@@ -1,0 +1,50 @@
+@reference "../index.css";
+
+.footer {
+  @apply border-t border-border bg-bg px-12 shrink-0;
+}
+
+.inner {
+  @apply max-w-[1080px] mx-auto py-4 grid items-center gap-6;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.label {
+  @apply font-mono text-[10px] tracking-[0.12em] text-fg-muted uppercase mb-2;
+}
+
+/* 通用連結（Email、Medium、LinkedIn） */
+.link {
+  @apply inline-flex items-center gap-[7px]
+         font-mono text-[11px] tracking-[0.06em]
+         text-fg-sub no-underline
+         px-3 py-[7px] rounded-[6px]
+         border border-transparent bg-transparent
+         transition-all duration-200 cursor-pointer;
+}
+.link:hover {
+  @apply text-fg border-border bg-bg-card;
+}
+
+.diamond {
+  @apply text-accent text-[10px];
+}
+
+/* 履歷下載按鈕（accent 色） */
+.resumeLink {
+  @apply inline-flex items-center gap-[7px]
+         font-mono text-[11px] tracking-[0.06em]
+         text-accent no-underline
+         px-3 py-[7px] rounded-[6px]
+         transition-all duration-200 cursor-pointer;
+  border: 1px solid #C8923A33;
+  background: #C8923A14;
+}
+.resumeLink:hover {
+  border-color: #C8923A88;
+  background: #C8923A28;
+}
+
+.copyright {
+  @apply font-mono text-[11px] text-fg-muted tracking-[0.04em] leading-[1.7];
+}

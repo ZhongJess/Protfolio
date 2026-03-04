@@ -1,0 +1,38 @@
+@reference "../index.css";
+
+.container {
+  @apply relative w-full h-full overflow-hidden;
+  clip-path: inset(0);
+}
+
+/* 透明畫布覆蓋在最上層，接收 Matter.js 滑鼠事件 */
+.canvas {
+  @apply absolute inset-0 w-full h-full cursor-grab;
+  z-index: 2;
+  background: transparent;
+}
+
+/* 每個技能標籤 pill（位置由 JS 同步，不能用 Tailwind layout） */
+.pill {
+  @apply absolute top-0 left-0
+         flex items-center justify-center gap-[6px]
+         pointer-events-none select-none
+         opacity-0 transition-opacity duration-[400ms];
+  z-index: 1;
+  border: 1px solid color-mix(in srgb, var(--color) 33%, transparent);
+  background: color-mix(in srgb, var(--color) 8%, transparent);
+  backdrop-filter: blur(4px);
+}
+.pill[data-ready="true"] {
+  opacity: 1;
+}
+
+.pillDot {
+  @apply shrink-0 rounded-full;
+  width: 5px;
+  height: 5px;
+}
+
+.pillLabel {
+  @apply font-mono text-[11px] font-medium text-fg tracking-[0.02em] whitespace-nowrap;
+}

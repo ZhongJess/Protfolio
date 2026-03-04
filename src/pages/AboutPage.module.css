@@ -1,0 +1,68 @@
+@reference "../index.css";
+
+/* 與 ProjectsPage 相同的頁首樣式 */
+.header {
+  @apply max-w-[1080px] mx-auto px-12 pt-7 pb-4;
+}
+
+.eyebrow {
+  @apply font-mono text-[11px] tracking-[0.12em] text-accent uppercase;
+}
+
+.pageTitle {
+  @apply font-serif font-bold text-fg tracking-[-0.03em] leading-[1.1] mt-5;
+  font-size: clamp(26px, 3.5vw, 48px);
+}
+
+/* 內容區塊 */
+.content {
+  @apply max-w-[1080px] mx-auto px-12 pb-12;
+}
+
+.section {
+  @apply py-8;
+}
+
+.sectionTitle {
+  @apply font-serif font-bold text-fg tracking-[-0.02em] leading-[1.2] mb-4;
+  font-size: clamp(17px, 2.2vw, 26px);
+}
+
+.body {
+  @apply font-sans text-[14px] text-fg-sub leading-[1.75] max-w-[620px] font-light;
+}
+
+.link {
+  @apply text-accent no-underline transition-opacity duration-150;
+}
+.link:hover {
+  @apply opacity-70;
+}
+
+.divider {
+  border-top: 1px solid #2A2520;
+}
+
+/* What I Do 卡片格狀排列 */
+.grid {
+  @apply grid gap-5;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+  @apply rounded-[8px] px-5 py-4;
+  background: #1A1612;
+  border: 1px solid #2A2520;
+  transition: border-color 0.2s ease;
+}
+.card:hover {
+  border-color: #C8923A33;
+}
+
+.cardLabel {
+  @apply font-mono text-[11px] tracking-[0.1em] text-accent uppercase block mb-2;
+}
+
+.cardDesc {
+  @apply font-sans text-[13px] text-fg-sub leading-[1.6] font-light;
+}

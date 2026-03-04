@@ -1,0 +1,58 @@
+@reference "../index.css";
+
+.backWrap  { @apply max-w-[1080px] mx-auto px-12 pt-[14px]; }
+
+.backBtn {
+  @apply font-mono text-[11px] tracking-[0.08em]
+         text-fg-sub bg-transparent border-none cursor-pointer
+         flex items-center gap-2 transition-colors duration-200;
+}
+.backBtn:hover { @apply text-accent; }
+
+.heroWrap  { @apply max-w-[1080px] mx-auto px-12 pt-4; }
+
+.heroTitle {
+  @apply font-serif font-bold text-fg tracking-[-0.03em] leading-[1.1] mb-5;
+  font-size: clamp(32px, 4.5vw, 60px);
+  word-break: keep-all;
+}
+
+.heroDesc  { @apply font-sans text-[17px] leading-[1.75] text-fg-sub max-w-[560px] font-light; }
+
+.imgWrap   { @apply max-w-[1080px] mx-auto px-12 mt-10; }
+
+.imgFrame  {
+  @apply w-full overflow-hidden rounded-[6px] border border-border;
+  height: clamp(220px, 35vw, 420px);
+}
+
+.impactWrap  { @apply max-w-[1080px] mx-auto px-12 pt-6; }
+
+.impactLabel {
+  @apply block font-mono text-[11px] tracking-[0.12em] text-accent uppercase mb-3;
+}
+
+.impactGrid  {
+  @apply grid gap-[2px] mb-20;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 數據卡片 */
+.statCard  { @apply p-7 border border-border bg-bg-card; }
+.statLabel { @apply font-mono text-[10px] text-fg-muted tracking-[0.08em] uppercase mb-3; }
+.statBefore { @apply font-mono text-[13px] text-fg-sub line-through; }
+.statAfter  { @apply font-serif text-[22px] font-bold text-fg; }
+.statDelta  { @apply font-mono text-[12px] font-medium text-accent; }
+.statDelta[data-up="true"] { @apply text-green; }
+
+/* 案例段落 */
+.sectionsWrap { @apply max-w-[700px] mx-auto px-12 pb-[120px]; }
+
+.section {
+  @apply mb-[60px] pb-[60px] border-b border-border;
+}
+.section[data-last="true"] { @apply border-none; }
+
+.sectionMeta    { @apply font-mono text-[10px] text-fg-muted tracking-[0.1em] uppercase; }
+.sectionHeading { @apply font-serif text-[22px] font-bold text-fg tracking-[-0.01em] mb-4; }
+.sectionBody    { @apply font-sans text-[15px] leading-[1.85] text-fg-sub font-light whitespace-pre-line; }

@@ -1,0 +1,8 @@
+@reference "../index.css";
+
+.tag {
+  @apply font-mono text-[10px] tracking-[0.08em] px-2 py-[3px] rounded-[3px];
+  color: var(--color);
+  border: 1px solid color-mix(in srgb, var(--color) 20%, transparent);
+  background: color-mix(in srgb, var(--color) 5%, transparent);
+}

@@ -1,0 +1,70 @@
+@reference "../index.css";
+
+.wrap {
+  @apply max-w-[600px] mx-auto px-12 pt-7 pb-16;
+}
+
+.backBtn {
+  @apply font-mono text-[11px] tracking-[0.08em]
+         text-fg-sub bg-transparent border-none cursor-pointer
+         flex items-center gap-2 transition-colors duration-200 mb-8;
+}
+.backBtn:hover { @apply text-accent; }
+
+.card {
+  @apply border border-border bg-bg-card rounded-[6px] p-10;
+}
+
+.cardTitle {
+  @apply font-serif text-[22px] font-bold text-fg tracking-[-0.01em] mb-7;
+}
+
+.sentTitle {
+  @apply font-serif text-[20px] font-bold text-fg mb-2;
+}
+
+.sentDesc {
+  @apply font-sans text-[14px] text-fg-sub leading-[1.75] mb-6 font-light;
+}
+
+.resetBtn {
+  @apply font-mono text-[11px] tracking-[0.06em] text-accent
+         bg-transparent border border-accent/30 rounded-[4px]
+         px-4 py-[7px] cursor-pointer transition-colors duration-200;
+}
+.resetBtn:hover { @apply bg-accent/10; }
+
+.field {
+  @apply mb-5;
+}
+
+.label {
+  @apply block font-mono text-[10px] tracking-[0.1em] text-fg-muted uppercase mb-2;
+}
+
+.input {
+  @apply w-full font-sans text-[14px] text-fg bg-bg
+         border border-border rounded-[4px]
+         px-4 py-[10px] font-light
+         transition-colors duration-200;
+  outline: none;
+}
+.input:focus { border-color: #C8923A55; }
+.input::placeholder { color: #3D3530; }
+
+.textarea {
+  @apply resize-none;
+}
+
+.error {
+  @apply font-mono text-[11px] text-red-400 mb-4;
+}
+
+.sendBtn {
+  @apply w-full font-sans text-[13px] font-medium
+         bg-accent text-bg border-none rounded-[6px]
+         py-[13px] cursor-pointer mt-2
+         transition-opacity duration-200;
+  box-shadow: 0 4px 24px rgba(200, 146, 58, 0.28);
+}
+.sendBtn:hover { @apply opacity-90; }

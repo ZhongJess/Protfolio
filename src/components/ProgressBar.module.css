@@ -1,0 +1,10 @@
+@reference "../index.css";
+
+.track {
+  @apply fixed top-0 left-0 right-0 z-[300] h-px bg-border;
+}
+
+.fill {
+  @apply h-full bg-accent transition-[width] duration-100 ease-linear;
+  box-shadow: 0 0 8px rgba(200, 146, 58, 0.5);
+}

@@ -1,0 +1,67 @@
+@reference "../index.css";
+
+.backWrap   { @apply max-w-[1080px] mx-auto px-12 pt-[14px]; }
+
+.backBtn {
+  @apply font-mono text-[11px] tracking-[0.08em]
+         text-fg-sub bg-transparent border-none cursor-pointer
+         flex items-center gap-2 transition-colors duration-200;
+}
+
+.headerWrap { @apply max-w-[1080px] mx-auto px-12 pt-4; }
+
+.repoTitle {
+  @apply font-mono font-medium text-fg tracking-[-0.01em];
+  font-size: clamp(22px, 3vw, 36px);
+}
+
+.desc { @apply font-sans text-[15px] leading-[1.75] text-fg-sub max-w-[520px] font-light mb-5; }
+
+.githubLink {
+  @apply inline-flex items-center gap-[6px]
+         font-mono text-[10px] tracking-[0.08em]
+         text-fg border border-border rounded-[3px]
+         px-[10px] py-[3px] no-underline bg-bg-card
+         transition-colors duration-200;
+}
+
+/* 兩欄佈局：程式碼 + 截圖 */
+.twoCols {
+  @apply max-w-[1080px] mx-auto px-12 pb-6
+         grid items-start;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.codePanel {
+  @apply overflow-hidden border border-border border-r-0;
+  background: #0A0D0B;
+}
+
+.previewPanel {
+  @apply border border-border overflow-hidden flex flex-col;
+}
+
+.panelBar {
+  @apply flex items-center justify-between px-4 py-3
+         border-b border-border bg-bg-card;
+}
+
+.panelBarSimple {
+  @apply px-4 py-3 border-b border-border bg-bg-card;
+}
+
+.filename { @apply font-mono text-[10px] text-fg-muted tracking-[0.06em]; }
+
+.pre {
+  @apply font-mono text-[12px] leading-[1.7]
+         m-0 p-6 overflow-x-auto whitespace-pre;
+  color: #A8C4A0;
+}
+
+.previewImg  { @apply flex-1 overflow-hidden min-h-[320px]; }
+
+.previewFooter {
+  @apply px-4 py-4 border-t border-border bg-bg-card
+         font-mono text-[11px] text-fg-muted leading-[1.6];
+}

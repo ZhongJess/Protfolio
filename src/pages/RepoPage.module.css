@@ -1,0 +1,49 @@
+@reference "../index.css";
+
+.header { @apply max-w-[1080px] mx-auto px-12 pt-7 pb-4; }
+
+.eyebrow   { @apply font-mono text-[11px] tracking-[0.12em] text-green uppercase; }
+.pageTitle {
+  @apply font-serif font-bold text-fg tracking-[-0.03em] leading-[1.1] mt-5;
+  font-size: clamp(26px, 3.5vw, 48px);
+}
+.pageDesc  { @apply font-sans text-[15px] leading-[1.75] text-fg-sub max-w-[480px] mt-4 font-light; }
+
+.list { @apply max-w-[1080px] mx-auto px-12 pb-6; }
+
+.row {
+  @apply grid items-center gap-6 py-7 cursor-pointer relative
+         transition-colors duration-[250ms];
+  grid-template-columns: 1fr auto;
+  border-top: 1px solid #2A2520;
+}
+.row[data-hovered="true"] { border-top-color: #3D3028; }
+
+.rowGlow {
+  @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[250ms];
+}
+.rowGlow[data-hovered="true"] { @apply opacity-100; }
+
+.repoName { @apply font-mono text-[15px] font-medium text-fg tracking-[-0.01em]; }
+
+.branch {
+  @apply font-mono text-[10px] text-fg-muted
+         px-[7px] py-[2px] border border-border rounded-[10px];
+}
+
+.desc  { @apply font-sans text-[13px] leading-[1.65] text-fg-sub max-w-[560px] font-light mb-3; }
+.stars { @apply font-mono text-[11px] text-fg-muted; }
+
+.lang {
+  @apply font-mono text-[11px] px-[10px] py-[3px] rounded-[3px];
+  color: var(--color);
+  border: 1px solid color-mix(in srgb, var(--color) 20%, transparent);
+  background: color-mix(in srgb, var(--color) 5%, transparent);
+}
+
+.arrow {
+  @apply text-[16px] text-fg-muted transition-all duration-[250ms] inline-block;
+}
+.arrow[data-hovered="true"] {
+  transform: translate(3px, -3px);
+}
