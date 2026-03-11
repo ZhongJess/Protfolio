@@ -6,6 +6,21 @@ import T from "./tokens";
 // ── 作品集專案 ─────────────────────────────────────────────────────────────────
 export const PROJECTS = [
   {
+    id: "rent4u",
+    num: "00",
+    title: "Rent4U 輔具租賃平台",
+    tags: ["UX Research", "Product Strategy", "Interaction"],
+    tagColor: "#C8923A",
+    desc: "讓輔具借用像借書一樣簡單——適配、諮詢、租賃三步驟無縫整合的數位平台。",
+    year: "2025",
+    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80",
+    scrollStory: true,   // ← triggers Rent4UScrollStory renderer
+    // impact & sections not used (scrollStory handles its own content)
+    impact: [],
+    sections: [],
+  },
+
+  {
     id: "gov-data",
     num: "01",
     title: "Government Data Dashboard",
