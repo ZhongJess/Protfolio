@@ -1429,203 +1429,310 @@ function SectionLogic() {
 // 暗色底 · count-up 動畫 · 4 個核心指標 · 收尾反思
 // ─────────────────────────────────────────────────────────────────────────────
 
-const KPI_DATA = [
-  { value: 134, suffix: "+", label: "累計詢問單",   sub: "上線 3 個月內",     color: C.secondary },
-  { value:  33, suffix: "",  label: "已回覆建議單", sub: "店家回覆率 25%",    color: "#7ECFB3"   },
-  { value:   3, suffix: "",  label: "個月 0→上線",  sub: "研究・設計・開發",  color: "#A78BFA"   },
-  { value:  12, suffix: "+", label: "位訪談對象",   sub: "使用者 ＋ 店家 ＋ 治療師", color: "#F9A8D4" },
+// ── Value Data ─────────────────────────────────────────────────────────────
+const VALUE_DATA = [
+  {
+    num:   "②",
+    title: "商業端",
+    desc:  "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。",
+    mockup: "dark",
+  },
+  {
+    num:   "①",
+    title: "使用者端",
+    desc:  "消除焦慮與雞同鴨講，諮詢精準度大幅提升。",
+    mockup: "light",
+  },
+  {
+    num:   "③",
+    title: "產品端",
+    desc:  "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。",
+    mockup: "multi",
+  },
 ];
 
-/** count-up 動畫 hook */
-function useCountUp(target, duration = 1600, triggered = false) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!triggered) return;
-    let start = null;
-    const tick = (ts) => {
-      if (!start) start = ts;
-      const p = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);   // ease-out cubic
-      setVal(Math.floor(eased * target));
-      if (p < 1) requestAnimationFrame(tick);
-      else setVal(target);
-    };
-    requestAnimationFrame(tick);
-  }, [triggered, target, duration]);
-  return val;
+// ── Tablet Mockup 組件 ─────────────────────────────────────────────────────
+
+/** 深色介面：左側欄 + AI 輔助卡 + 搜尋列 */
+function MockupDark() {
+  const rows = [92, 75, 88, 60, 70, 55];
+  return (
+    <div style={{ display:"flex", height:"100%", background:"#1c1c2e", fontFamily:FONT }}>
+      {/* 左側欄 */}
+      <div style={{ width:130, background:"#13132a", borderRight:"1px solid #2a2a4a", padding:"10px 6px", display:"flex", flexDirection:"column", gap:4, flexShrink:0 }}>
+        <div style={{ fontSize:7, color:"#6668aa", marginBottom:6, padding:"0 4px", fontWeight:600, letterSpacing:"0.1em" }}>SOURCES</div>
+        {["輔具分類基準","治療師訪談","競品分析","使用者旅程","市場規模"].map((t, i) => (
+          <div key={i} style={{ padding:"5px 8px", borderRadius:5, background:i===0 ? "#003795":"transparent", color:i===0 ? "#fff":"#888", fontSize:7, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{t}</div>
+        ))}
+        <div style={{ flex:1 }} />
+        <div style={{ fontSize:7, color:"#444", padding:"0 4px" }}>+ Add source</div>
+      </div>
+      {/* 主內容 */}
+      <div style={{ flex:1, padding:10, display:"flex", flexDirection:"column", gap:8, minWidth:0 }}>
+        <div style={{ background:"#2a2a4e", borderRadius:7, padding:"8px 10px" }}>
+          <div style={{ fontSize:8, fontWeight:700, color:"#fff", marginBottom:5 }}>Notebook guide</div>
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:3 }}>
+            {["FAQ","時間軸","摘要","說明"].map((t, i) => (
+              <div key={i} style={{ background:"#003795", borderRadius:3, padding:"3px 5px", fontSize:6, color:"#fff", textAlign:"center" }}>{t}</div>
+            ))}
+          </div>
+        </div>
+        <div style={{ flex:1, display:"flex", flexDirection:"column", gap:4 }}>
+          {rows.map((w, i) => (
+            <div key={i} style={{ height:5, background:"rgba(255,255,255,0.07)", borderRadius:3, width:`${w}%` }} />
+          ))}
+        </div>
+        <div style={{ display:"flex", gap:5, alignItems:"center" }}>
+          <div style={{ flex:1, height:20, background:"#2a2a3e", borderRadius:10, border:"1px solid #3a3a5e" }} />
+          <div style={{ width:20, height:20, borderRadius:10, background:"#003795", display:"flex", alignItems:"center", justifyContent:"center" }}>
+            <span style={{ color:"#fff", fontSize:9, lineHeight:1 }}>→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-/** 單張 KPI Card */
-function KpiCard({ value, suffix, label, sub, color, triggered }) {
-  const count = useCountUp(value, 1600, triggered);
+/** 淺色介面：文章 + 知識卡片 */
+function MockupLight() {
   return (
-    <div
-      style={{
-        flex:          1,
-        display:       "flex",
-        flexDirection: "column",
-        gap:           10,
-        padding:       "32px 24px",
-        background:    "rgba(255,255,255,0.04)",
-        border:        `1px solid rgba(255,255,255,0.07)`,
-        borderRadius:  16,
-        position:      "relative",
-        overflow:      "hidden",
-      }}
-    >
-      {/* 背景光暈 */}
-      <div style={{ position:"absolute", top:-30, left:-20, width:100, height:100, borderRadius:"50%", background:`${color}18`, filter:"blur(30px)", pointerEvents:"none" }} />
-
-      {/* 數字 */}
-      <div
-        style={{
-          fontSize:      "clamp(42px, 5vw, 64px)",
-          fontWeight:    900,
-          color,
-          lineHeight:    1,
-          fontFamily:    "'IBM Plex Mono', monospace",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        {count}{suffix}
+    <div style={{ display:"flex", height:"100%", background:"#f0faf4", fontFamily:FONT }}>
+      {/* 主文章區 */}
+      <div style={{ flex:1, padding:"12px 10px", display:"flex", flexDirection:"column", gap:6, minWidth:0 }}>
+        <div style={{ fontSize:9, fontWeight:700, color:"#1a1a1a", marginBottom:2 }}>諮詢單設計指南</div>
+        <div style={{ fontSize:7, color:"#888", marginBottom:6 }}>Week Two: Key Questions</div>
+        {[90,82,70,88,76,65,80].map((w, i) => (
+          <div key={i} style={{ height:5, background:`rgba(0,0,0,${0.07 + (i%3)*0.03})`, borderRadius:3, width:`${w}%` }} />
+        ))}
+        <div style={{ marginTop:4, display:"flex", gap:3 }}>
+          {["同意","中立","不同意"].map((t, i) => (
+            <div key={i} style={{ flex:1, border:"1px solid #ccc", borderRadius:4, padding:"4px 0", fontSize:6, textAlign:"center", color:"#555", background:"#fff" }}>{t}</div>
+          ))}
+        </div>
       </div>
-
-      {/* 標籤 */}
-      <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
-        <span style={{ fontSize:15, fontWeight:700, color:"#fff", fontFamily:FONT }}>
-          {label}
-        </span>
-        <span style={{ fontSize:12, color:"rgba(255,255,255,0.4)", fontFamily:FONT }}>
-          {sub}
-        </span>
+      {/* 右側知識卡 */}
+      <div style={{ width:110, background:"#fff", borderLeft:"1px solid #e0f0e8", padding:"10px 8px", display:"flex", flexDirection:"column", gap:6 }}>
+        <div style={{ background:"#e8f8ef", borderRadius:6, padding:"7px 8px" }}>
+          <div style={{ fontSize:7, fontWeight:700, color:"#1a6640", marginBottom:4 }}>Document guide</div>
+          {[75,60,80].map((w, i) => (
+            <div key={i} style={{ height:4, background:"rgba(0,100,60,0.15)", borderRadius:2, marginBottom:3, width:`${w}%` }} />
+          ))}
+        </div>
+        <div style={{ background:"#e8f8ef", borderRadius:6, padding:"7px 8px" }}>
+          <div style={{ fontSize:7, fontWeight:700, color:"#1a6640", marginBottom:4 }}>Key topics</div>
+          {["STEM & Diversity","Asian-Amer."].map((t, i) => (
+            <div key={i} style={{ fontSize:6, color:"#555", padding:"2px 0", borderBottom:"1px solid #d0ead8" }}>{t}</div>
+          ))}
+        </div>
+        <div style={{ flex:1 }} />
+        <div style={{ height:20, background:"#f0f0f0", borderRadius:4, border:"1px solid #ddd" }} />
       </div>
+    </div>
+  );
+}
 
-      {/* 底部色條 */}
-      <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:`linear-gradient(90deg, ${color}, transparent)` }} />
+/** 三欄介面：來源 / 主聊天 / 筆記 */
+function MockupMulti() {
+  return (
+    <div style={{ display:"flex", height:"100%", background:"#fff", fontFamily:FONT }}>
+      {/* 左欄 Sources */}
+      <div style={{ width:90, background:"#f9f9fb", borderRight:"1px solid #eee", padding:"10px 6px", display:"flex", flexDirection:"column", gap:4 }}>
+        <div style={{ fontSize:6, color:"#999", letterSpacing:"0.1em", marginBottom:4 }}>SOURCES</div>
+        {["輔具清單","訪談錄音","設計稿"].map((t, i) => (
+          <div key={i} style={{ fontSize:6, color:"#555", padding:"4px 6px", background:"#fff", border:"1px solid #eee", borderRadius:4 }}>{t}</div>
+        ))}
+        <div style={{ marginTop:"auto", fontSize:6, color:"#aaa" }}>+ Add note</div>
+      </div>
+      {/* 中欄 Chat */}
+      <div style={{ flex:1, padding:"10px 8px", display:"flex", flexDirection:"column", gap:6 }}>
+        <div style={{ textAlign:"center", padding:"8px 0" }}>
+          <div style={{ fontSize:9, fontWeight:700, color:"#1a1a1a" }}>Science in Motion</div>
+          <div style={{ fontSize:6, color:"#999", marginTop:2 }}>AI 推薦引擎</div>
+        </div>
+        {[80,65,72].map((w, i) => (
+          <div key={i} style={{ padding:"5px 8px", background:i%2===0?"#f4f4f8":"#fff", borderRadius:6, border:"1px solid #eee" }}>
+            <div style={{ height:4, background:"rgba(0,0,0,0.08)", borderRadius:2, width:`${w}%`, marginBottom:3 }} />
+            <div style={{ height:4, background:"rgba(0,0,0,0.05)", borderRadius:2, width:`${w-15}%` }} />
+          </div>
+        ))}
+        <div style={{ marginTop:"auto", display:"flex", gap:4 }}>
+          <div style={{ flex:1, height:18, background:"#f4f4f8", borderRadius:9, border:"1px solid #e0e0e8" }} />
+          <div style={{ width:18, height:18, borderRadius:9, background:"#003795" }} />
+        </div>
+      </div>
+      {/* 右欄 Notes / Studio */}
+      <div style={{ width:90, background:"#f9f9fb", borderLeft:"1px solid #eee", padding:"10px 6px", display:"flex", flexDirection:"column", gap:4 }}>
+        <div style={{ fontSize:6, color:"#999", letterSpacing:"0.1em", marginBottom:4 }}>STUDIO</div>
+        {[70,55,65,50].map((w, i) => (
+          <div key={i} style={{ height:4, background:"rgba(0,0,0,0.07)", borderRadius:2, width:`${w}%`, marginBottom:2 }} />
+        ))}
+        <div style={{ marginTop:8 }}>
+          {["First draft","Study guide"].map((t, i) => (
+            <div key={i} style={{ fontSize:6, color:"#555", padding:"3px 6px", background:"#fff", border:"1px solid #eee", borderRadius:4, marginBottom:3 }}>{t}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** 平板外框 wrapper */
+function TabletFrame({ type }) {
+  const content = type === "dark"  ? <MockupDark />
+                : type === "light" ? <MockupLight />
+                :                   <MockupMulti />;
+  return (
+    <div style={{
+      borderRadius:   16,
+      overflow:       "hidden",
+      border:         "8px solid #e8e4dc",
+      boxShadow:      "0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
+      aspectRatio:    "16/10",
+      background:     "#e8e4dc",
+    }}>
+      <div style={{ width:"100%", height:"100%" }}>
+        {content}
+      </div>
+    </div>
+  );
+}
+
+/** 單張 Value Card */
+function ValueCard({ num, title, desc, mockup }) {
+  return (
+    <div style={{ display:"flex", flexDirection:"column", gap:20 }}>
+      {/* 平板截圖 */}
+      <TabletFrame type={mockup} />
+
+      {/* 數字 + 標題 + 描述 */}
+      <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+          {/* 圓形數字徽章 */}
+          <div style={{
+            width:28, height:28, borderRadius:"50%",
+            background:"#111", color:"#fff",
+            display:"flex", alignItems:"center", justifyContent:"center",
+            fontSize:13, fontWeight:700, fontFamily:FONT, flexShrink:0,
+          }}>
+            {num}
+          </div>
+          <span style={{ fontSize:16, fontWeight:700, color:"#111", fontFamily:FONT }}>
+            {title}
+          </span>
+        </div>
+        <p style={{ fontSize:13, color:"#555", lineHeight:1.8, margin:0, fontFamily:FONT }}>
+          {desc}
+        </p>
+      </div>
     </div>
   );
 }
 
 function SectionImpact() {
-  const [triggered, setTriggered] = useState(false);
   const sectionRef = useRef(null);
-
-  // 進入視口時觸發 count-up
-  useEffect(() => {
-    const scrollEl = document.getElementById("main-scroll");
-    if (!scrollEl || !sectionRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setTriggered(true); },
-      { root: scrollEl, threshold: 0.2 }
-    );
-    obs.observe(sectionRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <section
       id="r4u-impact"
       ref={sectionRef}
-      style={{
-        background: `linear-gradient(160deg, #0a0f1e 0%, #0E0E0E 60%, #141414 100%)`,
-        fontFamily: FONT,
-        padding:    "96px 60px 80px",
-        position:   "relative",
-        overflow:   "hidden",
-      }}
+      style={{ fontFamily:FONT, background:"#fff" }}
     >
-      {/* 背景光暈 */}
-      <div style={{ position:"absolute", bottom:"10%", right:"5%", width:"35%", height:"35%", background:"radial-gradient(circle, rgba(0,55,149,0.15) 0%, transparent 70%)", pointerEvents:"none" }} />
-
-      {/* 節頭 */}
-      <div style={{ maxWidth:1100, margin:"0 auto" }}>
-        <span style={{ fontSize:11, fontWeight:600, color:C.secondary, letterSpacing:"0.14em", textTransform:"uppercase", display:"block", marginBottom:14 }}>
-          Impact
-        </span>
-        <h2 style={{ fontSize:"clamp(28px,3.5vw,52px)", fontWeight:900, color:"#fff", margin:"0 0 12px", lineHeight:1.15 }}>
-          數字背後的設計價值
+      {/* ── 真實價值 (白底) ───────────────────────────────────────── */}
+      <div style={{ padding:"88px 60px 80px", maxWidth:1200, margin:"0 auto" }}>
+        {/* 標題 */}
+        <h2 style={{ fontSize:"clamp(20px,2.2vw,28px)", fontWeight:700, color:"#111", margin:"0 0 48px", fontFamily:FONT }}>
+          真實價值 (Value &amp; KPI)：
         </h2>
-        <p style={{ fontSize:15, color:"rgba(255,255,255,0.45)", lineHeight:1.7, margin:"0 0 64px", maxWidth:560 }}>
-          從 0 開始構建的服務，在 3 個月內完成從研究到上線的完整週期，
-          驗證了「診斷式推薦」模型的可行性。
-        </p>
 
-        {/* KPI 卡片 */}
-        <div style={{ display:"flex", gap:16, marginBottom:72 }}>
-          {KPI_DATA.map(kpi => (
-            <KpiCard key={kpi.label} {...kpi} triggered={triggered} />
+        {/* 3 欄卡片 */}
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:32 }}>
+          {VALUE_DATA.map(v => (
+            <ValueCard key={v.title} {...v} />
           ))}
         </div>
+      </div>
 
-        {/* 分隔線 */}
-        <div style={{ height:1, background:"rgba(255,255,255,0.08)", margin:"0 0 56px" }} />
+      {/* ── 深色反思 + CTA ────────────────────────────────────────── */}
+      <div style={{
+        background: "linear-gradient(160deg, #0a0f1e 0%, #0E0E0E 60%, #141414 100%)",
+        padding:    "72px 60px 80px",
+        position:   "relative",
+        overflow:   "hidden",
+      }}>
+        {/* 背景光暈 */}
+        <div style={{ position:"absolute", bottom:"10%", right:"5%", width:"35%", height:"35%", background:"radial-gradient(circle, rgba(0,55,149,0.15) 0%, transparent 70%)", pointerEvents:"none" }} />
 
-        {/* 反思段落 */}
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60 }}>
-          <div>
-            <h3 style={{ fontSize:18, fontWeight:700, color:"#fff", margin:"0 0 14px", fontFamily:FONT }}>
-              學到最多的事
-            </h3>
-            <p style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.85, margin:0 }}>
-              設計輔具租賃平台，讓我深刻理解「專業知識的轉譯」是 UX 設計中最複雜的挑戰之一。
-              如何讓不懂醫療的使用者，在不做出錯誤決策的前提下完成自助諮詢，需要同時兼顧
-              <span style={{ color:"#fff", fontWeight:600 }}>資訊架構、信任建立與風險管控</span>。
-            </p>
+        <div style={{ maxWidth:1100, margin:"0 auto" }}>
+          {/* 分隔線 */}
+          <div style={{ height:1, background:"rgba(255,255,255,0.08)", margin:"0 0 56px" }} />
+
+          {/* 反思段落 */}
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60 }}>
+            <div>
+              <h3 style={{ fontSize:18, fontWeight:700, color:"#fff", margin:"0 0 14px", fontFamily:FONT }}>
+                學到最多的事
+              </h3>
+              <p style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.85, margin:0 }}>
+                設計輔具租賃平台，讓我深刻理解「專業知識的轉譯」是 UX 設計中最複雜的挑戰之一。
+                如何讓不懂醫療的使用者，在不做出錯誤決策的前提下完成自助諮詢，需要同時兼顧
+                <span style={{ color:"#fff", fontWeight:600 }}>資訊架構、信任建立與風險管控</span>。
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize:18, fontWeight:700, color:"#fff", margin:"0 0 14px", fontFamily:FONT }}>
+                如果重來一次
+              </h3>
+              <p style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.85, margin:0 }}>
+                會更早導入
+                <span style={{ color:"#fff", fontWeight:600 }}>可用性測試</span>——
+                我在第二輪迭代才發現年長使用者對「粗大動作分級」的理解存在很大差異，
+                導致問卷題目需要全面重寫。更早的測試能節省 2-3 週的迭代成本。
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 style={{ fontSize:18, fontWeight:700, color:"#fff", margin:"0 0 14px", fontFamily:FONT }}>
-              如果重來一次
-            </h3>
-            <p style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.85, margin:0 }}>
-              會更早導入
-              <span style={{ color:"#fff", fontWeight:600 }}>可用性測試</span>——
-              我在第二輪迭代才發現年長使用者對「粗大動作分級」的理解存在很大差異，
-              導致問卷題目需要全面重寫。更早的測試能節省 2-3 週的迭代成本。
-            </p>
-          </div>
-        </div>
 
-        {/* CTA */}
-        <div style={{ display:"flex", gap:12, marginTop:56, alignItems:"center" }}>
-          <a
-            href="#"
-            style={{
-              display:       "inline-flex",
-              alignItems:    "center",
-              gap:           8,
-              padding:       "12px 28px",
-              borderRadius:  9999,
-              background:    C.primary,
-              color:         "#fff",
-              fontSize:      14,
-              fontFamily:    FONT,
-              fontWeight:    600,
-              textDecoration:"none",
-              letterSpacing: "0.03em",
-            }}
-          >
-            前往網站 ↗
-          </a>
-          <button
-            onClick={() => {
-              const s = document.getElementById("main-scroll");
-              const t = document.getElementById("r4u-summary");
-              if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior:"smooth" });
-            }}
-            style={{
-              background:    "transparent",
-              border:        "1px solid rgba(255,255,255,0.2)",
-              color:         "rgba(255,255,255,0.6)",
-              padding:       "12px 24px",
-              borderRadius:  9999,
-              fontSize:      14,
-              fontFamily:    FONT,
-              cursor:        "pointer",
-              letterSpacing: "0.03em",
-            }}
-          >
-            ↑ 回到頂部
-          </button>
+          {/* CTA */}
+          <div style={{ display:"flex", gap:12, marginTop:56, alignItems:"center" }}>
+            <a
+              href="#"
+              style={{
+                display:        "inline-flex",
+                alignItems:     "center",
+                gap:            8,
+                padding:        "12px 28px",
+                borderRadius:   9999,
+                background:     C.primary,
+                color:          "#fff",
+                fontSize:       14,
+                fontFamily:     FONT,
+                fontWeight:     600,
+                textDecoration: "none",
+                letterSpacing:  "0.03em",
+              }}
+            >
+              前往網站 ↗
+            </a>
+            <button
+              onClick={() => {
+                const s = document.getElementById("main-scroll");
+                const t = document.getElementById("r4u-summary");
+                if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior:"smooth" });
+              }}
+              style={{
+                background:    "transparent",
+                border:        "1px solid rgba(255,255,255,0.2)",
+                color:         "rgba(255,255,255,0.6)",
+                padding:       "12px 24px",
+                borderRadius:  9999,
+                fontSize:      14,
+                fontFamily:    FONT,
+                cursor:        "pointer",
+                letterSpacing: "0.03em",
+              }}
+            >
+              ↑ 回到頂部
+            </button>
+          </div>
         </div>
       </div>
     </section>
