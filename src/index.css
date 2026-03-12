@@ -18,6 +18,13 @@
   --color-accent:       #C8923A;
   --color-green:        #2DA567;
 
+  /* ── Rent4U Case Study Tokens ── */
+  --color-r4u-primary:   #003795;   /* 深藍主色  */
+  --color-r4u-secondary: #FFC11A;   /* 金黃次色  */
+  --color-r4u-accent:    #E53E3E;   /* 紅色強調  */
+  --color-r4u-dark:      #111111;   /* Hero 底色 */
+  --color-r4u-light:     #F7F5F2;   /* 淡底色    */
+
   /* 字體 */
   --font-family-serif:  'Lora', Georgia, serif;
   --font-family-sans:   'DM Sans', system-ui, sans-serif;

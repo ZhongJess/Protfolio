@@ -12,7 +12,8 @@ import Footer     from "./components/Footer";
 import HomePage       from "./pages/HomePage";
 import AboutPage      from "./pages/AboutPage";
 import ProjectsPage   from "./pages/ProjectsPage";
-import CaseStudyPage  from "./pages/CaseStudyPage";
+import CaseStudyPage       from "./pages/CaseStudyPage";
+import Rent4UScrollStory   from "./components/Rent4UScrollStory";
 import RepoPage       from "./pages/RepoPage";
 import RepoDetailPage from "./pages/RepoDetailPage";
 
@@ -38,7 +39,8 @@ export default function Portfolio() {
 
   // 根據狀態決定顯示哪個頁面
   let pageContent;
-  if      (selected && detailType === "project") pageContent = <CaseStudyPage  project={selected} onBack={handleBack} />;
+  if      (selected && detailType === "project" && selected.scrollStory) pageContent = <Rent4UScrollStory onBack={handleBack} />;
+  else if (selected && detailType === "project") pageContent = <CaseStudyPage  project={selected} onBack={handleBack} />;
   else if (selected && detailType === "repo")    pageContent = <RepoDetailPage repo={selected}    onBack={handleBack} />;
   else if (page === "home")                      pageContent = <HomePage       setPage={setPage} />;
   else if (page === "about")                     pageContent = <AboutPage />;
