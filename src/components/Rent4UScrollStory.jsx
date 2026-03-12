@@ -22,10 +22,10 @@ const FONT = "'Noto Sans TC', system-ui, sans-serif";
 
 // ── Nav Items ─────────────────────────────────────────────────────────────────
 const NAV_ITEMS = [
-  { id: "summary",  label: "專案敘述" },
-  { id: "research", label: "設計流程" },
-  { id: "logic",    label: "Mock up"  },
-  { id: "impact",   label: "成效"     },
+  { id: "summary",  label: "需求洞察" },
+  { id: "research", label: "設計核心" },
+  { id: "logic",    label: "系統實踐" },
+  { id: "impact",   label: "價值影響" },
 ];
 
 // ── Hero Info Cards ───────────────────────────────────────────────────────────
@@ -59,7 +59,7 @@ function TopNav({ active }) {
         gap:                  2,
         padding:              "0 32px",
         height:               56,
-        background:           "rgba(10,10,10,0.90)",
+        background:           "red",
         backdropFilter:       "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
         borderBottom:         "1px solid rgba(255,255,255,0.06)",
@@ -394,7 +394,7 @@ function SectionSummary() {
               fontFamily:    "Georgia, serif",
             }}
           >
-            精準適配輔具租賃系統
+            重塑輔具租賃：以GMFCS實現精準適配
           </h1>
 
           {/* 副標題 */}
@@ -633,9 +633,9 @@ function SectionResearch() {
             <Highlight>輔具</Highlight>了嗎？
           </h2>
           <p style={{ fontSize: 15, color: "#7A6F65", lineHeight: 1.85, margin: 0, maxWidth: 420, fontWeight: 300 }}>
-            在照護情境中，家屬往往處於極度焦慮且<Highlight>資訊不對稱</Highlight>的狀態。
-            大多數家屬因無法全面掌握患者的「使用情境」，輔具需求常在<Highlight>當下才浮現</Highlight>，
-            導致輔具不適配或不足。
+            在照護情境中，家屬往往處於極度焦慮且需要情境不對稱的狀態。
+            很多家屬租了病床卻忘了洗澡椅。我們發現 70% 的家庭在租借輔具時，
+            因為<strong style={{ color: "#EDE8E0", fontWeight: 600 }}>缺乏情境聯想而產生照顧斷層</strong>。
           </p>
         </div>
 
@@ -1316,7 +1316,7 @@ function SectionLogic() {
   return (
     <section id="r4u-logic" style={{ fontFamily: FONT }}>
 
-      {/* ── 設計決策 3 欄 ── */}
+      {/* ── 設計核心 3 欄 ── */}
       <div style={{ background: "#0E0C0A", padding: "80px 60px 72px", borderBottom: "1px solid #2A2520" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
 
@@ -1332,7 +1332,7 @@ function SectionLogic() {
               lineHeight:    1.5,
             }}
           >
-            設計決策
+            設計核心
           </h2>
 
           {/* 副標題 */}
@@ -1346,7 +1346,7 @@ function SectionLogic() {
               fontWeight: 300,
             }}
           >
-            我們透過<strong style={{ color: "#EDE8E0", fontWeight: 600 }}>數位化E11行動能力分級描述</strong>
+            我們透過<strong style={{ color: "#EDE8E0", fontWeight: 600 }}>數位化GMFCS行動能力分級描述</strong>
             ，打破地理限制，讓專業店家能透過
             <strong style={{ color: "#EDE8E0", fontWeight: 600 }}>「遠端諮詢建議單」</strong>
             精準觸達家屬，消除 80% 的轉化缺口，透明化租賃體驗。
@@ -1379,7 +1379,7 @@ function SectionLogic() {
                   直覺化評估
                 </h3>
                 <p style={{ fontFamily: FONT, fontSize: 16, color: "#7A6F65", lineHeight: 1.45, margin: 0 }}>
-                  將複雜的 GMFCS 醫學標準 封裝在簡潔的 E11 選單中，讓家屬無需專業背景即可發起精準諮詢。
+                  將複雜的 GMFCS 醫學標準 封裝在簡潔的 GMFCS 選單中，讓家屬無需專業背景即可發起精準諮詢。
                 </p>
               </div>
             </div>
@@ -1495,7 +1495,7 @@ function SectionLogic() {
             {/* 3 步驟 pill */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 1fr", gap: 12 }}>
               {[
-                { label: "自評行為能力 E11",                              dark: true  },
+                { label: "自評行為能力 GMFCS",                              dark: true  },
                 { label: "店家後台收到詢問單，給予客製化輔具建議",        dark: false },
                 { label: "用戶 LINE 收到通知",                            dark: true  },
               ].map((step, i) => (
@@ -1585,6 +1585,81 @@ function SectionImpact() {
       ref={sectionRef}
       style={{ fontFamily:FONT, background:"#fff" }}
     >
+      {/* ── 詢問單功能設計（影片） ───────────────────────────────────── */}
+      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 16px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
+            詢問單功能設計
+          </h3>
+          <p style={{ fontSize: 16, color: "rgba(0,0,0,0.6)", lineHeight: "27px", margin: "0 0 40px", fontFamily: FONT, maxWidth: 760 }}>
+            詢問單設計基於粗大動作評估系統的分級標準，涵蓋五種失能級別，確保使用者能夠按照自身的失能狀態進行輔具諮詢。此機制有助於店家更準確地理解使用者需求，避免資訊不對稱或無法確定使用者目前的失能級別，進而提供最合適的輔具建議。
+          </p>
+          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
+            <video autoPlay loop muted playsInline style={{ width: "100%", display: "block" }}>
+              <source src="/videos/inquiry.mov" type="video/quicktime" />
+              <source src="/videos/inquiry.mov" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 建議單功能設計（3 欄：左說明、中截圖、右標注） ──────────── */}
+      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 32px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
+            建議單功能設計
+          </h3>
+
+          {/* 截圖主體 */}
+          <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.10)", border: "1px solid #E8E8E8" }}>
+            <img
+              src="/images/jianyi.png"
+              alt="回覆建議單介面截圖"
+              style={{ width: "100%", display: "block" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── 串連 LINE 系統（影片佔位） ──────────────────────────────── */}
+      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 16px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
+            串連 LINE 系統
+          </h3>
+          <p style={{ fontSize: 16, color: "rgba(0,0,0,0.6)", lineHeight: "27px", margin: "0 0 40px", fontFamily: FONT, maxWidth: 760 }}>
+            串連Line功能考慮到照護者的高壓力，我們捨棄複雜的 App，選擇 LINE 作為服務閉環，確保專業建議單能直接推送到家屬手中，確定輔具沒問題後，再進行線上租賃。
+          </p>
+          <img
+            src="/images/line.png"
+            alt="串連 LINE 系統截圖：Line Message、Line Login、Line Pay"
+            style={{ width: "100%", display: "block", borderRadius: 12 }}
+          />
+        </div>
+      </div>
+
+      {/* ── 設計系統 ─────────────────────────────────────────────── */}
+      <div style={{ background: "#FAFAFA", padding: "80px 60px", borderTop: "1px solid #EFEFEF" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          {/* 標題區 */}
+          <div style={{ marginBottom: 48 }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "#999", fontFamily: "Menlo, monospace", display: "block", marginBottom: 12 }}>Design System</span>
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 16px", fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>設計系統</h2>
+            <p style={{ fontSize: 16, color: "rgba(0,0,0,0.55)", lineHeight: 1.75, margin: 0, fontFamily: FONT, maxWidth: 640 }}>
+              建立統一的品牌語言，涵蓋色彩系統、字體規範與 UI 元件庫，確保產品視覺一致性。
+            </p>
+          </div>
+          {/* 截圖 */}
+          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)", border: "1px solid #E8E8E8" }}>
+            <img
+              src="/images/design-guide.png"
+              alt="Rent4U 設計系統：品牌色彩、字體、元件庫"
+              style={{ width: "100%", display: "block" }}
+            />
+          </div>
+        </div>
+      </div>
+
       {/* ── 真實價值 (白底) ───────────────────────────────────────── */}
       <div style={{ padding: "88px 60px 80px", maxWidth: 1200, margin: "0 auto" }}>
         {/* 標題 */}
@@ -1678,81 +1753,6 @@ function SectionImpact() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* ── 詢問單功能設計（影片） ───────────────────────────────────── */}
-      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 16px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
-            詢問單功能設計
-          </h3>
-          <p style={{ fontSize: 16, color: "rgba(0,0,0,0.6)", lineHeight: "27px", margin: "0 0 40px", fontFamily: FONT, maxWidth: 760 }}>
-            詢問單設計基於粗大動作評估系統的分級標準，涵蓋五種失能級別，確保使用者能夠按照自身的失能狀態進行輔具諮詢。此機制有助於店家更準確地理解使用者需求，避免資訊不對稱或無法確定使用者目前的失能級別，進而提供最合適的輔具建議。
-          </p>
-          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
-            <video autoPlay loop muted playsInline style={{ width: "100%", display: "block" }}>
-              <source src="/videos/inquiry.mov" type="video/quicktime" />
-              <source src="/videos/inquiry.mov" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
-
-      {/* ── 建議單功能設計（3 欄：左說明、中截圖、右標注） ──────────── */}
-      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 32px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
-            建議單功能設計
-          </h3>
-
-          {/* 截圖主體 */}
-          <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.10)", border: "1px solid #E8E8E8" }}>
-            <img
-              src="/images/jianyi.png"
-              alt="回覆建議單介面截圖"
-              style={{ width: "100%", display: "block" }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* ── 串連 LINE 系統（影片佔位） ──────────────────────────────── */}
-      <div style={{ background: "#FFFFFF", padding: "72px 60px", borderTop: "1px solid #EFEFEF" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          <h3 style={{ fontSize: 20, fontWeight: 500, color: "#111", margin: "0 0 16px", fontFamily: FONT, letterSpacing: "-0.3px" }}>
-            串連 LINE 系統
-          </h3>
-          <p style={{ fontSize: 16, color: "rgba(0,0,0,0.6)", lineHeight: "27px", margin: "0 0 40px", fontFamily: FONT, maxWidth: 760 }}>
-            串連Line功能考慮到照護者的高壓力，我們捨棄複雜的 App，選擇 LINE 作為服務閉環，確保專業建議單能直接推送到家屬手中，確定輔具沒問題後，再進行線上租賃。
-          </p>
-          <img
-            src="/images/line.png"
-            alt="串連 LINE 系統截圖：Line Message、Line Login、Line Pay"
-            style={{ width: "100%", display: "block", borderRadius: 12 }}
-          />
-        </div>
-      </div>
-
-      {/* ── 設計系統 ─────────────────────────────────────────────── */}
-      <div style={{ background: "#FAFAFA", padding: "80px 60px", borderTop: "1px solid #EFEFEF" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          {/* 標題區 */}
-          <div style={{ marginBottom: 48 }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "#999", fontFamily: "Menlo, monospace", display: "block", marginBottom: 12 }}>Design System</span>
-            <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 16px", fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>設計系統</h2>
-            <p style={{ fontSize: 16, color: "rgba(0,0,0,0.55)", lineHeight: 1.75, margin: 0, fontFamily: FONT, maxWidth: 640 }}>
-              建立統一的品牌語言，涵蓋色彩系統、字體規範與 UI 元件庫，確保產品視覺一致性。
-            </p>
-          </div>
-          {/* 截圖 */}
-          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)", border: "1px solid #E8E8E8" }}>
-            <img
-              src="/images/design-guide.png"
-              alt="Rent4U 設計系統：品牌色彩、字體、元件庫"
-              style={{ width: "100%", display: "block" }}
-            />
-          </div>
         </div>
       </div>
 
