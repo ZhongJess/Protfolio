@@ -281,23 +281,17 @@ export const DESIGN_TOOLS = [
 
 // ── 技能標籤（星座 Hero 用）─────────────────────────────────────────────────────
 export const SKILL_PILLS = [
-  { label: "UX Research",                   color: "#C8923A" },
   { label: "User Research",                  color: "#BB7A4F" },
-  { label: "Product Strategy",              color: "#A07840" },
   { label: "Market Research",               color: "#A07840" },
   { label: "Interaction Design",            color: "#7B6FBB" },
-  { label: "Microinteractions",             color: "#8A6BBB" },
-  { label: "Design System",                 color: "#4F7FBB" },
   { label: "Design System Guideline",       color: "#4F7FBB" },
   { label: "Information Architecture (IA)", color: "#2DA567" },
   { label: "User-Centered Design (UCD)",    color: "#5BAA80" },
   { label: "Wireframe",                     color: "#7B6FBB" },
   { label: "Prototype",                     color: "#BB9A4F" },
   { label: "RWD",                           color: "#4F9BBB" },
-  { label: "Responsive Design",             color: "#4FA8BB" },
   { label: "HTML / CSS",                    color: "#BB7A4F" },
   { label: "Figma",                         color: "#BB4F7A" },
-  { label: "Framer",                        color: "#BB9A4F" },
   { label: "Git",                           color: "#6BBB4F" },
   { label: "Vibe Coding",                   color: "#C8923A" },
   { label: "ClaudeCode",                    color: "#8A6BBB" },
