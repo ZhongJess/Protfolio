@@ -10,7 +10,7 @@ export const PROJECTS = [
     num: "00",
     title: "Rent4U 輔具租賃平台",
     tags: ["UX Research", "Product Strategy", "Interaction"],
-    tagColor: "#C8923A",
+    tagColor: "#FF6200",
     desc: "讓輔具借用像借書一樣簡單——適配、諮詢、租賃三步驟無縫整合的數位平台。",
     year: "2025",
     img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80",
@@ -237,22 +237,70 @@ export const REPOS = [
     screenshot: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=700&q=75",
     github: "https://github.com/yourusername/form-ux-patterns",
   },
+  {
+    id: "design-token-system",
+    name: "design-token-system",
+    branch: "main",
+    lang: "JSON / CSS",
+    langColor: "#BB4F7A",
+    desc: "跨平台設計 Token 管理系統。統一色彩、間距、字型等設計決策，支援 Web / iOS / Android 三端輸出。",
+    tags: ["Design System", "Token", "Cross-Platform"],
+    stars: 19,
+    code: `/* Token 結構：語意化命名 */
+:root {
+  /* Primitive */
+  --color-orange-500: #FF6200;
+  --color-gray-100:  #F5F4F2;
+
+  /* Semantic */
+  --color-action:    var(--color-orange-500);
+  --color-surface:   var(--color-gray-100);
+
+  /* Component */
+  --btn-bg:          var(--color-action);
+  --btn-radius:      8px;
+}`,
+    screenshot: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75",
+    github: "https://github.com/yourusername/design-token-system",
+  },
 ];
 
-// ── 技能標籤（物理牆用）─────────────────────────────────────────────────────────
+// ── 設計工具跑馬燈 ──────────────────────────────────────────────────────────────
+export const DESIGN_TOOLS = [
+  { label: "Figma",        color: "#BB4F7A" },
+  { label: "Cursor / AI",  color: "#8A6BBB" },
+  { label: "Framer",       color: "#BB9A4F" },
+  { label: "Miro",         color: "#F8C300" },
+  { label: "React",        color: "#4FA8BB" },
+  { label: "HTML / CSS",   color: "#BB7A4F" },
+  { label: "Git",          color: "#6BBB4F" },
+  { label: "Notion",       color: "#888888" },
+  { label: "Vibe Coding",  color: "#C8923A" },
+  { label: "Claude",       color: "#8A6BBB" },
+];
+
+// ── 技能標籤（星座 Hero 用）─────────────────────────────────────────────────────
 export const SKILL_PILLS = [
-  { label: "UX Research",        color: "#C8923A" },
-  { label: "Product Strategy",   color: "#A07840" },
-  { label: "Interaction Design", color: "#7B6FBB" },
-  { label: "Design System",      color: "#4F7FBB" },
-  { label: "Data & Analytics",   color: "#2DA567" },
-  { label: "PRD Writing",        color: "#5BAA80" },
-  { label: "HTML / CSS",         color: "#BB7A4F" },
-  { label: "React",              color: "#4FA8BB" },
-  { label: "Figma",              color: "#BB4F7A" },
-  { label: "Cursor / AI",        color: "#8A6BBB" },
-  { label: "Framer",             color: "#BB9A4F" },
-  { label: "Git",                color: "#6BBB4F" },
-  { label: "Vibe Coding",        color: "#C8923A" },
-  { label: "A/B Testing",        color: "#4F9BBB" },
+  { label: "UX Research",                   color: "#C8923A" },
+  { label: "User Research",                  color: "#BB7A4F" },
+  { label: "Product Strategy",              color: "#A07840" },
+  { label: "Market Research",               color: "#A07840" },
+  { label: "Interaction Design",            color: "#7B6FBB" },
+  { label: "Microinteractions",             color: "#8A6BBB" },
+  { label: "Design System",                 color: "#4F7FBB" },
+  { label: "Design System Guideline",       color: "#4F7FBB" },
+  { label: "Information Architecture (IA)", color: "#2DA567" },
+  { label: "User-Centered Design (UCD)",    color: "#5BAA80" },
+  { label: "Wireframe",                     color: "#7B6FBB" },
+  { label: "Prototype",                     color: "#BB9A4F" },
+  { label: "RWD",                           color: "#4F9BBB" },
+  { label: "Responsive Design",             color: "#4FA8BB" },
+  { label: "HTML / CSS",                    color: "#BB7A4F" },
+  { label: "Figma",                         color: "#BB4F7A" },
+  { label: "Framer",                        color: "#BB9A4F" },
+  { label: "Git",                           color: "#6BBB4F" },
+  { label: "Vibe Coding",                   color: "#C8923A" },
+  { label: "ClaudeCode",                    color: "#8A6BBB" },
+  { label: "APP",                           color: "#BB4F7A" },
+  { label: "A/B Testing",                   color: "#4F9BBB" },
 ];

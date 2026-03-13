@@ -4,27 +4,27 @@
 
 const T = {
   // 背景色
-  bg:          "#0E0C0A",
-  bgCard:      "#121008",
-  bgHover:     "#1A1714",
+  bg:          "#F5F4F2",
+  bgCard:      "#EBEBEA",
+  bgHover:     "#E3E2DF",
 
   // 邊框
-  border:      "#2A2520",
-  borderWarm:  "#3D3028",
+  border:      "#D5D3CF",
+  borderWarm:  "#C8C6C1",
 
   // 文字
-  fg:          "#EDE8E0",   // 主要文字
-  fgSub:       "#7A6F65",   // 次要文字
-  fgMuted:     "#3D3530",   // 最淡的文字
+  fg:          "#111111",   // 主要文字
+  fgSub:       "#6B6760",   // 次要文字
+  fgMuted:     "#ADADAB",   // 最淡的文字
 
-  // 強調色（琥珀金）
-  accent:      "#C8923A",
-  accentRgb:   "200,146,58",
-  accentSoft:  "#C8923A14",
+  // 強調色（橘色）
+  accent:      "#FF6200",
+  accentRgb:   "255,98,0",
+  accentSoft:  "#FF620014",
 
   // 綠色
-  green:       "#2DA567",
-  greenRgb:    "45,165,103",
+  green:       "#1A9456",
+  greenRgb:    "26,148,86",
 
   // 字體
   serif:  "'Lora', Georgia, serif",

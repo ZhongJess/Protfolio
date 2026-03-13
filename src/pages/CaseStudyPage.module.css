@@ -1,6 +1,6 @@
 @reference "../index.css";
 
-.backWrap  { @apply max-w-[1080px] mx-auto px-12 pt-[14px]; }
+.backWrap  { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-[14px]; }
 
 .backBtn {
   @apply font-mono text-[11px] tracking-[0.08em]
@@ -9,36 +9,35 @@
 }
 .backBtn:hover { @apply text-accent; }
 
-.heroWrap  { @apply max-w-[1080px] mx-auto px-12 pt-4; }
+.heroWrap  { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-4; }
 
 .heroTitle {
   @apply font-serif font-bold text-fg tracking-[-0.03em] leading-[1.1] mb-5;
-  font-size: clamp(32px, 4.5vw, 60px);
+  font-size: clamp(26px, 4.5vw, 60px);
   word-break: keep-all;
 }
 
-.heroDesc  { @apply font-sans text-[17px] leading-[1.75] text-fg-sub max-w-[560px] font-light; }
+.heroDesc  { @apply font-sans text-[15px] md:text-[17px] leading-[1.75] text-fg-sub max-w-[560px] font-light; }
 
-.imgWrap   { @apply max-w-[1080px] mx-auto px-12 mt-10; }
+.imgWrap   { @apply max-w-[1080px] mx-auto px-6 md:px-12 mt-10; }
 
 .imgFrame  {
   @apply w-full overflow-hidden rounded-[6px] border border-border;
-  height: clamp(220px, 35vw, 420px);
+  height: clamp(180px, 35vw, 420px);
 }
 
-.impactWrap  { @apply max-w-[1080px] mx-auto px-12 pt-6; }
+.impactWrap  { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-6; }
 
 .impactLabel {
   @apply block font-mono text-[11px] tracking-[0.12em] text-accent uppercase mb-3;
 }
 
 .impactGrid  {
-  @apply grid gap-[2px] mb-20;
-  grid-template-columns: repeat(3, 1fr);
+  @apply grid gap-[2px] mb-20 grid-cols-1 md:grid-cols-3;
 }
 
 /* 數據卡片 */
-.statCard  { @apply p-7 border border-border bg-bg-card; }
+.statCard  { @apply p-5 md:p-7 border border-border bg-bg-card; }
 .statLabel { @apply font-mono text-[10px] text-fg-muted tracking-[0.08em] uppercase mb-3; }
 .statBefore { @apply font-mono text-[13px] text-fg-sub line-through; }
 .statAfter  { @apply font-serif text-[22px] font-bold text-fg; }
@@ -46,13 +45,13 @@
 .statDelta[data-up="true"] { @apply text-green; }
 
 /* 案例段落 */
-.sectionsWrap { @apply max-w-[700px] mx-auto px-12 pb-[120px]; }
+.sectionsWrap { @apply max-w-[700px] mx-auto px-6 md:px-12 pb-[80px] md:pb-[120px]; }
 
 .section {
-  @apply mb-[60px] pb-[60px] border-b border-border;
+  @apply mb-[40px] md:mb-[60px] pb-[40px] md:pb-[60px] border-b border-border;
 }
 .section[data-last="true"] { @apply border-none; }
 
 .sectionMeta    { @apply font-mono text-[10px] text-fg-muted tracking-[0.1em] uppercase; }
-.sectionHeading { @apply font-serif text-[22px] font-bold text-fg tracking-[-0.01em] mb-4; }
-.sectionBody    { @apply font-sans text-[15px] leading-[1.85] text-fg-sub font-light whitespace-pre-line; }
+.sectionHeading { @apply font-serif text-[20px] md:text-[22px] font-bold text-fg tracking-[-0.01em] mb-4; }
+.sectionBody    { @apply font-sans text-[14px] md:text-[15px] leading-[1.85] text-fg-sub font-light whitespace-pre-line; }

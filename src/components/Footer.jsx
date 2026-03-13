@@ -25,12 +25,11 @@ function IconCake() {
   );
 }
 
-function IconDownload() {
+function IconMail() {
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
   );
 }
@@ -40,15 +39,16 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
 
-        {/* 左：履歷下載（桌面才顯示） */}
-        <div className="hidden md:block">
-          <a href="/resume.pdf" download className={styles.resumeLink}>
-            <IconDownload /> 履歷下載
+        {/* 左：Email */}
+        <div className={styles.emailCol}>
+          <a href="mailto:sk2377328815@gmail.com" className={styles.emailLink}>
+            <IconMail />
+            sk2377328815@gmail.com
           </a>
         </div>
 
-        {/* 中：Medium + LinkedIn + Cake（桌面才顯示） */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* 中：社交平台 */}
+        <div className={styles.socialCol}>
           <a href="https://medium.com/@sk2377328815" target="_blank" rel="noopener noreferrer" className={styles.link}>
             <IconMedium /> Medium
           </a>
@@ -60,11 +60,9 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* 版權 */}
-        <div className="md:text-right text-center col-span-3 md:col-span-1">
-          <p className={styles.copyright}>
-            © 2026 JessZhong
-          </p>
+        {/* 右：版權 */}
+        <div className={styles.copyrightCol}>
+          <p className={styles.copyright}>© 2026 JessZhong</p>
         </div>
 
       </div>

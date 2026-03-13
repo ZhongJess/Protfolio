@@ -1,5 +1,6 @@
 // 頂部導覽列
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from './Nav.module.css';
 
 const NAV_LINKS = [
@@ -42,34 +43,42 @@ function IconDownload() {
   );
 }
 
-export default function Nav({ page, setPage, onLogoClick }) {
+export default function Nav() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // 判斷目前是否在某個路由底下
+  const isActive = (id) => location.pathname.startsWith(`/${id}`);
+
   function handleNav(id) {
-    setPage(id);
+    navigate(`/${id}`);
     setMenuOpen(false);
   }
 
   return (
     <nav className={styles.nav}>
       {/* Logo / 名字按鈕 */}
-      <button onClick={onLogoClick} className={styles.logo}>
+      <button onClick={() => navigate("/")} className={styles.logo}>
         <span className={styles.logoDiamond}>◆</span>
         Your Name
       </button>
 
-      {/* 桌面導覽連結 */}
+      {/* 桌面導覽連結 + CTA */}
       <div className={styles.desktopLinks}>
         {NAV_LINKS.map(([id, label]) => (
           <button
             key={id}
-            onClick={() => setPage(id)}
-            data-active={page === id}
+            onClick={() => navigate(`/${id}`)}
+            data-active={isActive(id)}
             className={styles.navLink}
           >
             {label}
           </button>
         ))}
+        <a href="/resume.pdf" download className={styles.ctaButton}>
+          <IconDownload /> 履歷下載
+        </a>
       </div>
 
       {/* 手機漢堡按鈕 */}
@@ -99,7 +108,7 @@ export default function Nav({ page, setPage, onLogoClick }) {
               <button
                 key={id}
                 onClick={() => handleNav(id)}
-                data-active={page === id}
+                data-active={isActive(id)}
                 className={styles.mobileLink}
               >
                 {label}

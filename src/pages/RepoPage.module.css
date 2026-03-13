@@ -1,6 +1,6 @@
 @reference "../index.css";
 
-.header { @apply max-w-[1080px] mx-auto px-12 pt-7 pb-4; }
+.header { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-7 pb-4; }
 
 .eyebrow   { @apply font-mono text-[11px] tracking-[0.12em] text-green uppercase; }
 .pageTitle {
@@ -9,15 +9,15 @@
 }
 .pageDesc  { @apply font-sans text-[15px] leading-[1.75] text-fg-sub max-w-[480px] mt-4 font-light; }
 
-.list { @apply max-w-[1080px] mx-auto px-12 pb-6; }
+.list { @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-6; }
 
 .row {
   @apply grid items-center gap-6 py-7 cursor-pointer relative
          transition-colors duration-[250ms];
   grid-template-columns: 1fr auto;
-  border-top: 1px solid #2A2520;
+  border-top: 1px solid #D5D3CF;
 }
-.row[data-hovered="true"] { border-top-color: #3D3028; }
+.row[data-hovered="true"] { border-top-color: #C8C6C1; }
 
 .rowGlow {
   @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[250ms];
