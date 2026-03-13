@@ -602,7 +602,7 @@ function SectionResearch() {
       {/* ── 子區塊 A：問題陳述 ── */}
       <div
         style={{
-          maxWidth:            1100,
+          maxWidth:            1080,
           margin:              "0 auto",
           padding:             isDesktop ? "96px 40px 80px" : "48px 20px 40px",
           display:             "grid",
@@ -1673,7 +1673,7 @@ function SectionImpact() {
       </div>
 
       {/* ── 真實價值 (白底) ───────────────────────────────────────── */}
-      <div style={{ padding: isDesktop ? "88px 60px 80px" : "48px 20px 40px", maxWidth: 1200, margin: "0 auto" }}>
+      <div style={{ padding: isDesktop ? "88px 60px 80px" : "48px 20px 40px", maxWidth: 1080, margin: "0 auto" }}>
         {/* 標題 */}
         <h2
           style={{
@@ -1779,7 +1779,7 @@ function SectionImpact() {
         {/* 背景光暈 */}
         <div style={{ position:"absolute", bottom:"10%", right:"5%", width:"35%", height:"35%", background:"radial-gradient(circle, rgba(255,98,0,0.08) 0%, transparent 70%)", pointerEvents:"none" }} />
 
-        <div style={{ maxWidth:1100, margin:"0 auto" }}>
+        <div style={{ maxWidth:1080, margin:"0 auto" }}>
           {/* 分隔線 */}
           <div style={{ height:1, background:"#D5D3CF", margin:"0 0 56px" }} />
 
