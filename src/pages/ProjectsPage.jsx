@@ -1,5 +1,6 @@
 // 作品列表頁
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PROJECTS } from "../data";
 import Tag from "../components/Tag";
 import styles from './ProjectsPage.module.css';
@@ -18,7 +19,8 @@ function CursorImage({ visible, pos, src }) {
 }
 
 // 單一專案列
-function ProjectRow({ project, onSelect }) {
+function ProjectRow({ project }) {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -29,7 +31,7 @@ function ProjectRow({ project, onSelect }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={e => setMousePos({ x: e.clientX, y: e.clientY })}
-        onClick={() => onSelect(project)}
+        onClick={() => navigate(`/projects/${project.id}`)}
         data-hovered={isHovered}
         className={styles.row}
       >
@@ -67,7 +69,7 @@ function ProjectRow({ project, onSelect }) {
 }
 
 // 作品列表頁主元件
-export default function ProjectsPage({ onSelect }) {
+export default function ProjectsPage() {
   return (
     <div className="bg-bg flex-1">
       <div className={styles.header}>
@@ -78,7 +80,7 @@ export default function ProjectsPage({ onSelect }) {
       </div>
       <div className={styles.list}>
         {PROJECTS.map(project => (
-          <ProjectRow key={project.id} project={project} onSelect={onSelect} />
+          <ProjectRow key={project.id} project={project} />
         ))}
         <div className="border-t border-border" />
       </div>

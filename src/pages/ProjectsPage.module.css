@@ -1,7 +1,7 @@
 @reference "../index.css";
 
 .header {
-  @apply max-w-[1080px] mx-auto px-12 pt-7 pb-4;
+  @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-7 pb-4;
 }
 
 .eyebrow {
@@ -14,7 +14,7 @@
 }
 
 .list {
-  @apply max-w-[1080px] mx-auto px-12 pb-6;
+  @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-6;
 }
 
 /* 滑鼠跟隨縮圖 */
@@ -35,16 +35,16 @@
 .row {
   @apply grid items-center gap-7 py-8 cursor-none relative transition-colors duration-300;
   grid-template-columns: 56px 1fr auto;
-  border-top: 1px solid #2A2520;
+  border-top: 1px solid #D5D3CF;
 }
 .row[data-hovered="true"] {
-  border-top-color: #C8923A33;
+  border-top-color: #FF620033;
 }
 
 /* Hover 背景光暈 */
 .rowGlow {
   @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300;
-  background: linear-gradient(90deg, #C8923A07, transparent);
+  background: linear-gradient(90deg, #FF620007, transparent);
 }
 .rowGlow[data-hovered="true"] {
   @apply opacity-100;
@@ -65,7 +65,7 @@
   word-break: keep-all;
 }
 .title[data-hovered="true"] {
-  color: #fff;
+  color: #111;
 }
 
 /* 描述 */
