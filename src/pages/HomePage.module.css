@@ -314,8 +314,10 @@
 
 .marqueeTrack {
   @apply inline-flex gap-0;
-  animation: marqueeScroll 35s linear infinite;
+  /* 4× 複製 → -25% = 剛好一組，無縫循環 */
+  animation: marqueeScroll 20s linear infinite;
   white-space: nowrap;
+  will-change: transform;
 }
 .marqueeTrack:hover {
   animation-play-state: paused;
@@ -323,7 +325,7 @@
 
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-25%); }
 }
 
 .marqueeItem {
