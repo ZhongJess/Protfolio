@@ -267,16 +267,12 @@ export const REPOS = [
 
 // ── 設計工具跑馬燈 ──────────────────────────────────────────────────────────────
 export const DESIGN_TOOLS = [
-  { label: "Figma",        color: "#BB4F7A" },
-  { label: "Cursor / AI",  color: "#8A6BBB" },
-  { label: "Framer",       color: "#BB9A4F" },
-  { label: "Miro",         color: "#F8C300" },
-  { label: "React",        color: "#4FA8BB" },
-  { label: "HTML / CSS",   color: "#BB7A4F" },
-  { label: "Git",          color: "#6BBB4F" },
-  { label: "Notion",       color: "#888888" },
-  { label: "Vibe Coding",  color: "#C8923A" },
-  { label: "Claude",       color: "#8A6BBB" },
+  { label: "Figma",          color: "#BB4F7A" },
+  { label: "Miro",           color: "#F8C300" },
+  { label: "GitHub",         color: "#6BBB4F" },
+  { label: "Notion",         color: "#888888" },
+  { label: "Claude Code",    color: "#8A6BBB" },
+  { label: "Visual Studio",  color: "#4FA8BB" },
 ];
 
 // ── 技能標籤（星座 Hero 用）─────────────────────────────────────────────────────

@@ -6,6 +6,13 @@ const LINK_DIST   = 210;   // 連線距離閾值
 const REPEL_DIST  = 110;   // 滑鼠排斥距離
 const SPEED_MAX   = 0.55;  // 最大速度
 const MOUSE_GLOW  = 130;   // 線段滑鼠發光範圍
+const NODE_REPEL  = 90;    // 節點互斥距離（避免擠堆）
+
+// 文字區禁入比例：節點只能在上方帶狀區域浮動
+const ZONE_X1 = 0.0;
+const ZONE_X2 = 1.0;
+const ZONE_Y1 = 0.30;   // 節點可活動區：canvas 頂部 30%
+const ZONE_Y2 = 1.0;
 
 export default function ConstellationSkills() {
   const canvasRef = useRef(null);
@@ -35,14 +42,20 @@ export default function ConstellationSkills() {
     const cols  = 4;
     const rows  = Math.ceil(pills.length / cols);
 
-    const nodes = pills.map((pill, i) => {
-      const col = i % cols;
-      const row = Math.floor(i / cols);
-      const W   = canvas.offsetWidth;
-      const H   = canvas.offsetHeight;
-      // 均勻分格 + 隨機偏移，避免全部堆在角落
-      const x = (col + 0.5 + (Math.random() - 0.5) * 0.75) * (W / cols);
-      const y = (row + 0.5 + (Math.random() - 0.5) * 0.65) * (H / rows);
+    const nodes = pills.map((pill) => {
+      const W = canvas.offsetWidth;
+      const H = canvas.offsetHeight;
+      // 初始化時直接放在四邊邊緣帶，不進入中心區
+      let x, y, attempts = 0;
+      do {
+        x = Math.random() * W;
+        y = Math.random() * H;
+        attempts++;
+      } while (
+        x > W * ZONE_X1 && x < W * ZONE_X2 &&
+        y > H * ZONE_Y1 && y < H * ZONE_Y2 &&
+        attempts < 20
+      );
       return {
         label : pill.label,
         color : pill.color,
@@ -85,6 +98,37 @@ export default function ConstellationSkills() {
           const force = ((REPEL_DIST - dist) / REPEL_DIST) * 0.12;
           n.vx += (dx / dist) * force;
           n.vy += (dy / dist) * force;
+        }
+
+        // 節點互斥：太近的節點互相推開
+        nodes.forEach((b, j) => {
+          if (j <= nodes.indexOf(n)) return;
+          const dx2 = n.x - b.x;
+          const dy2 = n.y - b.y;
+          const d2  = Math.hypot(dx2, dy2);
+          if (d2 < NODE_REPEL && d2 > 0) {
+            const f = ((NODE_REPEL - d2) / NODE_REPEL) * 0.035;
+            n.vx += (dx2 / d2) * f;
+            n.vy += (dy2 / d2) * f;
+            b.vx -= (dx2 / d2) * f;
+            b.vy -= (dy2 / d2) * f;
+          }
+        });
+
+        // 中心禁入區排斥：若節點進入中心區，往最近邊緣推
+        const zx1 = W * ZONE_X1, zx2 = W * ZONE_X2;
+        const zy1 = H * ZONE_Y1, zy2 = H * ZONE_Y2;
+        if (n.x > zx1 && n.x < zx2 && n.y > zy1 && n.y < zy2) {
+          const dLeft   = n.x - zx1;
+          const dRight  = zx2 - n.x;
+          const dTop    = n.y - zy1;
+          const dBottom = zy2 - n.y;
+          const minD    = Math.min(dLeft, dRight, dTop, dBottom);
+          const force   = 0.14;
+          if      (minD === dLeft)   n.vx -= force;
+          else if (minD === dRight)  n.vx += force;
+          else if (minD === dTop)    n.vy -= force;
+          else                       n.vy += force;
         }
       });
 
