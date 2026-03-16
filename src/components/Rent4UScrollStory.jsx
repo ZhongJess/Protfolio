@@ -1609,19 +1609,19 @@ function SectionImpact() {
           {[
             {
               icon:  "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a",
-              img:   "/images/value-user.jpg",
+              img:   "/images/value-product.jpg",
               title: "使用者端",
               desc:  "減少照護者的輔具選擇焦慮",
             },
             {
               icon:  "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4",
-              img:   "/images/value-business.png",
+              img:   "/images/value-user.jpg",
               title: "商業端",
               desc:  "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。",
             },
             {
               icon:  "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22",
-              img:   "/images/value-product.jpg",
+              img:   "/images/value-business.png",
               title: "產品端",
               desc:  "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。",
             },
