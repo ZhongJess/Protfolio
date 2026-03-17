@@ -5,12 +5,14 @@
 }
 
 .inner {
-  @apply max-w-[1080px] mx-auto py-4 flex flex-wrap items-center justify-between gap-3;
+  @apply max-w-[1080px] mx-auto py-4 items-center gap-3;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
 }
 
 /* 左：Email */
 .emailCol {
-  @apply flex items-center;
+  @apply flex items-center justify-start;
 }
 
 .emailLink {
@@ -27,7 +29,7 @@
 
 /* 中：社交平台 */
 .socialCol {
-  @apply flex items-center gap-1;
+  @apply flex items-center gap-1 justify-center;
 }
 
 /* 通用連結 */
@@ -48,6 +50,19 @@
   @apply flex items-center justify-end;
 }
 
+/* 手機版：改回 flex wrap，社群置中 */
+@media (max-width: 767px) {
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .emailCol { order: 1; width: 100%; }
+  .socialCol { order: 2; flex: 1; justify-content: center; }
+  .copyrightCol { order: 3; }
+}
+
 .copyright {
   @apply font-mono text-[11px] text-fg-muted tracking-[0.04em] leading-[1.7];
+  padding: 7px 12px;
 }
