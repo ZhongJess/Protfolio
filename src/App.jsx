@@ -49,23 +49,20 @@ function ScrollToTop() {
 // ── 主 Layout（需在 BrowserRouter 內，才能用 router hooks）────────────────────
 function AppLayout() {
   const { pathname } = useLocation();
-  // 首頁 / About / Projects / 專案詳細頁：Nav 透明浮動（position: fixed），不佔 layout 空間
-  const navTransparent = pathname === "/" || pathname === "/about"
-    || pathname === "/projects" || pathname.startsWith("/projects/");
 
-  // 滾動狀態
-  const [navSolid,  setNavSolid]  = useState(false); // 滾動超過閾值 → 顯示背景
-  const [navHidden, setNavHidden] = useState(false); // 向下滾動 → 向上縮進去
+  // 首頁 / About / Projects / Repo：Nav 不縮進去
+  // 其他頁面（detail pages、contact 等）：向下滾動時 Nav 向上縮進去
+  const navStatic = pathname === "/" || pathname === "/about"
+    || pathname === "/projects" || pathname === "/repo";
+
+  const [navHidden, setNavHidden] = useState(false);
 
   // 換頁時重置
-  useEffect(() => {
-    setNavSolid(false);
-    setNavHidden(false);
-  }, [pathname]);
+  useEffect(() => { setNavHidden(false); }, [pathname]);
 
-  // 滾動追蹤（僅限透明 nav 頁面）
+  // 滾動追蹤（僅限會縮進去的頁面）
   useEffect(() => {
-    if (!navTransparent) return;
+    if (navStatic) return;
     const el = document.getElementById("main-scroll");
     if (!el) return;
 
@@ -75,14 +72,13 @@ function AppLayout() {
     const onScroll = () => {
       const y = el.scrollTop;
       const goingDown = y > lastY;
-      setNavSolid(y > THRESHOLD);
       setNavHidden(y > THRESHOLD && goingDown);
       lastY = y;
     };
 
     el.addEventListener("scroll", onScroll, { passive: true });
     return () => el.removeEventListener("scroll", onScroll);
-  }, [navTransparent, pathname]);
+  }, [navStatic, pathname]);
 
   // 全版本鎖定 body scroll，只讓 #main-scroll 捲動
   useEffect(() => {
@@ -99,14 +95,9 @@ function AppLayout() {
       <ScrollToTop />
       <ProgressBar />
       <div className="flex flex-col h-screen overflow-hidden bg-bg">
-        {/* 透明模式：Nav 是 position:fixed，不需要 shrink-0 佔位 */}
-        {navTransparent ? (
-          <Nav transparent solid={navSolid} hidden={navHidden} />
-        ) : (
-          <div className="shrink-0">
-            <Nav />
-          </div>
-        )}
+        <div className="shrink-0">
+          <Nav hidden={navHidden} />
+        </div>
         <div id="main-scroll" className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col">
           <Routes>
             <Route path="/"             element={<HomePage />} />

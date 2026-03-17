@@ -5,32 +5,11 @@
          flex justify-between items-center
          px-6 md:px-12 h-[60px]
          border-b border-border;
-  background: #F5F4F2EE;
-  backdrop-filter: blur(20px);
+  background: #F5F4F2;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 首頁 / About / Projects：透明浮動模式 */
-.navTransparent {
-  position: fixed;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              background 0.25s ease,
-              border-color 0.25s ease,
-              backdrop-filter 0.25s ease;
-}
-
-/* 滾動後出現背景（透明 → 實心）*/
-.navSolid {
-  background: #F5F4F2EE;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* 向下滾動時向上縮進去 */
+/* 向下滾動時向上縮進去（詳細頁用） */
 .navHidden {
   transform: translateY(-100%);
 }

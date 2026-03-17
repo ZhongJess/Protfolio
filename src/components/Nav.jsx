@@ -43,7 +43,7 @@ function IconDownload() {
   );
 }
 
-export default function Nav({ transparent = false, solid = false, hidden = false }) {
+export default function Nav({ hidden = false }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,12 +56,7 @@ export default function Nav({ transparent = false, solid = false, hidden = false
     setMenuOpen(false);
   }
 
-  const navClass = [
-    styles.nav,
-    transparent && styles.navTransparent,
-    transparent && solid  && styles.navSolid,
-    transparent && hidden && styles.navHidden,
-  ].filter(Boolean).join(" ");
+  const navClass = [styles.nav, hidden && styles.navHidden].filter(Boolean).join(" ");
 
   return (
     <nav className={navClass}>
