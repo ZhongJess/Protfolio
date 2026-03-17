@@ -1498,7 +1498,7 @@ function SectionImpact() {
             {/* Notion 專案時程 */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
-                <div style={{ height: 224, borderRadius: 10, overflow: "hidden" }}>
+                <div style={{ height: 224, borderRadius: 10, overflow: "hidden", border: "1px solid #eeeeee" }}>
                   <img src="/images/notion-timeline.webp" alt="Notion 專案時程" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
@@ -1515,7 +1515,7 @@ function SectionImpact() {
             {/* Notion Issue 管理 */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
-                <div style={{ height: 224, borderRadius: 10, overflow: "hidden" }}>
+                <div style={{ height: 224, borderRadius: 10, overflow: "hidden", border: "1px solid #eeeeee" }}>
                   <img src="/images/notion-issues.webp" alt="Notion Issue 管理" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
