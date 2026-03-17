@@ -1419,6 +1419,68 @@ function SectionImpact() {
         </div>
       </div>
 
+      {/* ── 設計核心 ─────────────────────────────────────────────────── */}
+      <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+
+          <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 48px", letterSpacing: "-0.5px" }}>
+            設計核心
+          </h2>
+
+          <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr" : "1fr", gap: 32 }}>
+
+            {/* ❶ 手風琴 */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+                <img src="/images/gmfcs-accordion.webp" alt="手風琴選單設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ width: 28, height: 28, borderRadius: "50%", background: "#111", color: "#fff", fontSize: 13, fontWeight: 700, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>1</span>
+                  <h3 style={{ fontFamily: FONT, fontSize: 18, fontWeight: 600, color: "#111", margin: 0, letterSpacing: "-0.3px" }}>手風琴</h3>
+                </div>
+                <p style={{ fontFamily: FONT, fontSize: 15, color: "#4a4a4a", lineHeight: 1.8, margin: 0 }}>
+                  每次展開僅能看見一個等級說明，選項之間無法相互比較。反覆收合切換的操作流程加重認知負荷，拉低決策效率。
+                </p>
+              </div>
+            </div>
+
+            {/* ❷ 圖文卡片 */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+                <img src="/images/gmfcs-card.webp" alt="圖文卡片設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ width: 28, height: 28, borderRadius: "50%", background: "#111", color: "#fff", fontSize: 13, fontWeight: 700, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>2</span>
+                  <h3 style={{ fontFamily: FONT, fontSize: 18, fontWeight: 600, color: "#111", margin: 0, letterSpacing: "-0.3px" }}>圖文卡片</h3>
+                </div>
+                <p style={{ fontFamily: FONT, fontSize: 15, color: "#4a4a4a", lineHeight: 1.8, margin: 0 }}>
+                  圖片與說明並排，資訊更直觀易讀。但手機端六張卡片同時顯示時，螢幕寬度不足，圖片過小難以辨識。
+                </p>
+              </div>
+            </div>
+
+            {/* ❸ 垂直標籤頁 */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+                <img src="/images/gmfcs-tabs.png" alt="垂直標籤頁設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ width: 28, height: 28, borderRadius: "50%", background: "#FF6200", color: "#fff", fontSize: 13, fontWeight: 700, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>3</span>
+                  <h3 style={{ fontFamily: FONT, fontSize: 18, fontWeight: 600, color: "#111", margin: 0, letterSpacing: "-0.3px" }}>垂直標籤頁</h3>
+                </div>
+                <p style={{ fontFamily: FONT, fontSize: 15, color: "#4a4a4a", lineHeight: 1.8, margin: 0 }}>
+                  捨棄水平標籤——手機端需左右滑動，選擇困難。改為垂直排列後，使用者單指上下瀏覽即可快速選取，操作更直覺。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* ── 建議單功能設計（3 欄：左說明、中截圖、右標注） ──────────── */}
       <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
