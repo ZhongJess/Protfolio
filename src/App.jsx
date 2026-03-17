@@ -37,6 +37,14 @@ function RepoRoute() {
   return <RepoDetailPage repo={repo} onBack={() => navigate("/repo")} />;
 }
 
+// ── 詳細頁不顯示 Footer ────────────────────────────────────────────────────────
+function FooterConditional() {
+  const { pathname } = useLocation();
+  const hide = pathname.startsWith("/projects/") || pathname.startsWith("/repo/");
+  if (hide) return null;
+  return <Footer />;
+}
+
 // ── 換頁時自動捲回頂部 ──────────────────────────────────────────────────────────
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -77,8 +85,8 @@ function AppLayout() {
             <Route path="/contact"      element={<ContactPage />} />
             <Route path="*"             element={<Navigate to="/" replace />} />
           </Routes>
+          <FooterConditional />
         </div>
-        <Footer />
       </div>
     </>
   );
