@@ -11,7 +11,8 @@ import HomePage          from "./pages/HomePage";
 import AboutPage         from "./pages/AboutPage";
 import ProjectsPage      from "./pages/ProjectsPage";
 import CaseStudyPage     from "./pages/CaseStudyPage";
-import Rent4UScrollStory from "./components/Rent4UScrollStory";
+import Rent4UScrollStory       from "./components/Rent4UScrollStory";
+import StarbucksMOPScrollStory from "./components/StarbucksMOPScrollStory";
 import RepoPage          from "./pages/RepoPage";
 import RepoDetailPage    from "./pages/RepoDetailPage";
 import ContactPage       from "./pages/ContactPage";
@@ -23,6 +24,7 @@ function ProjectRoute() {
   const project  = PROJECTS.find(p => p.id === id);
 
   if (!project) return <Navigate to="/projects" replace />;
+  if (project.scrollStory === "starbucks-mop") return <StarbucksMOPScrollStory />;
   if (project.scrollStory) return <Rent4UScrollStory />;
   return <CaseStudyPage project={project} onBack={() => navigate("/projects")} />;
 }

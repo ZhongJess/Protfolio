@@ -21,8 +21,22 @@ export const PROJECTS = [
   },
 
   {
-    id: "gov-data",
+    id: "starbucks-mop",
     num: "01",
+    title: "Starbucks 行動預點 MOP",
+    tags: ["UX Research", "UI Redesign", "Mobile App"],
+    tagColor: "#036242",
+    desc: "彈性省時，預約星體驗——以夥伴視角重新設計星巴克行動預點的點餐流程，改善 App Store 2.1 星的使用者痛點。",
+    year: "2024",
+    img: "/images/sbux-hero.webp",
+    scrollStory: "starbucks-mop",
+    impact: [],
+    sections: [],
+  },
+
+  {
+    id: "gov-data",
+    num: "02",
     title: "Government Data Dashboard",
     tags: ["Strategy", "Data Viz", "Business Impact"],
     tagColor: T.accent,
