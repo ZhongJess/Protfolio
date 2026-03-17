@@ -1,5 +1,5 @@
 // ── App 主元件 ─────────────────────────────────────────────────────────────────
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate, useLocation } from "react-router-dom";
 import { PROJECTS, REPOS } from "./data";
 
@@ -49,8 +49,40 @@ function ScrollToTop() {
 // ── 主 Layout（需在 BrowserRouter 內，才能用 router hooks）────────────────────
 function AppLayout() {
   const { pathname } = useLocation();
-  // 首頁 / About：Nav 透明浮動（position: fixed），不佔 layout 空間
-  const navTransparent = pathname === "/" || pathname === "/about";
+  // 首頁 / About / Projects / 專案詳細頁：Nav 透明浮動（position: fixed），不佔 layout 空間
+  const navTransparent = pathname === "/" || pathname === "/about"
+    || pathname === "/projects" || pathname.startsWith("/projects/");
+
+  // 滾動狀態
+  const [navSolid,  setNavSolid]  = useState(false); // 滾動超過閾值 → 顯示背景
+  const [navHidden, setNavHidden] = useState(false); // 向下滾動 → 向上縮進去
+
+  // 換頁時重置
+  useEffect(() => {
+    setNavSolid(false);
+    setNavHidden(false);
+  }, [pathname]);
+
+  // 滾動追蹤（僅限透明 nav 頁面）
+  useEffect(() => {
+    if (!navTransparent) return;
+    const el = document.getElementById("main-scroll");
+    if (!el) return;
+
+    let lastY = el.scrollTop;
+    const THRESHOLD = 60;
+
+    const onScroll = () => {
+      const y = el.scrollTop;
+      const goingDown = y > lastY;
+      setNavSolid(y > THRESHOLD);
+      setNavHidden(y > THRESHOLD && goingDown);
+      lastY = y;
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [navTransparent, pathname]);
 
   // 全版本鎖定 body scroll，只讓 #main-scroll 捲動
   useEffect(() => {
@@ -69,7 +101,7 @@ function AppLayout() {
       <div className="flex flex-col h-screen overflow-hidden bg-bg">
         {/* 透明模式：Nav 是 position:fixed，不需要 shrink-0 佔位 */}
         {navTransparent ? (
-          <Nav transparent />
+          <Nav transparent solid={navSolid} hidden={navHidden} />
         ) : (
           <div className="shrink-0">
             <Nav />
