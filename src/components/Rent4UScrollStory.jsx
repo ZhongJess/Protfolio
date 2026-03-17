@@ -1456,7 +1456,7 @@ function SectionImpact() {
                   <h3 style={{ fontFamily: FONT, fontSize: 18, fontWeight: 600, color: "#111", margin: 0, letterSpacing: "-0.3px" }}>圖文卡片</h3>
                 </div>
                 <p style={{ fontFamily: FONT, fontSize: 15, color: "#4a4a4a", lineHeight: 1.8, margin: 0 }}>
-                  圖片與說明並排，資訊更直觀易讀。但手機端六張卡片同時顯示時，螢幕寬度不足，圖片過小難以辨識。
+                  圖片與說明排序，資訊更直觀易讀，但手機端六張卡片同時顯示時，造成文字過小難以辨識。
                 </p>
               </div>
             </div>
