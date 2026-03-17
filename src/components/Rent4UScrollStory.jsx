@@ -5,6 +5,7 @@
  */
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useIsDesktop } from "../hooks";
 
@@ -1689,37 +1690,44 @@ export default function Rent4UScrollStory() {
   };
 
   return (
-    <div style={{ fontFamily: FONT }}>
-      <SectionSummary />
-      <SectionResearch />
-      <SectionLogic />
-      <SectionImpact />
-      <SectionStrategy />
-      <SectionOutro />
+    <>
+      <div style={{ fontFamily: FONT }}>
+        <SectionSummary />
+        <SectionResearch />
+        <SectionLogic />
+        <SectionImpact />
+        <SectionStrategy />
+        <SectionOutro />
+      </div>
 
-      {/* ── 固定 glass 按鈕 ── */}
-      <a
-        href="https://assist-hub.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ ...glassBase, position: "fixed", bottom: 24, left: 24, zIndex: 9999 }}
-        onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
-        onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
-      >
-        前往網站 ↗
-      </a>
-      <button
-        onClick={() => {
-          const s = document.getElementById("main-scroll");
-          const t = document.getElementById("r4u-summary");
-          if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior: "smooth" });
-        }}
-        style={{ ...glassBase, position: "fixed", bottom: 24, right: 24, zIndex: 9999 }}
-        onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
-        onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
-      >
-        ↑ 回到頂部
-      </button>
-    </div>
+      {/* ── 固定 glass 按鈕（Portal → document.body，確保在所有 z-index 之上）── */}
+      {createPortal(
+        <>
+          <a
+            href="https://assist-hub.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ ...glassBase, position: "fixed", bottom: 72, left: 24, zIndex: 9999 }}
+            onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+          >
+            前往網站 ↗
+          </a>
+          <button
+            onClick={() => {
+              const s = document.getElementById("main-scroll");
+              const t = document.getElementById("r4u-summary");
+              if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior: "smooth" });
+            }}
+            style={{ ...glassBase, position: "fixed", bottom: 72, right: 24, zIndex: 9999 }}
+            onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+          >
+            ↑ 回到頂部
+          </button>
+        </>,
+        document.body
+      )}
+    </>
   );
 }

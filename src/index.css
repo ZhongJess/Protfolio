@@ -1,5 +1,5 @@
 /* ── Google Fonts（必須在所有其他語句之前）─────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ── Tailwind v4 入口 ────────────────────────────────────────────────────────── */
 @import "tailwindcss";
@@ -26,8 +26,8 @@
   --color-r4u-light:     #F7F5F2;   /* 淡底色    */
 
   /* 字體 */
-  --font-family-serif:  'Noto Sans TC', system-ui, sans-serif;
-  --font-family-sans:   'Noto Sans TC', system-ui, sans-serif;
+  --font-family-serif:  Inter, 'Noto Sans TC', system-ui, sans-serif;
+  --font-family-sans:   Inter, 'Noto Sans TC', system-ui, sans-serif;
   --font-family-mono:   'IBM Plex Mono', monospace;
 }
 
@@ -43,7 +43,7 @@
     height: 100%;
     background: var(--color-bg);
     overflow: hidden;
-    font-family: 'Noto Sans TC', system-ui, sans-serif;
+    font-family: Inter, 'Noto Sans TC', system-ui, sans-serif;
   }
 
   ::selection {
@@ -60,11 +60,21 @@
   }
 }
 
-/* ── 隱藏主捲動區的捲軸 ────────────────────────────────────────────────────── */
+/* ── 主捲動區的捲軸 ────────────────────────────────────────────────────────── */
 #main-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: #D5D3CF transparent;
 }
 #main-scroll::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+#main-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+#main-scroll::-webkit-scrollbar-thumb {
+  background: #D5D3CF;
+  border-radius: 3px;
+}
+#main-scroll::-webkit-scrollbar-thumb:hover {
+  background: #C8C6C1;
 }
