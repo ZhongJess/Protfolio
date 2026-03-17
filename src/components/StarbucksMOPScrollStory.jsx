@@ -32,7 +32,6 @@ const NAV_ITEMS = [
   { id: "sbux-research", label: "研究洞察" },
   { id: "sbux-opt",      label: "優化方案" },
   { id: "sbux-design",   label: "設計系統" },
-  { id: "sbux-workflow", label: "開發紀錄" },
 ];
 
 function SectionNav({ active }) {
@@ -222,9 +221,17 @@ const REVIEWS = [
 ];
 
 const PAIN_SUMMARY = [
-  { no: "01", title: "導航不直覺",   desc: "功能入口深埋，使用者難以找到常用功能與設定門市。" },
-  { no: "02", title: "冷熱飲品分離", desc: "同品項的冷熱版本分散在不同頁面，容易造成點錯單。" },
-  { no: "03", title: "手機適配不佳", desc: "部分 UI 在小螢幕裝置（如 iPhone SE）上顯示擁擠。" },
+  { no: "01", title: "特殊牛奶選項不明確",   desc: "植物奶選項入口不清楚，顧客難以辨識如何換奶。" },
+  { no: "02", title: "地圖當機閃退",         desc: "地圖頁面不穩定，常發生閃退，影響選取門市體驗。" },
+  { no: "03", title: "無法預約隔日取餐",     desc: "僅支援當日取餐，無法提前預約明日訂單，靈活性受限。" },
+  { no: "04", title: "儲值金額門檻偏高",     desc: "最低儲值 300 元，小額消費的彈性儲值需求未被滿足。" },
+  { no: "05", title: "確認訂單缺門市電話",   desc: "確認訂單頁缺乏門市聯絡資訊，找不到門市電話洽詢。" },
+  { no: "06", title: "冷熱飲品分散不同頁",   desc: "同款飲品的冷熱版本各自獨立，顧客不易找到、點錯率高。" },
+  { no: "07", title: "下單前看不到卡片餘額", desc: "下單時無法確認星禮準餘額，容易遇到餘額不足的狀況。" },
+  { no: "08", title: "星里程兌換入口不顯",   desc: "星里程兌換入口不明顯，顧客難以找到並使用累積點數。" },
+  { no: "09", title: "缺少下單成功通知",     desc: "下單後沒有明確的成功或失敗通知，顧客不確定訂單是否成立。" },
+  { no: "10", title: "無法追蹤訂單進度",     desc: "缺少訂單製作進度追蹤，顧客不知道何時能到門市取餐。" },
+  { no: "11", title: "發票僅寄 Email",       desc: "統一編號與發票資訊只發電子郵件，App 內無法即時查看。" },
 ];
 
 function SectionResearch() {
@@ -239,7 +246,7 @@ function SectionResearch() {
         }}>RESEARCH</span>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 12px", letterSpacing: "-0.5px" }}>研究洞察</h2>
         <p style={{ fontFamily: FONT, fontSize: 16, color: "#4a4a4a", lineHeight: 1.8, margin: "0 0 48px", maxWidth: 640 }}>
-          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，揭露了三大核心痛點。
+          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，整理出 11 項使用者痛點。
         </p>
 
         {/* Rating banner */}
@@ -261,6 +268,15 @@ function SectionResearch() {
             <div style={{ fontFamily: FONT, fontSize: 52, fontWeight: 800, color: GREEN, lineHeight: 1 }}>2.1</div>
             <div style={{ fontFamily: FONT, fontSize: 12, color: `${GREEN}80`, marginTop: 4 }}>滿分 5 分 · 5,007 則評分</div>
           </div>
+        </div>
+
+        {/* App Store screenshot */}
+        <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", marginBottom: 40 }}>
+          <img
+            src="/images/sbux-reviews.webp"
+            alt="App Store 用戶評論截圖"
+            style={{ width: "100%", display: "block" }}
+          />
         </div>
 
         {/* Review cards */}
@@ -287,7 +303,7 @@ function SectionResearch() {
         </div>
 
         {/* Pain point summary */}
-        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr" : "1fr", gap: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr 1fr" : "1fr 1fr", gap: 12 }}>
           {PAIN_SUMMARY.map(({ no, title, desc }) => (
             <div key={no} style={{
               padding: "24px", borderRadius: 14,
@@ -309,8 +325,8 @@ const OPT_ITEMS = [
   {
     no: "01", title: "取餐門市頁面", sub: "設置常用門市",
     desc: "快速找到常用的取餐門市，對於新手用戶也能快速找到附近取餐門市，並決定哪種取餐方式較為方便。",
-    before: "/images/sbux-before-01.webp",
     after:  "/images/sbux-after-01.webp",
+    singleImage: true,
   },
   {
     no: "02", title: "飲品冷熱同一品項", sub: "冷熱我都在",
@@ -327,8 +343,8 @@ const OPT_ITEMS = [
   {
     no: "04", title: "快速儲值", sub: "小額也行",
     desc: "在下單前看到卡片餘額，避免下單後發現餘額不足需重新選購，且提供小額線上儲值。",
-    before: "/images/sbux-before-04.webp",
     after:  "/images/sbux-after-04.webp",
+    singleImage: true,
   },
   {
     no: "05", title: "訂單完成", sub: "快與友人分享",
@@ -405,7 +421,7 @@ function SectionOptimization() {
         }}>OPTIMIZATION</span>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: GREEN, margin: "0 0 12px", letterSpacing: "-0.5px" }}>優化方案</h2>
         <p style={{ fontFamily: FONT, fontSize: 16, color: `${GREEN}BB`, lineHeight: 1.8, margin: "0 0 56px", maxWidth: 640 }}>
-          針對研究洞察提出五項核心體驗改善，每項都有明確的 Before / After 對比。
+          針對研究洞察提出五項核心體驗改善，以設計成果說明各項優化方案。
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
           {OPT_ITEMS.map(item => (
@@ -498,35 +514,6 @@ function SectionDesign() {
 }
 
 // ── WORKFLOW（開發紀錄）──────────────────────────────────────────────────────
-function SectionWorkflow() {
-  const isDesktop = useIsDesktop();
-  return (
-    <section id="sbux-workflow" style={{ background: BG, padding: isDesktop ? "80px 40px" : "48px 20px" }}>
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <span style={{
-          fontFamily: "Menlo, monospace", fontSize: 11, color: BRAND,
-          letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 600,
-          display: "block", marginBottom: 16,
-        }}>WORKFLOW</span>
-        <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: GREEN, margin: "0 0 16px", letterSpacing: "-0.5px" }}>開發紀錄</h2>
-        <p style={{ fontFamily: FONT, fontSize: 16, color: `${GREEN}BB`, lineHeight: 1.8, margin: "0 0 40px", maxWidth: 640 }}>
-          透過 Notion 規劃設計迭代流程，從使用者研究到高保真原型的完整時程紀錄。
-        </p>
-        <div style={{
-          borderRadius: 16, overflow: "hidden",
-          border: `1px solid ${GREEN}20`,
-          boxShadow: `0 8px 40px ${GREEN}12`,
-        }}>
-          <img
-            src="/images/sbux-notion.webp"
-            alt="Notion 開發時程"
-            style={{ width: "100%", display: "block" }}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ── OUTRO ────────────────────────────────────────────────────────────────────
 function SectionOutro() {
@@ -605,7 +592,6 @@ export default function StarbucksMOPScrollStory() {
       <SectionResearch />
       <SectionOptimization />
       <SectionDesign />
-      <SectionWorkflow />
       <SectionOutro />
 
       {createPortal(
