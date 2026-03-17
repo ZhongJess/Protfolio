@@ -82,7 +82,7 @@
 
 /* 手機展開選單：全螢幕覆蓋 */
 .mobileMenu {
-  @apply absolute top-[60px] left-0 right-0 z-[300]
+  @apply fixed top-[60px] left-0 right-0 z-[300]
          flex flex-col;
   min-height: calc(100dvh - 60px);
   background: #F5F4F2FC;
