@@ -95,8 +95,15 @@ function AppLayout() {
       <ScrollToTop />
       <ProgressBar />
       <div className="flex flex-col h-screen overflow-hidden bg-bg">
-        <div className="shrink-0">
-          <Nav hidden={navHidden} />
+        <div
+          className="shrink-0"
+          style={{
+            overflow: "hidden",
+            marginTop: navHidden ? -60 : 0,
+            transition: "margin-top 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+        >
+          <Nav />
         </div>
         <div id="main-scroll" className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col">
           <Routes>

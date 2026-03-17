@@ -6,12 +6,6 @@
          px-6 md:px-12 h-[60px]
          border-b border-border;
   background: #F5F4F2;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* 向下滾動時向上縮進去（詳細頁用） */
-.navHidden {
-  transform: translateY(-100%);
 }
 
 .logo {
