@@ -556,11 +556,14 @@ function SectionResearch() {
           {/* 市場研究 */}
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ height: 417, borderRadius: 16, overflow: "hidden", width: "100%", flexShrink: 0, position: "relative" }}>
-              <img
-                src="/images/market-research.webp"
-                alt="市場研究"
-                style={{ position: "absolute", width: "110.84%", height: "100%", objectFit: "cover", left: "-5.42%", top: 0 }}
-              />
+              <picture style={{ position: "absolute", width: "110.84%", height: "100%", left: "-5.42%", top: 0 }}>
+                <source media="(max-width: 767px)" srcSet="/images/market-research-mobile.png" />
+                <img
+                  src="/images/market-research.webp"
+                  alt="市場研究"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </picture>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <h3
