@@ -9,6 +9,15 @@
   backdrop-filter: blur(20px);
 }
 
+/* 首頁 / About：透明浮動模式 */
+.navTransparent {
+  position: fixed;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+}
+
 .logo {
   @apply flex items-center gap-[7px] cursor-pointer
          bg-transparent border-none

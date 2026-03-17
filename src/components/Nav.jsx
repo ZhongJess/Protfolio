@@ -43,7 +43,7 @@ function IconDownload() {
   );
 }
 
-export default function Nav() {
+export default function Nav({ transparent = false }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,8 +56,11 @@ export default function Nav() {
     setMenuOpen(false);
   }
 
+  const navClass = [styles.nav, transparent && styles.navTransparent]
+    .filter(Boolean).join(" ");
+
   return (
-    <nav className={styles.nav}>
+    <nav className={navClass}>
       {/* Logo / 名字按鈕 */}
       <button onClick={() => navigate("/")} className={styles.logo}>
         <span className={styles.logoDiamond}>◆</span>

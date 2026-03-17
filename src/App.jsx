@@ -48,6 +48,10 @@ function ScrollToTop() {
 
 // ── 主 Layout（需在 BrowserRouter 內，才能用 router hooks）────────────────────
 function AppLayout() {
+  const { pathname } = useLocation();
+  // 首頁 / About：Nav 透明浮動（position: fixed），不佔 layout 空間
+  const navTransparent = pathname === "/" || pathname === "/about";
+
   // 全版本鎖定 body scroll，只讓 #main-scroll 捲動
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -63,9 +67,14 @@ function AppLayout() {
       <ScrollToTop />
       <ProgressBar />
       <div className="flex flex-col h-screen overflow-hidden bg-bg">
-        <div className="shrink-0">
-          <Nav />
-        </div>
+        {/* 透明模式：Nav 是 position:fixed，不需要 shrink-0 佔位 */}
+        {navTransparent ? (
+          <Nav transparent />
+        ) : (
+          <div className="shrink-0">
+            <Nav />
+          </div>
+        )}
         <div id="main-scroll" className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col">
           <Routes>
             <Route path="/"             element={<HomePage />} />
