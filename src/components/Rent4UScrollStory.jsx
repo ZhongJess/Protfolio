@@ -34,7 +34,7 @@ const NAV_ITEMS = [
 
 // ── Hero Info Cards ───────────────────────────────────────────────────────────
 const INFO_CARDS = [
-  { label: "成果",     value: "輔具適配錯誤率降低 70%" },
+  { label: "目標達成", value: "預計優化 70% 的輔具適配精準度" },
   { label: "開發時程", value: "12 週" },
   { label: "團隊角色", value: "UXUI · PM" },
   { label: "工具",     value: "Figma · Notion · Miro" },
