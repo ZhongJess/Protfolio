@@ -4,18 +4,8 @@ import Tag from "../components/Tag";
 import { useFadeIn } from "../hooks";
 import styles from './CaseStudyPage.module.css';
 
-// 像素風格 ↗ 箭頭（水平翻轉作為返回箭頭）
 function IconPixelArrowLeft() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" shapeRendering="crispEdges" style={{ transform: 'scaleX(-1)' }}>
-      <rect x="6" y="0" width="4" height="2"/>
-      <rect x="8" y="0" width="2" height="4"/>
-      <rect x="6" y="2" width="2" height="2"/>
-      <rect x="4" y="4" width="2" height="2"/>
-      <rect x="2" y="6" width="2" height="2"/>
-      <rect x="0" y="8" width="2" height="2"/>
-    </svg>
-  );
+  return <span style={{ fontSize: 13 }}>←</span>;
 }
 
 // 單一數據指標卡片

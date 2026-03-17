@@ -171,17 +171,18 @@ function InfoCard({ label, value, dark = false }) {
   return (
     <div
       style={{
-        flex:       1,
-        minWidth:   130,
-        padding:    "16px 24px",
-        border:     `1px solid #D5D3CF`,
-        background: dark ? "#EBEBEA" : "transparent",
-        fontFamily: FONT,
+        flex:         1,
+        minWidth:     130,
+        padding:      "16px 24px",
+        border:       "none",
+        borderRadius: 8,
+        background:   dark ? "#EBEBEA" : "transparent",
+        fontFamily:   FONT,
       }}
     >
       <div
         style={{
-          fontSize:      10,
+          fontSize:      12,
           color:         "#ADADAB",
           fontWeight:    400,
           letterSpacing: "0.08em",
@@ -224,16 +225,7 @@ const HERO_TAGS = ["Designer", "Project Manager", "2025"];
 
 /** Hero Section 主體 — 深色主題版 (matching Figma) */
 function IconPixelArrowLeft() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" shapeRendering="crispEdges" style={{ transform: "scaleX(-1)" }}>
-      <rect x="6" y="0" width="4" height="2"/>
-      <rect x="8" y="0" width="2" height="4"/>
-      <rect x="6" y="2" width="2" height="2"/>
-      <rect x="4" y="4" width="2" height="2"/>
-      <rect x="2" y="6" width="2" height="2"/>
-      <rect x="0" y="8" width="2" height="2"/>
-    </svg>
-  );
+  return <span style={{ fontSize: 13 }}>←</span>;
 }
 
 function SectionSummary() {
@@ -257,15 +249,8 @@ function SectionSummary() {
           padding:  isDesktop ? "0" : "0 20px",
         }}
       >
-        {/* ── 頂部列：← Projects + 前往網站 ── */}
-        <div
-          style={{
-            display:        "flex",
-            justifyContent: "space-between",
-            alignItems:     "center",
-            padding:        "24px 0 0",
-          }}
-        >
+        {/* ── 頂部列：← Projects ── */}
+        <div style={{ padding: "24px 0 0" }}>
           <button
             onClick={() => navigate("/projects")}
             style={{
@@ -286,31 +271,6 @@ function SectionSummary() {
           >
             <IconPixelArrowLeft /> Projects
           </button>
-
-          <a
-            href="https://assist-hub.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display:        "inline-flex",
-              alignItems:     "center",
-              padding:        "12px 20px",
-              borderRadius:   40,
-              border:         "1px solid #111111",
-              background:     "#ffffff",
-              color:          "#111111",
-              fontSize:       14,
-              fontFamily:     "Inter, " + FONT,
-              fontWeight:     500,
-              textDecoration: "none",
-              transition:     "background 0.2s, color 0.2s",
-              letterSpacing:  "0.02em",
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = "#FF6200"; e.currentTarget.style.color = "#ffffff"; e.currentTarget.style.borderColor = "#FF6200"; }}
-            onMouseLeave={e => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#111111"; e.currentTarget.style.borderColor = "#111111"; }}
-          >
-            前往網站
-          </a>
         </div>
 
         {/* ── 主標題區塊 ── */}
@@ -321,9 +281,9 @@ function SectionSummary() {
               <span
                 key={tag}
                 style={{
-                  background:    "rgba(255,98,0,0.06)",
-                  border:        "1px solid rgba(255,98,0,0.20)",
-                  borderRadius:  3,
+                  background:    "transparent",
+                  border:        "1px solid rgba(255,98,0,0.40)",
+                  borderRadius:  9999,
                   padding:       "4px 12px",
                   fontSize:      14,
                   color:         "#FF6200",
@@ -1535,7 +1495,7 @@ function SectionImpact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
                 <div style={{ height: 224, borderRadius: 10, overflow: "hidden" }}>
-                  <img src="/images/notion-timeline.webp" alt="Notion 專案時程" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <img src="/images/notion-timeline.webp" alt="Notion 專案時程" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1552,7 +1512,7 @@ function SectionImpact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
                 <div style={{ height: 224, borderRadius: 10, overflow: "hidden" }}>
-                  <img src="/images/notion-issues.webp" alt="Notion Issue 管理" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <img src="/images/notion-issues.webp" alt="Notion Issue 管理" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1587,193 +1547,74 @@ function SectionImpact() {
         </div>
       </div>
 
-      {/* ── 真實價值 (白底) ───────────────────────────────────────── */}
-      <div style={{ padding: isDesktop ? "80px 40px" : "48px 20px" }}>
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        {/* 標題 */}
-        <h2
-          style={{
-            fontSize:      28,
-            fontWeight:    700,
-            color:         "#111",
-            margin:        "0 0 32px",
-            fontFamily:    "Georgia, serif",
-            letterSpacing: "-0.5px",
-          }}
-        >
-          真實價值
-        </h2>
+    </section>
+  );
+}
 
-        {/* 3 欄卡片 */}
-        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "repeat(3, 1fr)" : "1fr", gap: 24 }}>
-          {[
-            {
-              icon:  "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a",
-              img:   "/images/value-product.jpg",
-              title: "使用者端",
-              desc:  "減少照護者的輔具選擇焦慮",
-            },
-            {
-              icon:  "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4",
-              img:   "/images/value-user.jpg",
-              title: "商業端",
-              desc:  "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。",
-            },
-            {
-              icon:  "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22",
-              img:   "/images/value-business.png",
-              title: "產品端",
-              desc:  "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。",
-            },
-          ].map((card, i) => (
-            <div key={i} style={{ display: "flex", flexDirection: "column", gap: 24, borderRadius: 8 }}>
-              {/* 截圖 */}
-              <div
-                style={{
-                  height:     252,
-                  borderRadius: 12,
-                  overflow:   "hidden",
-                  position:   "relative",
-                  width:      "100%",
-                  flexShrink: 0,
-                }}
-              >
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  style={{
-                    position:   "absolute",
-                    height:     "100%",
-                    left:       "-0.29%",
-                    width:      "100.57%",
-                    top:        0,
-                    objectFit:  "cover",
-                  }}
-                />
-              </div>
-              {/* icon + 標題 + 描述 */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                  <img src={card.icon} alt="" style={{ width: 24, height: 24, flexShrink: 0 }} />
-                  <span
-                    style={{
-                      fontFamily:    FONT,
-                      fontSize:      20,
-                      fontWeight:    500,
-                      color:         "#111",
-                      letterSpacing: "-0.3px",
-                      lineHeight:    "20px",
-                    }}
-                  >
-                    {card.title}
-                  </span>
+// ── SectionOutro（真實價值 + CTA）────────────────────────────────────────────
+function SectionOutro() {
+  const isDesktop = useIsDesktop();
+  return (
+    <section style={{ fontFamily: FONT }}>
+      <div style={{ background: "#EBEBEA", padding: isDesktop ? "80px 40px" : "48px 20px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", bottom: "10%", right: "5%", width: "35%", height: "35%", background: "radial-gradient(circle, rgba(255,98,0,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+
+          {/* 真實價值 */}
+          <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 32px", fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>
+            真實價值
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "repeat(3, 1fr)" : "1fr", gap: 24 }}>
+            {[
+              { icon: "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a", img: "/images/value-product.jpg", title: "使用者端", desc: "減少照護者的輔具選擇焦慮" },
+              { icon: "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4", img: "/images/value-user.jpg",    title: "商業端",  desc: "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。" },
+              { icon: "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22", img: "/images/value-business.png", title: "產品端",  desc: "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。" },
+            ].map((card, i) => (
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: 24, borderRadius: 8 }}>
+                <div style={{ height: 252, borderRadius: 12, overflow: "hidden", position: "relative", width: "100%", flexShrink: 0 }}>
+                  <img src={card.img} alt={card.title} style={{ position: "absolute", height: "100%", left: "-0.29%", width: "100.57%", top: 0, objectFit: "cover" }} />
                 </div>
-                <p
-                  style={{
-                    fontFamily:    FONT,
-                    fontSize:      16,
-                    color:         "rgba(0,0,0,0.6)",
-                    lineHeight:    "24px",
-                    letterSpacing: "-0.08px",
-                    margin:        0,
-                  }}
-                >
-                  {card.desc}
-                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                  <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                    <img src={card.icon} alt="" style={{ width: 24, height: 24, flexShrink: 0 }} />
+                    <span style={{ fontFamily: FONT, fontSize: 20, fontWeight: 500, color: "#111", letterSpacing: "-0.3px", lineHeight: "20px" }}>{card.title}</span>
+                  </div>
+                  <p style={{ fontFamily: FONT, fontSize: 16, color: "rgba(0,0,0,0.6)", lineHeight: "24px", letterSpacing: "-0.08px", margin: 0 }}>{card.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
       </div>
-      </div>
+    </section>
+  );
+}
 
-      {/* ── 深色反思 + CTA ────────────────────────────────────────── */}
-      <div style={{
-        background: "#EBEBEA",
-        padding:    isDesktop ? "80px 40px" : "48px 20px",
-        position:   "relative",
-        overflow:   "hidden",
-      }}>
-        {/* 背景光暈 */}
-        <div style={{ position:"absolute", bottom:"10%", right:"5%", width:"35%", height:"35%", background:"radial-gradient(circle, rgba(255,98,0,0.08) 0%, transparent 70%)", pointerEvents:"none" }} />
-
-        <div style={{ maxWidth:1080, margin:"0 auto" }}>
-          {/* 分隔線 */}
-          <div style={{ height:1, background:"#D5D3CF", margin:"0 0 56px" }} />
-
-          {/* 反思段落 */}
-          <div style={{ display:"grid", gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr", gap: isDesktop ? 60 : 32 }}>
-            <div>
-              <h3 style={{ fontSize:18, fontWeight:700, color:"#111111", margin:"0 0 14px", fontFamily:FONT }}>
-                學到最多的事
-              </h3>
-              <p style={{ fontSize:16, color:"#4a4a4a", lineHeight:1.8, margin:0 }}>
-                設計輔具租賃平台，讓我深刻理解「專業知識的轉譯」是 UX 設計中最複雜的挑戰之一。
-                如何讓不懂醫療的使用者，在不做出錯誤決策的前提下完成自助諮詢，需要同時兼顧
-                <span style={{ color:"#111111", fontWeight:600 }}>資訊架構、信任建立與風險管控</span>。
-              </p>
-            </div>
-            <div>
-              <h3 style={{ fontSize:18, fontWeight:700, color:"#111111", margin:"0 0 14px", fontFamily:FONT }}>
-                如果重來一次
-              </h3>
-              <p style={{ fontSize:16, color:"#4a4a4a", lineHeight:1.8, margin:0 }}>
-                會更早導入
-                <span style={{ color:"#111111", fontWeight:600 }}>可用性測試</span>——
-                我在第二輪迭代才發現年長使用者對「粗大動作分級」的理解存在很大差異，
-                導致問卷題目需要全面重寫。更早的測試能節省 2-3 週的迭代成本。
-              </p>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div style={{ display:"flex", gap:12, marginTop:56, alignItems:"center" }}>
-            <a
-              href="https://assist-hub.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display:        "inline-flex",
-                alignItems:     "center",
-                gap:            8,
-                padding:        "12px 28px",
-                borderRadius:   9999,
-                border:         "1px solid #111111",
-                background:     "#ffffff",
-                color:          "#111111",
-                fontSize:       14,
-                fontFamily:     FONT,
-                fontWeight:     600,
-                textDecoration: "none",
-                letterSpacing:  "0.03em",
-                transition:     "background 0.2s, color 0.2s, border-color 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#FF6200"; e.currentTarget.style.color = "#ffffff"; e.currentTarget.style.borderColor = "#FF6200"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#111111"; e.currentTarget.style.borderColor = "#111111"; }}
-            >
-              前往網站 ↗
-            </a>
-            <button
-              onClick={() => {
-                const s = document.getElementById("main-scroll");
-                const t = document.getElementById("r4u-summary");
-                if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior:"smooth" });
-              }}
-              style={{
-                background:    "transparent",
-                border:        "1px solid #D5D3CF",
-                color:         "#6B6760",
-                padding:       "12px 24px",
-                borderRadius:  9999,
-                fontSize:      14,
-                fontFamily:    FONT,
-                cursor:        "pointer",
-                letterSpacing: "0.03em",
-              }}
-            >
-              ↑ 回到頂部
-            </button>
-          </div>
+// ── SectionStrategy ───────────────────────────────────────────────────────────
+function SectionStrategy() {
+  const isDesktop = useIsDesktop();
+  return (
+    <section style={{ fontFamily: FONT, background: "#fff" }}>
+      <div style={{ padding: isDesktop ? "80px 40px" : "48px 20px" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          <h2
+            style={{
+              fontSize:      28,
+              fontWeight:    700,
+              color:         "#111",
+              margin:        "0 0 32px",
+              fontFamily:    "Georgia, serif",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            商業策略
+          </h2>
+          <img
+            src={isDesktop ? "/images/biz-strategy.webp" : "/images/biz-strategy-mobile.webp"}
+            alt="商業策略：價值、供給、需求、財務"
+            style={{ width: "100%", display: "block", borderRadius: 16 }}
+          />
         </div>
       </div>
     </section>
@@ -1826,12 +1667,59 @@ export default function Rent4UScrollStory() {
     return () => obs.disconnect();
   }, []);
 
+  const glassBase = {
+    display:        "inline-flex",
+    alignItems:     "center",
+    gap:            8,
+    padding:        "10px 20px",
+    borderRadius:   9999,
+    border:         "1px solid rgba(255,255,255,0.55)",
+    background:     "rgba(255,255,255,0.55)",
+    backdropFilter: "blur(14px)",
+    WebkitBackdropFilter: "blur(14px)",
+    boxShadow:      "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)",
+    fontSize:       14,
+    fontFamily:     FONT,
+    fontWeight:     500,
+    color:          "#111",
+    cursor:         "pointer",
+    textDecoration: "none",
+    letterSpacing:  "0.01em",
+    transition:     "background 0.2s, box-shadow 0.2s",
+  };
+
   return (
     <div style={{ fontFamily: FONT }}>
       <SectionSummary />
       <SectionResearch />
       <SectionLogic />
       <SectionImpact />
+      <SectionStrategy />
+      <SectionOutro />
+
+      {/* ── 固定 glass 按鈕 ── */}
+      <a
+        href="https://assist-hub.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ ...glassBase, position: "fixed", bottom: 24, left: 24, zIndex: 9999 }}
+        onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+        onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+      >
+        前往網站 ↗
+      </a>
+      <button
+        onClick={() => {
+          const s = document.getElementById("main-scroll");
+          const t = document.getElementById("r4u-summary");
+          if (s && t) s.scrollTo({ top: t.offsetTop - 56, behavior: "smooth" });
+        }}
+        style={{ ...glassBase, position: "fixed", bottom: 24, right: 24, zIndex: 9999 }}
+        onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.8)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+        onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.55)"; e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+      >
+        ↑ 回到頂部
+      </button>
     </div>
   );
 }
