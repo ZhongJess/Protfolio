@@ -1419,12 +1419,12 @@ function SectionImpact() {
         </div>
       </div>
 
-      {/* ── 設計核心 ─────────────────────────────────────────────────── */}
+      {/* ── 設計演進 ─────────────────────────────────────────────────── */}
       <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
 
           <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 48px", letterSpacing: "-0.5px" }}>
-            設計核心
+            設計演進
           </h2>
 
           <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr" : "1fr", gap: 32 }}>
