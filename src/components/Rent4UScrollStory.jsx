@@ -1516,33 +1516,6 @@ function SectionImpact() {
         </div>
       </div>
 
-      {/* ── 設計系統 ─────────────────────────────────────────────── */}
-      <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          {/* 標題區 */}
-          <div style={{ marginBottom: 48 }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 16px", fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>設計系統</h2>
-            <p style={{ fontSize: 16, color: "#4a4a4a", lineHeight: 1.8, margin: 0, fontFamily: FONT }}>
-              建立統一的品牌語言，涵蓋色彩系統、字體規範與 UI 元件庫，確保產品視覺一致性。
-            </p>
-          </div>
-          {/* 截圖 */}
-          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)", border: "1px solid #E8E8E8", position: "relative" }}>
-            <img
-              src="/images/design-guide.webp"
-              alt="Rent4U 設計系統：品牌色彩、字體、元件庫"
-              style={{ width: "100%", display: "block" }}
-            />
-            <div style={{
-              position: "absolute", bottom: 0, left: 0, right: 0,
-              height: "33%",
-              background: "linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,1) 100%)",
-              pointerEvents: "none",
-            }} />
-          </div>
-        </div>
-      </div>
-
       {/* ── 技術實踐與工作流 ── */}
       <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
@@ -1610,6 +1583,33 @@ function SectionImpact() {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* ── 設計系統 ─────────────────────────────────────────────── */}
+      <div style={{ background: "#FFFFFF", padding: isDesktop ? "80px 40px" : "48px 20px" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+          {/* 標題區 */}
+          <div style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 16px", fontFamily: "Georgia, serif", letterSpacing: "-0.5px" }}>設計系統</h2>
+            <p style={{ fontSize: 16, color: "#4a4a4a", lineHeight: 1.8, margin: 0, fontFamily: FONT }}>
+              建立統一的品牌語言，涵蓋色彩系統、字體規範與 UI 元件庫，確保產品視覺一致性。
+            </p>
+          </div>
+          {/* 截圖 */}
+          <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)", border: "1px solid #E8E8E8", position: "relative" }}>
+            <img
+              src="/images/design-guide.webp"
+              alt="Rent4U 設計系統：品牌色彩、字體、元件庫"
+              style={{ width: "100%", display: "block" }}
+            />
+            <div style={{
+              position: "absolute", bottom: 0, left: 0, right: 0,
+              height: "33%",
+              background: "linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,1) 100%)",
+              pointerEvents: "none",
+            }} />
+          </div>
         </div>
       </div>
 
