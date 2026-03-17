@@ -221,17 +221,11 @@ const REVIEWS = [
 ];
 
 const PAIN_SUMMARY = [
-  { no: "01", title: "特殊牛奶選項不明確",   desc: "植物奶選項入口不清楚，顧客難以辨識如何換奶。" },
-  { no: "02", title: "地圖當機閃退",         desc: "地圖頁面不穩定，常發生閃退，影響選取門市體驗。" },
-  { no: "03", title: "無法預約隔日取餐",     desc: "僅支援當日取餐，無法提前預約明日訂單，靈活性受限。" },
-  { no: "04", title: "儲值金額門檻偏高",     desc: "最低儲值 300 元，小額消費的彈性儲值需求未被滿足。" },
-  { no: "05", title: "確認訂單缺門市電話",   desc: "確認訂單頁缺乏門市聯絡資訊，找不到門市電話洽詢。" },
-  { no: "06", title: "冷熱飲品分散不同頁",   desc: "同款飲品的冷熱版本各自獨立，顧客不易找到、點錯率高。" },
-  { no: "07", title: "下單前看不到卡片餘額", desc: "下單時無法確認星禮準餘額，容易遇到餘額不足的狀況。" },
-  { no: "08", title: "星里程兌換入口不顯",   desc: "星里程兌換入口不明顯，顧客難以找到並使用累積點數。" },
-  { no: "09", title: "缺少下單成功通知",     desc: "下單後沒有明確的成功或失敗通知，顧客不確定訂單是否成立。" },
-  { no: "10", title: "無法追蹤訂單進度",     desc: "缺少訂單製作進度追蹤，顧客不知道何時能到門市取餐。" },
-  { no: "11", title: "發票僅寄 Email",       desc: "統一編號與發票資訊只發電子郵件，App 內無法即時查看。" },
+  { no: "01", title: "特殊牛奶選項不明確",     desc: "植物奶加購入口隱藏，顧客難以辨識如何客製飲品。" },
+  { no: "02", title: "無法設置常用門市",       desc: "每次預點都需重新搜尋門市，流程繁瑣且費時。" },
+  { no: "03", title: "冷熱飲品分散不同頁",     desc: "同款飲品的冷熱版本各自獨立，容易找不到或點錯單。" },
+  { no: "04", title: "卡片餘額不透明、儲值門檻高", desc: "下單時看不到餘額，且最低儲值 300 元，靈活性不足。" },
+  { no: "05", title: "缺少訂單通知與進度追蹤", desc: "下單後無成功或失敗通知，也看不到訂單製作進度。" },
 ];
 
 function SectionResearch() {
@@ -246,7 +240,7 @@ function SectionResearch() {
         }}>RESEARCH</span>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: "#111", margin: "0 0 12px", letterSpacing: "-0.5px" }}>研究洞察</h2>
         <p style={{ fontFamily: FONT, fontSize: 16, color: "#4a4a4a", lineHeight: 1.8, margin: "0 0 48px", maxWidth: 640 }}>
-          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，整理出 11 項使用者痛點。
+          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，聚焦出 5 項核心問題並逐一設計解決方案。
         </p>
 
         {/* Rating banner */}
@@ -302,8 +296,8 @@ function SectionResearch() {
           ))}
         </div>
 
-        {/* Pain point summary */}
-        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr 1fr" : "1fr 1fr", gap: 12 }}>
+        {/* Pain point summary — 5 問題 */}
+        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr" : "1fr", gap: 14 }}>
           {PAIN_SUMMARY.map(({ no, title, desc }) => (
             <div key={no} style={{
               padding: "24px", borderRadius: 14,
