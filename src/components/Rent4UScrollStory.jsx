@@ -1400,7 +1400,7 @@ function SectionImpact() {
                   After
                 </span>
                 <span style={{ fontSize: 13, color: "#6B6760", fontFamily: FONT }}>
-                  Rent4U 數位詢問單
+                  Rent4U 行動能力描述方法
                 </span>
               </div>
               <div style={{
