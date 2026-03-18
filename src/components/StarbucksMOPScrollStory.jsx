@@ -565,7 +565,6 @@ function OptCard({ item, isDesktop, index }) {
       {item.singleImage ? (
         <div style={{
           borderRadius: 20, overflow: "hidden",
-          border: `1px solid ${GREEN}20`,
           boxShadow: `0 8px 40px ${GREEN}14`,
           maxWidth: 320, margin: "0 auto",
         }}>
@@ -581,7 +580,7 @@ function OptCard({ item, isDesktop, index }) {
               padding: "3px 10px", borderRadius: 4, marginBottom: 10,
             }}>BEFORE</span>
             <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20` }}>
-              <img src={item.before} alt={`${item.title} before`} style={{ width: "100%", display: "block" }} />
+              <img src={item.before} alt={`${item.title} before`} style={{ width: "90%", display: "block" }} />
             </div>
           </div>
           <div>
@@ -591,7 +590,7 @@ function OptCard({ item, isDesktop, index }) {
               letterSpacing: "0.14em", color: "#fff", background: BRAND,
               padding: "3px 10px", borderRadius: 4, marginBottom: 10,
             }}>AFTER</span>
-            <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${BRAND}40` }}>
+            <div style={{ borderRadius: 14, overflow: "hidden" }}>
               <img src={item.after} alt={`${item.title} after`} style={{ width: "100%", display: "block" }} />
             </div>
           </div>
