@@ -674,10 +674,10 @@ function OptCard({ item, isDesktop, index }) {
       {/* Ghost 水印數字 */}
       <div style={{
         position: "absolute",
-        top: isDesktop ? -30 : -20,
-        left: isDesktop ? -16 : -8,
+        top: isDesktop ? -10 : -8,
+        left: isDesktop ? -8 : -4,
         fontFamily: "Georgia, serif",
-        fontSize: isDesktop ? 300 : 180,
+        fontSize: isDesktop ? 140 : 90,
         fontWeight: 800,
         color: `${GREEN}08`,
         lineHeight: 1,
