@@ -326,9 +326,9 @@ function SectionResearch() {
         {/* App Store header image */}
         <div style={{ marginBottom: 24 }}>
           <img
-            src="/images/sbux/sbux-appstore-header.png"
+            src="/images/sbux/sbux-review-header.webp"
             alt="Starbucks TW App Store 評分與評論"
-            style={{ width: 560, maxWidth: "100%", height: "auto", display: "block", borderRadius: 16 }}
+            style={{ width: 480, maxWidth: "100%", height: "auto", display: "block", borderRadius: 16 }}
           />
         </div>
 
