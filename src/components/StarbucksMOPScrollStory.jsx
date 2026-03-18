@@ -126,86 +126,120 @@ function CoffeeCupSVG({ size = 280 }) {
   );
 }
 
+// ── Hero 資料 ──────────────────────────────────────────────────────────────────
+const SBUX_HERO_TAGS  = ["UX / UI", "Redesign", "2023"];
+const SBUX_INFO_CARDS = [
+  { label: "成果", value: "5 項核心體驗改善" },
+  { label: "時程", value: "8 週"             },
+  { label: "角色", value: "UX Designer"      },
+  { label: "工具", value: "Figma · Notion"   },
+];
+
+function SbuxInfoCard({ label, value }) {
+  return (
+    <div style={{
+      flex: 1, minWidth: 130,
+      padding: "16px 24px",
+      borderRadius: 8,
+      background: `${GREEN}0D`,
+      fontFamily: FONT,
+    }}>
+      <div style={{
+        fontSize: 12, color: `${GREEN}70`,
+        fontWeight: 400, letterSpacing: "0.08em",
+        textTransform: "uppercase", marginBottom: 12,
+      }}>{label}</div>
+      <div style={{
+        fontSize: 16, fontWeight: 700,
+        color: GREEN, lineHeight: "28px",
+      }}>{value}</div>
+    </div>
+  );
+}
+
 function SectionHero() {
   const isDesktop = useIsDesktop();
   const navigate  = useNavigate();
-  const cupSize   = isDesktop ? 280 : 210;
   return (
-    <section style={{ background: BG, fontFamily: FONT, overflow: "hidden", flexShrink: 0 }}>
-      {/* ← Projects 返回按鈕 */}
-      <div style={{ padding: isDesktop ? "24px 56px 0" : "20px 24px 0" }}>
-        <button
-          onClick={() => navigate("/projects")}
-          style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            fontSize: 11, color: `${GREEN}70`,
-            background: "transparent", border: "none", cursor: "pointer",
-            fontFamily: "Menlo, monospace", letterSpacing: "0.08em",
-            transition: "color 0.2s",
-          }}
-          onMouseEnter={e => { e.currentTarget.style.color = BRAND; }}
-          onMouseLeave={e => { e.currentTarget.style.color = `${GREEN}70`; }}
-        >
-          ← Projects
-        </button>
-      </div>
+    <section id="sbux-hero" style={{ background: BG, fontFamily: FONT, overflow: "hidden", flexShrink: 0 }}>
+      <div style={{ maxWidth: 1080, margin: "0 auto", width: "100%", padding: isDesktop ? "0 40px" : "0 20px" }}>
 
-      {/* Giant STARBUCKS heading */}
-      <div style={{ textAlign: "center", padding: "4px 16px 0", overflow: "hidden" }}>
-        <h1 style={{
-          fontFamily: "Georgia, serif",
-          fontSize: isDesktop ? "clamp(80px, 14vw, 192px)" : "clamp(52px, 18vw, 108px)",
-          fontWeight: 900, margin: 0,
-          letterSpacing: isDesktop ? "-5px" : "-3px",
-          lineHeight: 0.92, color: GREEN,
-        }}>STARBUCKS</h1>
-      </div>
-
-      {/* 2×2 grid：上排文字同高，下排各放圖片 */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
-        columnGap: isDesktop ? 48 : 0,
-        rowGap: isDesktop ? 28 : 20,
-        maxWidth: 1080, margin: "0 auto",
-        padding: isDesktop ? "28px 56px 80px" : "20px 24px 56px",
-        alignItems: "start",
-      }}>
-        {/* Row 1 左：行動預點 */}
-        <div style={{
-          fontFamily: TC,
-          fontSize: isDesktop ? 30 : 22,
-          fontWeight: 700, color: GREEN,
-          letterSpacing: "-0.5px",
-          textAlign: isDesktop ? "left" : "center",
-        }}>行動預點</div>
-
-        {/* Row 1 右：彈性省時，預約星體驗 */}
-        <div style={{
-          fontFamily: TC,
-          fontSize: isDesktop ? 24 : 18,
-          fontWeight: 600, color: GREEN,
-          lineHeight: 1.55, letterSpacing: "-0.3px",
-          textAlign: isDesktop ? "right" : "center",
-        }}>彈性省時，預約星體驗</div>
-
-        {/* Row 2 左：咖啡杯 SVG */}
-        <div style={{ display: "flex", justifyContent: isDesktop ? "flex-start" : "center" }}>
-          <CoffeeCupSVG size={cupSize} />
+        {/* ← Projects */}
+        <div style={{ padding: "24px 0 0" }}>
+          <button
+            onClick={() => navigate("/projects")}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              fontSize: 11, color: `${GREEN}70`,
+              background: "transparent", border: "none", cursor: "pointer",
+              fontFamily: "Menlo, monospace", letterSpacing: "0.08em",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = BRAND; }}
+            onMouseLeave={e => { e.currentTarget.style.color = `${GREEN}70`; }}
+          >
+            ← Projects
+          </button>
         </div>
 
-        {/* Row 2 右：手機圖（待替換） */}
-        <div style={{ display: "flex", justifyContent: isDesktop ? "flex-end" : "center" }}>
+        {/* 主標題區塊 */}
+        <div style={{ paddingTop: 32 }}>
+          {/* Tags */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 24 }}>
+            {SBUX_HERO_TAGS.map(tag => (
+              <span key={tag} style={{
+                background: "transparent",
+                border: `1px solid ${BRAND}60`,
+                borderRadius: 9999,
+                padding: "4px 12px",
+                fontSize: 14, color: BRAND,
+                letterSpacing: "0.057em",
+                fontFamily: "Menlo, monospace",
+              }}>{tag}</span>
+            ))}
+          </div>
+
+          {/* 主標題 */}
+          <h1 style={{
+            fontSize: "clamp(36px, 4.5vw, 60px)",
+            fontWeight: 700, color: GREEN,
+            lineHeight: 1.1, letterSpacing: "-0.03em",
+            margin: "0 0 16px",
+            fontFamily: "Georgia, serif",
+          }}>重新設計行動預點，讓每杯咖啡從下單就開始享受</h1>
+
+          {/* 副標題 */}
+          <p style={{
+            margin: "0 0 32px",
+            fontSize: 16, color: `${GREEN}BB`,
+            lineHeight: 1.86, maxWidth: 620,
+            fontFamily: FONT, fontWeight: 300,
+          }}>
+            從 App Store 2.1 顆星的用戶痛點出發，重塑星巴克行動預點體驗，聚焦 5 項核心問題並逐一設計解決方案。
+          </p>
+
+          {/* Info Cards */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 40 }}>
+            {SBUX_INFO_CARDS.map(card => (
+              <SbuxInfoCard key={card.label} {...card} />
+            ))}
+          </div>
+        </div>
+
+        {/* Banner 圖 */}
+        <div style={{
+          borderRadius: 17, overflow: "hidden",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+          width: "100%",
+        }}>
           <img
-            src="/images/homepage/banner.png"
-            alt="Starbucks MOP App 裝置展示"
-            style={{
-              width: isDesktop ? "75%" : "60%",
-              maxWidth: 300, display: "block",
-              filter: "drop-shadow(0 20px 48px rgba(0,0,0,0.18))",
-            }}
+            src="/images/sbux/sbux-hero.webp"
+            alt="Starbucks MOP 行動預點重設計"
+            style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
+
+        <div style={{ height: isDesktop ? 80 : 48 }} />
       </div>
     </section>
   );
