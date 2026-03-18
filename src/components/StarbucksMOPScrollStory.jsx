@@ -425,7 +425,7 @@ function SectionResearch() {
 const DS_ITEMS = [
   { label: "TYPOGRAPHY", src: "/images/sbux-ds-typography.png", alt: "Typography 字體系統" },
   { label: "COLOUR",     src: "/images/sbux-ds-colour.png",     alt: "Colour 色彩系統"     },
-  { label: "ICONS",      src: "/images/sbux-ds-icons.png",      alt: "Icons 圖示集"         },
+  { label: "ICONS",      src: "/images/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "50%" },
   { label: "ASSETS",     src: "/images/sbux-ds-assets.png",     alt: "Assets UI 元件"       },
 ];
 
@@ -463,7 +463,7 @@ function SectionDesign() {
             marginBottom: startIdx === 0 ? (isDesktop ? 72 : 48) : 0,
             alignItems: "start",
           }}>
-            {DS_ITEMS.slice(startIdx, startIdx + 2).map(({ label, src, alt }) => (
+            {DS_ITEMS.slice(startIdx, startIdx + 2).map(({ label, src, alt, cardWidth }) => (
               <div key={label}>
                 <h3 style={{
                   fontFamily: "Menlo, monospace", fontSize: 10, fontWeight: 600,
@@ -471,9 +471,8 @@ function SectionDesign() {
                   margin: "0 0 20px",
                 }}>{label}</h3>
                 <div style={{
-                  borderRadius: 20, overflow: "hidden",
-                  border: `1px solid ${GREEN}12`,
-                  boxShadow: "0 2px 24px rgba(30,57,50,0.06)",
+                  borderRadius: 16, overflow: "hidden",
+                  width: cardWidth || "100%",
                 }}>
                   <img src={src} alt={alt} style={{ width: "100%", display: "block" }} />
                 </div>
