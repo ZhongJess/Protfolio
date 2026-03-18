@@ -455,16 +455,29 @@ function SectionResearch() {
               </div>
             )}
 
-            <ol style={{ margin: 0, padding: `0 0 0 24px`, paddingRight: isDesktop ? 220 : 0 }}>
-              {PAIN_SUMMARY.map(({ no, title }) => (
-                <li key={no} style={{
-                  fontFamily: TC,
-                  fontSize: isDesktop ? 19 : 16,
-                  fontWeight: 600, color: "#fff",
-                  lineHeight: 2.0, paddingLeft: 8,
-                }}>{title}</li>
+            <div style={{ display: "flex", flexDirection: "column", paddingRight: isDesktop ? 220 : 0 }}>
+              {PAIN_SUMMARY.map(({ no, title }, i) => (
+                <div key={no} style={{
+                  display: "flex", alignItems: "center", gap: 16,
+                  padding: "14px 0",
+                  borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.15)",
+                }}>
+                  <span style={{
+                    fontFamily: "Menlo, monospace",
+                    fontSize: 11, fontWeight: 600,
+                    color: "rgba(255,255,255,0.5)",
+                    letterSpacing: "0.08em",
+                    flexShrink: 0,
+                  }}>{no}</span>
+                  <span style={{
+                    fontFamily: TC,
+                    fontSize: isDesktop ? 17 : 15,
+                    fontWeight: 600, color: "#fff",
+                    lineHeight: 1.5,
+                  }}>{title}</span>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </div>
       </div>
