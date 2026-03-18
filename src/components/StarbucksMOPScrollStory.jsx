@@ -536,9 +536,15 @@ function SectionDesign() {
                 <div style={{
                   borderRadius: noRadius ? 0 : 16, overflow: "hidden",
                   width: cardWidth || "100%",
-                  height: cardHeight || "auto",
+                  height: (isDesktop && cardHeight) ? cardHeight : "auto",
                 }}>
-                  <img src={src} alt={alt} style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: imgPosition || "center", display: "block" }} />
+                  <img src={src} alt={alt} style={{
+                    width: "100%",
+                    height: (isDesktop && cardHeight) ? "100%" : "auto",
+                    objectFit: "contain",
+                    objectPosition: imgPosition || "top",
+                    display: "block",
+                  }} />
                 </div>
               </div>
             ))}
