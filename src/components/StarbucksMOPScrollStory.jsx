@@ -487,8 +487,8 @@ function SectionResearch() {
 
 // ── DESIGN SYSTEM（Figma 中排在優化方案前）────────────────────────────────────
 const DS_ITEMS = [
-  { label: "TYPOGRAPHY", src: "/images/sbux/sbux-ds-typography.png", alt: "Typography 字體系統", cardHeight: 500 },
-  { label: "COLOUR",     src: "/images/sbux/sbux-ds-colour.png",     alt: "Colour 色彩系統",     cardHeight: 500 },
+  { label: "TYPOGRAPHY", src: "/images/sbux/sbux-ds-typography.png", alt: "Typography 字體系統", cardHeight: 600 },
+  { label: "COLOUR",     src: "/images/sbux/sbux-ds-colour.png",     alt: "Colour 色彩系統",     cardHeight: 600 },
   { label: "ICONS",      src: "/images/sbux/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "50%" },
   { label: "ASSETS",     src: "/images/sbux/sbux-ds-assets.png",     alt: "Assets UI 元件"       },
 ];
