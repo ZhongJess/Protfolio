@@ -750,20 +750,9 @@ function SectionOutro() {
           fontWeight: 700, color: BG,
           margin: "0 0 16px", letterSpacing: "-0.5px",
         }}>Have a Nice Day.</h2>
-        <p style={{ fontFamily: FONT, fontSize: 16, color: `${BG}CC`, lineHeight: 1.8, margin: "0 0 40px" }}>
+        <p style={{ fontFamily: FONT, fontSize: 16, color: `${BG}CC`, lineHeight: 1.8, margin: 0 }}>
           重新設計後的行動預點流程，讓每一杯咖啡的旅程從下單就開始享受。
         </p>
-        <a
-          href="https://www.behance.net/gallery/192918307/Starbucks-MOP"
-          target="_blank" rel="noopener noreferrer"
-          style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "12px 32px", borderRadius: 9999,
-            background: BG, color: GREEN,
-            fontFamily: FONT, fontSize: 15, fontWeight: 600,
-            textDecoration: "none",
-          }}
-        >查看 Behance 完整作品 ↗</a>
       </div>
     </section>
   );
