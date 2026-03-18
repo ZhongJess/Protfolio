@@ -249,7 +249,7 @@ function SectionHero() {
 function SectionAbout() {
   const isDesktop = useIsDesktop();
   return (
-    <section id="sbux-about" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
+    <section id="sbux-about" style={{ background: BG, padding: isDesktop ? "100px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
       {/* Ghost 大字 */}
       <div style={{
         position: "absolute", top: -10, left: -8,
@@ -338,7 +338,7 @@ const PAIN_SUMMARY = [
 function SectionResearch() {
   const isDesktop = useIsDesktop();
   return (
-    <section id="sbux-research" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
+    <section id="sbux-research" style={{ background: BG, padding: isDesktop ? "100px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
       {/* Ghost 大字 */}
       <div style={{
         position: "absolute", top: -10, left: -8,
@@ -496,7 +496,7 @@ const DS_ITEMS = [
 function SectionDesign() {
   const isDesktop = useIsDesktop();
   return (
-    <section id="sbux-design" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
+    <section id="sbux-design" style={{ background: BG, padding: isDesktop ? "100px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
       {/* Ghost 大字 */}
       <div style={{
         position: "absolute", top: -10, left: -8,
@@ -667,7 +667,7 @@ function OptCard({ item, isDesktop, index }) {
   return (
     <div style={{
       position: "relative",
-      padding: isDesktop ? "80px 40px" : "56px 20px",
+      padding: isDesktop ? "100px 40px" : "56px 20px",
       borderTop: `1px solid ${GREEN}15`,
       overflow: "hidden",
     }}>
@@ -710,7 +710,7 @@ function SectionOptimization() {
   const isDesktop = useIsDesktop();
   return (
     <section id="sbux-opt" style={{ background: BG }}>
-      <div style={{ padding: isDesktop ? "80px 40px 40px" : "56px 20px 20px", position: "relative", overflow: "hidden" }}>
+      <div style={{ padding: isDesktop ? "100px 40px 40px" : "56px 20px 20px", position: "relative", overflow: "hidden" }}>
         {/* Ghost 大字 */}
         <div style={{
           position: "absolute", top: -10, left: -8,
