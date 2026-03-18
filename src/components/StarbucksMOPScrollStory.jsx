@@ -87,54 +87,101 @@ const INFO_CARDS = [
 function SectionHero() {
   const isDesktop = useIsDesktop();
   return (
-    <section style={{ background: GREEN, fontFamily: FONT }}>
-      <div style={{ padding: isDesktop ? "80px 40px 0" : "48px 20px 0", maxWidth: 1080, margin: "0 auto" }}>
-        {/* Tags */}
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-          {["UX / UI", "Redesign", "Mobile App"].map(tag => (
-            <span key={tag} style={{
-              padding: "4px 14px", borderRadius: 9999,
-              border: `1px solid ${BG}40`, color: `${BG}CC`,
-              fontSize: 12, fontWeight: 500, letterSpacing: "0.06em",
-            }}>{tag}</span>
-          ))}
-        </div>
-
-        {/* 大標題 */}
-        <h1 style={{
-          fontFamily: "Georgia, serif",
-          fontSize: isDesktop ? "clamp(40px, 5.5vw, 72px)" : 36,
-          fontWeight: 800, margin: "0 0 20px",
-          letterSpacing: "-1.5px", lineHeight: 1.05, color: BG,
-        }}>
-          Starbucks<br />行動預點 MOP
-        </h1>
-        <p style={{
-          fontSize: isDesktop ? 18 : 16, color: `${BG}BB`,
-          lineHeight: 1.75, margin: "0 0 52px", maxWidth: 520,
-        }}>
-          彈性省時，預約星體驗——重新設計星巴克行動預點（Mobile Order &amp; Pay）的點餐流程。
-        </p>
-
-        {/* Info grid */}
+    <section style={{ background: GREEN, fontFamily: FONT, overflow: "hidden" }}>
+      <div style={{
+        padding: isDesktop ? "80px 40px 0" : "48px 20px 40px",
+        maxWidth: 1080, margin: "0 auto",
+      }}>
+        {/* 兩欄：左文字 + 右裝置 */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${isDesktop ? 4 : 2}, 1fr)`,
-          gap: 1, background: `${BG}15`,
-          border: `1px solid ${BG}15`, borderRadius: 12, overflow: "hidden",
+          gridTemplateColumns: isDesktop ? "1fr 420px" : "1fr",
+          gap: isDesktop ? 40 : 0,
+          alignItems: "center",
         }}>
-          {INFO_CARDS.map(({ label, value }) => (
-            <div key={label} style={{ padding: "20px 24px", background: `${BG}08` }}>
-              <div style={{ fontSize: 11, color: `${BG}60`, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{label}</div>
-              <div style={{ fontSize: 15, color: BG, fontWeight: 600 }}>{value}</div>
+          {/* 左欄：文字內容 */}
+          <div>
+            {/* Tags */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
+              {["UX / UI", "Redesign", "Mobile App"].map(tag => (
+                <span key={tag} style={{
+                  padding: "4px 14px", borderRadius: 9999,
+                  border: `1px solid ${BG}40`, color: `${BG}CC`,
+                  fontSize: 12, fontWeight: 500, letterSpacing: "0.06em",
+                }}>{tag}</span>
+              ))}
             </div>
-          ))}
+
+            {/* 大標題 */}
+            <h1 style={{
+              fontFamily: "Georgia, serif",
+              fontSize: isDesktop ? "clamp(40px, 5vw, 68px)" : 36,
+              fontWeight: 800, margin: "0 0 20px",
+              letterSpacing: "-1.5px", lineHeight: 1.05, color: BG,
+            }}>
+              Starbucks<br />行動預點 MOP
+            </h1>
+            <p style={{
+              fontSize: isDesktop ? 18 : 16, color: `${BG}BB`,
+              lineHeight: 1.75, margin: "0 0 40px", maxWidth: 480,
+            }}>
+              彈性省時，預約星體驗——重新設計星巴克行動預點（Mobile Order &amp; Pay）的點餐流程。
+            </p>
+
+            {/* Info grid */}
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 1, background: `${BG}15`,
+              border: `1px solid ${BG}15`, borderRadius: 12, overflow: "hidden",
+              maxWidth: 420,
+            }}>
+              {INFO_CARDS.map(({ label, value }) => (
+                <div key={label} style={{ padding: "16px 20px", background: `${BG}08` }}>
+                  <div style={{ fontSize: 10, color: `${BG}60`, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
+                  <div style={{ fontSize: 14, color: BG, fontWeight: 600 }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 右欄：裝置照片 */}
+          {isDesktop && (
+            <div style={{
+              display: "flex", justifyContent: "center", alignItems: "flex-end",
+              paddingTop: 20,
+            }}>
+              <img
+                src="/images/banner.webp"
+                alt="Starbucks MOP App 裝置展示"
+                style={{
+                  width: "100%", maxWidth: 380,
+                  display: "block",
+                  filter: `drop-shadow(0 24px 48px rgba(0,0,0,0.45))`,
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Hero image */}
-      <div style={{ maxWidth: 1080, margin: "48px auto 0", padding: isDesktop ? "0 40px" : "0 20px" }}>
-        <div style={{ borderRadius: "16px 16px 0 0", overflow: "hidden", background: `${BG}20`, minHeight: 240 }}>
+      {/* 底部全寬 hero 圖（手機版才顯示裝置照）*/}
+      <div style={{ maxWidth: 1080, margin: isDesktop ? "0 auto" : "32px auto 0", padding: isDesktop ? "0 40px" : "0 20px" }}>
+        {/* 手機版顯示裝置照 */}
+        {!isDesktop && (
+          <div style={{ textAlign: "center", marginBottom: 32 }}>
+            <img
+              src="/images/banner.webp"
+              alt="Starbucks MOP App 裝置展示"
+              style={{
+                width: "60%", maxWidth: 240, display: "inline-block",
+                filter: "drop-shadow(0 16px 32px rgba(0,0,0,0.4))",
+              }}
+            />
+          </div>
+        )}
+        {/* sbux-hero.webp 全寬底圖 */}
+        <div style={{ borderRadius: isDesktop ? "16px 16px 0 0" : 0, overflow: "hidden", background: `${BG}20`, minHeight: 180 }}>
           <img src="/images/sbux-hero.webp" alt="Starbucks MOP" style={{ width: "100%", display: "block" }} />
         </div>
       </div>
