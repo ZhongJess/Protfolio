@@ -127,7 +127,7 @@ function CoffeeCupSVG({ size = 280 }) {
 }
 
 // ── Hero 資料 ──────────────────────────────────────────────────────────────────
-const SBUX_HERO_TAGS  = ["UX / UI", "Redesign", "2023"];
+const SBUX_HERO_TAGS  = ["UX / UI", "Redesign", "2024"];
 const SBUX_INFO_CARDS = [
   { label: "成果", value: "5 項核心體驗改善" },
   { label: "時程", value: "8 週"             },
