@@ -28,7 +28,7 @@ export const PROJECTS = [
     tagColor: "#036242",
     desc: "彈性省時，預約星體驗——以夥伴視角重新設計星巴克行動預點的點餐流程，改善 App Store 2.1 星的使用者痛點。",
     year: "2024",
-    img: "/images/sbux-hero.webp",
+    img: "/images/sbux/sbux-hero.webp",
     scrollStory: "starbucks-mop",
     impact: [],
     sections: [],
@@ -92,7 +92,7 @@ export const PROJECTS = [
   },
   {
     id: "fintech-onboarding",
-    num: "02",
+    num: "03",
     title: "Fintech Onboarding Redesign",
     tags: ["UX Research", "Interaction", "Business Impact"],
     tagColor: "#6B4FBB",
@@ -113,7 +113,7 @@ export const PROJECTS = [
   },
   {
     id: "retention-system",
-    num: "03",
+    num: "04",
     title: "E-commerce Retention System",
     tags: ["Growth", "Gamification", "Strategy"],
     tagColor: T.green,

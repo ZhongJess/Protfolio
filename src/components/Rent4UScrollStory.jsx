@@ -36,7 +36,7 @@ const NAV_ITEMS = [
 const INFO_CARDS = [
   { label: "目標達成", value: "預計優化 70% 的輔具適配精準度" },
   { label: "開發時程", value: "12 週" },
-  { label: "團隊角色", value: "UXUI · PM" },
+  { label: "團隊角色", value: "UX / UI · PM" },
   { label: "工具",     value: "Figma · Notion · Miro" },
 ];
 

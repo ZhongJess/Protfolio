@@ -215,7 +215,7 @@ function SectionHero() {
             lineHeight: 1.86, maxWidth: 620,
             fontFamily: FONT, fontWeight: 300,
           }}>
-            2.1 顆星的負面評價中挖掘產品契機 ，我將門市夥伴的服務經驗數位化。針對行動預點最迫切的 5 項核心問題提供設計對策 ，讓「預約」真正實現省時與貼心的品牌初衷。
+            2.1 顆星的負面評價中挖掘產品契機，我將門市夥伴的服務經驗數位化。針對行動預點最迫切的 5 項核心問題提供設計對策，讓「預約」真正實現省時與貼心的品牌初衷。
           </p>
 
           {/* Info Cards */}
@@ -308,7 +308,7 @@ function SectionAbout() {
 
             {/* Pill 按鈕 */}
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              {["UX / UI", "redesign"].map(tag => (
+              {["UX / UI", "Redesign"].map(tag => (
                 <span key={tag} style={{
                   display: "inline-flex", alignItems: "center",
                   padding: "10px 28px", borderRadius: 9999,
@@ -361,7 +361,7 @@ function SectionResearch() {
         }}>RESEARCH</span>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700, color: GREEN, margin: "0 0 12px", letterSpacing: "-0.5px" }}>研究洞察</h2>
         <p style={{ fontFamily: FONT, fontSize: 16, color: `${GREEN}BB`, lineHeight: 1.8, margin: "0 0 48px", maxWidth: 640 }}>
-          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，聚焦出 5 項核心問題並逐一設計解決方案。
+          從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，整理出 5 項核心問題並逐一設計解決方案。
         </p>
 
         {/* App Store header image */}
