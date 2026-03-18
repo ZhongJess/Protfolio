@@ -131,8 +131,8 @@ const SBUX_HERO_TAGS  = ["UX / UI", "Redesign", "2024"];
 const SBUX_INFO_CARDS = [
   { label: "成果", value: "5 項核心體驗改善" },
   { label: "時程", value: "8 週"             },
-  { label: "角色", value: "UX Designer"      },
-  { label: "工具", value: "Figma · Notion"   },
+  { label: "角色", value: "UX / UI Designer"  },
+  { label: "工具", value: "Figma"             },
 ];
 
 function SbuxInfoCard({ label, value }) {
