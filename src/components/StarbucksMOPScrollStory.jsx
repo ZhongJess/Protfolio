@@ -1,6 +1,7 @@
 // ── Starbucks MOP（行動預點）ScrollStory ─────────────────────────────────────
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 const FONT  = "Inter, 'Noto Sans TC', system-ui, sans-serif";
 const TC    = "'Noto Sans TC', 'PingFang TC', sans-serif";
@@ -127,15 +128,27 @@ function CoffeeCupSVG({ size = 280 }) {
 
 function SectionHero() {
   const isDesktop = useIsDesktop();
+  const navigate  = useNavigate();
   const cupSize   = isDesktop ? 280 : 210;
   return (
     <section style={{ background: BG, fontFamily: FONT, overflow: "hidden", flexShrink: 0 }}>
-      {/* 首頁 breadcrumb */}
-      <div style={{
-        padding: isDesktop ? "14px 56px" : "12px 24px",
-        fontSize: 13, color: `${GREEN}70`, fontFamily: FONT,
-        letterSpacing: "0.02em",
-      }}>首頁</div>
+      {/* ← Projects 返回按鈕 */}
+      <div style={{ padding: isDesktop ? "24px 56px 0" : "20px 24px 0" }}>
+        <button
+          onClick={() => navigate("/projects")}
+          style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            fontSize: 11, color: `${GREEN}70`,
+            background: "transparent", border: "none", cursor: "pointer",
+            fontFamily: "Menlo, monospace", letterSpacing: "0.08em",
+            transition: "color 0.2s",
+          }}
+          onMouseEnter={e => { e.currentTarget.style.color = BRAND; }}
+          onMouseLeave={e => { e.currentTarget.style.color = `${GREEN}70`; }}
+        >
+          ← Projects
+        </button>
+      </div>
 
       {/* Giant STARBUCKS heading */}
       <div style={{ textAlign: "center", padding: "4px 16px 0", overflow: "hidden" }}>
@@ -148,44 +161,41 @@ function SectionHero() {
         }}>STARBUCKS</h1>
       </div>
 
-      {/* Two-column: left (cup) + right (phone) */}
+      {/* 2×2 grid：上排文字同高，下排各放圖片 */}
       <div style={{
         display: "grid",
         gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
-        gap: isDesktop ? 48 : 0,
+        columnGap: isDesktop ? 48 : 0,
+        rowGap: isDesktop ? 28 : 20,
         maxWidth: 1080, margin: "0 auto",
         padding: isDesktop ? "28px 56px 80px" : "20px 24px 56px",
-        alignItems: "center",
+        alignItems: "start",
       }}>
-        {/* 左欄：行動預點 + SVG 咖啡杯 */}
+        {/* Row 1 左：行動預點 */}
         <div style={{
-          display: "flex", flexDirection: "column",
-          alignItems: isDesktop ? "flex-start" : "center",
-        }}>
-          <div style={{
-            fontFamily: TC,
-            fontSize: isDesktop ? 30 : 22,
-            fontWeight: 700, color: GREEN,
-            marginBottom: isDesktop ? 28 : 20,
-            letterSpacing: "-0.5px",
-          }}>行動預點</div>
+          fontFamily: TC,
+          fontSize: isDesktop ? 30 : 22,
+          fontWeight: 700, color: GREEN,
+          letterSpacing: "-0.5px",
+          textAlign: isDesktop ? "left" : "center",
+        }}>行動預點</div>
+
+        {/* Row 1 右：彈性省時，預約星體驗 */}
+        <div style={{
+          fontFamily: TC,
+          fontSize: isDesktop ? 24 : 18,
+          fontWeight: 600, color: GREEN,
+          lineHeight: 1.55, letterSpacing: "-0.3px",
+          textAlign: isDesktop ? "right" : "center",
+        }}>彈性省時，預約星體驗</div>
+
+        {/* Row 2 左：咖啡杯 SVG */}
+        <div style={{ display: "flex", justifyContent: isDesktop ? "flex-start" : "center" }}>
           <CoffeeCupSVG size={cupSize} />
         </div>
 
-        {/* 右欄：彈性省時 + 手機 */}
-        <div style={{
-          display: "flex", flexDirection: "column",
-          alignItems: isDesktop ? "flex-end" : "center",
-          paddingTop: isDesktop ? 0 : 32,
-        }}>
-          <div style={{
-            fontFamily: TC,
-            fontSize: isDesktop ? 24 : 18,
-            fontWeight: 600, color: GREEN,
-            marginBottom: isDesktop ? 28 : 20,
-            textAlign: isDesktop ? "right" : "center",
-            lineHeight: 1.55, letterSpacing: "-0.3px",
-          }}>彈性省時，預約星體驗</div>
+        {/* Row 2 右：手機圖（待替換） */}
+        <div style={{ display: "flex", justifyContent: isDesktop ? "flex-end" : "center" }}>
           <img
             src="/images/homepage/banner.png"
             alt="Starbucks MOP App 裝置展示"
