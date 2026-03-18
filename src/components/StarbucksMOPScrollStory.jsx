@@ -523,7 +523,7 @@ const OPT_ITEMS = [
     no: "04", title: "快速儲值", sub: "小額也行",
     desc: "在下單前看到卡片餘額，避免下單後發現餘額不足需重新選購，且提供小額線上儲值。",
     after: "/images/sbux/sbux-after-04.webp",
-    singleImage: true,
+    singleImage: true, imgMaxWidth: 480,
   },
   {
     no: "05", title: "訂單完成", sub: "快與友人分享",
@@ -565,8 +565,8 @@ function OptCard({ item, isDesktop, index }) {
       {item.singleImage ? (
         <div style={{
           borderRadius: 20, overflow: "hidden",
-          boxShadow: `0 8px 40px ${GREEN}14`,
-          maxWidth: 320, margin: "0 auto",
+          boxShadow: item.imgMaxWidth ? "none" : `0 8px 40px ${GREEN}14`,
+          maxWidth: item.imgMaxWidth || 320, margin: "0 auto",
         }}>
           <img src={item.after} alt={item.title} style={{ width: "100%", display: "block" }} />
         </div>
