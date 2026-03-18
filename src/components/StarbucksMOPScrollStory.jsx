@@ -489,7 +489,7 @@ function SectionResearch() {
 const DS_ITEMS = [
   { label: "TYPOGRAPHY", src: "/images/sbux/sbux-ds-typography.png", alt: "Typography 字體系統", cardHeight: 600 },
   { label: "COLOUR",     src: "/images/sbux/sbux-ds-colour.png",     alt: "Colour 色彩系統",     cardHeight: 600, imgPosition: "top" },
-  { label: "ICONS",      src: "/images/sbux/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "50%" },
+  { label: "ICONS",      src: "/images/sbux/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "100%", noRadius: true },
   { label: "ASSETS",     src: "/images/sbux/sbux-ds-assets.png",     alt: "Assets UI 元件"       },
 ];
 
@@ -527,7 +527,7 @@ function SectionDesign() {
             marginBottom: startIdx === 0 ? (isDesktop ? 40 : 28) : 0,
             alignItems: "start",
           }}>
-            {DS_ITEMS.slice(startIdx, startIdx + 2).map(({ label, src, alt, cardWidth, cardHeight, imgPosition }) => (
+            {DS_ITEMS.slice(startIdx, startIdx + 2).map(({ label, src, alt, cardWidth, cardHeight, imgPosition, noRadius }) => (
               <div key={label}>
                 <h3 style={{
                   fontFamily: "Menlo, monospace", fontSize: 10, fontWeight: 600,
@@ -535,7 +535,7 @@ function SectionDesign() {
                   margin: "0 0 20px",
                 }}>{label}</h3>
                 <div style={{
-                  borderRadius: 16, overflow: "hidden",
+                  borderRadius: noRadius ? 0 : 16, overflow: "hidden",
                   width: cardWidth || "100%",
                   height: cardHeight || "auto",
                 }}>
