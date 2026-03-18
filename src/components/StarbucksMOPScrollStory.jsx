@@ -301,7 +301,7 @@ const PAIN_SUMMARY = [
 function SectionResearch() {
   const isDesktop = useIsDesktop();
   return (
-    <section id="sbux-research" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden" }}>
+    <section id="sbux-research" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
       {/* Ghost 大字 */}
       <div style={{
         position: "absolute", top: -10, left: -8,
@@ -467,7 +467,7 @@ function SectionDesign() {
   ];
 
   return (
-    <section id="sbux-design" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden" }}>
+    <section id="sbux-design" style={{ background: BG, padding: isDesktop ? "80px 40px" : "56px 20px", position: "relative", overflow: "hidden", flexShrink: 0 }}>
       {/* Ghost 大字 */}
       <div style={{
         position: "absolute", top: -10, left: -8,
