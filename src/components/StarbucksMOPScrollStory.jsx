@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const FONT  = "Inter, 'Noto Sans TC', system-ui, sans-serif";
 const TC    = "'Noto Sans TC', 'PingFang TC', sans-serif";
-const BG    = "#D4E9E2";
-const GREEN = "#1E3932";
-const BRAND = "#036242";
-const ACCENT = "#02754B";
+const BG    = "#F5F4F2";
+const GREEN = "#111111";
+const BRAND = "#FF6200";
+const ACCENT = "#FF6200";
 
 function useIsDesktop() {
   const [v, setV] = useState(window.innerWidth >= 768);
