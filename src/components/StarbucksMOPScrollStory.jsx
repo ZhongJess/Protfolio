@@ -524,7 +524,7 @@ function SectionDesign() {
             display: "grid",
             gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
             gap: isDesktop ? 48 : 40,
-            marginBottom: startIdx === 0 ? (isDesktop ? 72 : 48) : 0,
+            marginBottom: startIdx === 0 ? (isDesktop ? 40 : 28) : 0,
             alignItems: "start",
           }}>
             {DS_ITEMS.slice(startIdx, startIdx + 2).map(({ label, src, alt, cardWidth }) => (
@@ -695,8 +695,18 @@ function SectionOptimization() {
   const isDesktop = useIsDesktop();
   return (
     <section id="sbux-opt" style={{ background: BG }}>
-      <div style={{ padding: isDesktop ? "80px 40px 40px" : "56px 20px 20px" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+      <div style={{ padding: isDesktop ? "80px 40px 40px" : "56px 20px 20px", position: "relative", overflow: "hidden" }}>
+        {/* Ghost 大字 */}
+        <div style={{
+          position: "absolute", top: -10, left: -8,
+          fontFamily: "Georgia, serif",
+          fontSize: isDesktop ? 140 : 80,
+          fontWeight: 800, color: `${BRAND}12`,
+          lineHeight: 1, userSelect: "none", pointerEvents: "none",
+          letterSpacing: "-3px", whiteSpace: "nowrap",
+        }}>Optimization</div>
+
+        <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative" }}>
           <span style={{
             fontFamily: "Menlo, monospace", fontSize: 11, color: BRAND,
             letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 600,
