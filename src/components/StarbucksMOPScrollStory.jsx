@@ -340,10 +340,10 @@ function SectionResearch() {
               style={{ position: "absolute", left: "0%", top: "30%", width: "39%", transform: "rotate(-1.5deg)", borderRadius: 12, zIndex: 1 }} />
             {/* Cancel card — top right */}
             <img src="/images/sbux/sbux-review-cancel.png" alt="預約取餐取消評論"
-              style={{ position: "absolute", right: "0%", top: "3%", width: "42%", transform: "rotate(1deg)", borderRadius: 12, zIndex: 2 }} />
+              style={{ position: "absolute", right: "0%", top: "3%", width: "42%", transform: "rotate(1deg)", borderRadius: 12, zIndex: 5 }} />
             {/* Store card — center, on top */}
             <img src="/images/sbux/sbux-review-store.png" alt="門市儲存常用評論"
-              style={{ position: "absolute", left: "27%", top: "10%", width: "45%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 5 }} />
+              style={{ position: "absolute", left: "27%", top: "10%", width: "45%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 2 }} />
             {/* MOP card — center bottom */}
             <img src="/images/sbux/sbux-review-mop.png" alt="行動預點評論"
               style={{ position: "absolute", left: "38%", top: "55%", width: "26%", transform: "rotate(-1deg)", borderRadius: 12, zIndex: 3 }} />
