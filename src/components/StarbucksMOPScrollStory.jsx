@@ -546,7 +546,7 @@ const OPT_ITEMS = [
     no: "01", title: "取餐門市頁面", sub: "設置常用門市",
     desc: "快速找到常用的取餐門市，對於新手用戶也能快速找到附近取餐門市，並決定哪種取餐方式較為方便。",
     after: "/images/sbux/sbux-after-01.webp",
-    singleImage: true,
+    singleImage: true, removeWhiteBg: true,
   },
   {
     no: "02", title: "飲品冷熱同一品項", sub: "冷熱我都在",
@@ -570,7 +570,7 @@ const OPT_ITEMS = [
     no: "05", title: "訂單完成", sub: "快與友人分享",
     desc: "訂單完成後跳出通知與詳細支付資訊，提供截圖、分享或致電門市三種方式。",
     after: "/images/sbux/sbux-feature-05.webp",
-    singleImage: true,
+    singleImage: true, removeWhiteBg: true,
   },
 ];
 
@@ -609,7 +609,7 @@ function OptCard({ item, isDesktop, index }) {
           boxShadow: item.imgMaxWidth ? "none" : `0 8px 40px ${GREEN}14`,
           maxWidth: item.imgMaxWidth || 320, margin: "0 auto",
         }}>
-          <img src={item.after} alt={item.title} style={{ width: "100%", display: "block" }} />
+          <img src={item.after} alt={item.title} style={{ width: "100%", display: "block", mixBlendMode: item.removeWhiteBg ? "multiply" : "normal" }} />
         </div>
       ) : (
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
