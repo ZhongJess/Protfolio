@@ -206,7 +206,7 @@ function SectionHero() {
             lineHeight: 1.1, letterSpacing: "-0.03em",
             margin: "0 0 16px",
             fontFamily: "Georgia, serif",
-          }}>重新設計行動預點，讓每杯咖啡從下單就開始享受</h1>
+          }}>從夥伴洞察出發，重塑星巴克行動預點</h1>
 
           {/* 副標題 */}
           <p style={{
