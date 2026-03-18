@@ -621,26 +621,37 @@ function OptCard({ item, isDesktop, index }) {
           <img src={item.after} alt={item.title} style={{ width: "100%", display: "block", mixBlendMode: item.removeWhiteBg ? "multiply" : "normal" }} />
         </div>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-          <div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, alignItems: isDesktop ? "start" : "stretch" }}>
+          {/* BEFORE */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{
               display: "inline-block",
               fontFamily: "Menlo, monospace", fontSize: 10, fontWeight: 600,
               letterSpacing: "0.14em", color: "#999", background: `${GREEN}10`,
-              padding: "3px 10px", borderRadius: 4, marginBottom: 10,
+              padding: "3px 10px", borderRadius: 4, marginBottom: 10, flexShrink: 0,
             }}>BEFORE</span>
-            <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20`, width: item.beforeHeight ? "fit-content" : "100%" }}>
-              <img src={item.before} alt={`${item.title} before`} style={{ width: item.beforeHeight ? "auto" : "100%", height: item.beforeHeight || "auto", display: "block" }} />
+            <div style={{
+              borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20`,
+              width: (item.beforeHeight && isDesktop) ? "fit-content" : "100%",
+              flex: isDesktop ? "none" : 1,
+            }}>
+              <img src={item.before} alt={`${item.title} before`} style={{
+                width: (item.beforeHeight && isDesktop) ? "auto" : "100%",
+                height: (item.beforeHeight && isDesktop) ? item.beforeHeight : "100%",
+                display: "block",
+                objectFit: isDesktop ? "unset" : "cover",
+              }} />
             </div>
           </div>
-          <div>
+          {/* AFTER */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{
               display: "inline-block",
               fontFamily: "Menlo, monospace", fontSize: 10, fontWeight: 600,
               letterSpacing: "0.14em", color: "#fff", background: BRAND,
-              padding: "3px 10px", borderRadius: 4, marginBottom: 10,
+              padding: "3px 10px", borderRadius: 4, marginBottom: 10, flexShrink: 0,
             }}>AFTER</span>
-            <div style={{ borderRadius: 14, overflow: "hidden" }}>
+            <div style={{ borderRadius: 14, overflow: "hidden", flex: isDesktop ? "none" : 1 }}>
               <img src={item.after} alt={`${item.title} after`} style={{ width: "100%", display: "block" }} />
             </div>
           </div>
