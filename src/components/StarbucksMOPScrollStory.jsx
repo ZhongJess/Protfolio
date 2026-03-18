@@ -215,7 +215,7 @@ function SectionHero() {
             lineHeight: 1.86, maxWidth: 620,
             fontFamily: FONT, fontWeight: 300,
           }}>
-            從 App Store 2.1 顆星的用戶痛點出發，重塑星巴克行動預點體驗，聚焦 5 項核心問題並逐一設計解決方案。
+            2.1 顆星的負面評價中挖掘產品契機 ，我將門市夥伴的服務經驗數位化。針對行動預點最迫切的 5 項核心問題提供設計對策 ，讓「預約」真正實現省時與貼心的品牌初衷。
           </p>
 
           {/* Info Cards */}
