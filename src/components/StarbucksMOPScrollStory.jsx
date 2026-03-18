@@ -323,33 +323,47 @@ function SectionResearch() {
           從 App Store 5,007 則使用者評論入手，平均 2.1 顆星，聚焦出 5 項核心問題並逐一設計解決方案。
         </p>
 
-        {/* Rating banner */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap",
-          padding: "28px 36px", background: "#fff",
-          borderRadius: 20, marginBottom: 32,
-          border: `1px solid ${GREEN}15`,
-          boxShadow: `0 2px 20px ${GREEN}08`,
-        }}>
-          <div style={{
-            width: 64, height: 64, borderRadius: 16, background: BRAND,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 28, flexShrink: 0,
-          }}>☕</div>
-          <div>
-            <div style={{ fontFamily: FONT, fontSize: 15, color: GREEN, fontWeight: 700, marginBottom: 2 }}>Starbucks TW</div>
-            <div style={{ fontFamily: FONT, fontSize: 13, color: `${GREEN}80` }}>Starbucks Coffee Company</div>
-          </div>
-          <div style={{ marginLeft: isDesktop ? "auto" : 0, textAlign: isDesktop ? "right" : "left" }}>
-            <div style={{ fontFamily: FONT, fontSize: 52, fontWeight: 800, color: GREEN, lineHeight: 1 }}>2.1</div>
-            <div style={{ fontFamily: FONT, fontSize: 12, color: `${GREEN}80`, marginTop: 4 }}>滿分 5 分 · 5,007 則評分</div>
-          </div>
+        {/* App Store header image */}
+        <div style={{ marginBottom: 24 }}>
+          <img
+            src="/images/sbux-appstore-header.png"
+            alt="Starbucks TW App Store 評分與評論"
+            style={{ width: "100%", display: "block", borderRadius: 16 }}
+          />
         </div>
 
-        {/* App Store screenshot */}
-        <div style={{ borderRadius: 16, overflow: "hidden", border: `1px solid ${GREEN}20`, marginBottom: 56, boxShadow: `0 4px 24px ${GREEN}10` }}>
-          <img src="/images/sbux-reviews.webp" alt="App Store 用戶評論截圖" style={{ width: "100%", display: "block" }} />
-        </div>
+        {/* Scattered review cards */}
+        {isDesktop ? (
+          <div style={{ position: "relative", height: 560, marginBottom: 56 }}>
+            {/* UX card — left */}
+            <img src="/images/sbux-review-ux.png" alt="UX優化建議評論"
+              style={{ position: "absolute", left: "0%", top: "30%", width: "26%", transform: "rotate(-1.5deg)", borderRadius: 12, zIndex: 1 }} />
+            {/* Cancel card — top right */}
+            <img src="/images/sbux-review-cancel.png" alt="預約取餐取消評論"
+              style={{ position: "absolute", right: "0%", top: "3%", width: "28%", transform: "rotate(1deg)", borderRadius: 12, zIndex: 2 }} />
+            {/* Store card — center, on top */}
+            <img src="/images/sbux-review-store.png" alt="門市儲存常用評論"
+              style={{ position: "absolute", left: "27%", top: "10%", width: "30%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 3 }} />
+            {/* MOP card — center bottom */}
+            <img src="/images/sbux-review-mop.png" alt="行動預點評論"
+              style={{ position: "absolute", left: "38%", top: "55%", width: "26%", transform: "rotate(-1deg)", borderRadius: 12, zIndex: 3 }} />
+            {/* Time card — right bottom */}
+            <img src="/images/sbux-review-time.png" alt="取餐時間無法更改評論"
+              style={{ position: "absolute", right: "0%", top: "46%", width: "30%", transform: "rotate(1.5deg)", borderRadius: 12, zIndex: 4 }} />
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 40 }}>
+            {[
+              { src: "/images/sbux-review-ux.png",     alt: "UX優化建議" },
+              { src: "/images/sbux-review-store.png",  alt: "門市儲存常用" },
+              { src: "/images/sbux-review-cancel.png", alt: "預約取餐取消" },
+              { src: "/images/sbux-review-mop.png",    alt: "行動預點" },
+              { src: "/images/sbux-review-time.png",   alt: "取餐時間" },
+            ].map(({ src, alt }) => (
+              <img key={src} src={src} alt={alt} style={{ width: "100%", display: "block", borderRadius: 12 }} />
+            ))}
+          </div>
+        )}
 
         {/* 找出問題 / 並解決 */}
         <div style={{
