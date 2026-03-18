@@ -229,22 +229,19 @@ function SectionAbout() {
           gap: isDesktop ? 72 : 40,
           alignItems: "center",
         }}>
-          {/* 左欄：手機截圖 */}
+          {/* 左欄：App Demo 影片 */}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* 圖片佔位（圖片補上後換成 <img src="/images/about-phone.png" ...> ） */}
             <div style={{
               width: isDesktop ? 300 : 220, height: isDesktop ? 560 : 420,
-              borderRadius: 32, background: `${GREEN}15`,
-              border: `1px dashed ${GREEN}30`,
-              display: "flex", alignItems: "center", justifyContent: "center",
+              borderRadius: 32, overflow: "hidden",
               filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.15))",
             }}>
-              <img
-                src="/images/homepage/banner.png"
-                alt="Starbucks MOP App 介面截圖"
+              <video
+                src="/videos/sbux/stbx-demo.mov"
+                autoPlay loop muted playsInline
                 style={{
                   width: "100%", height: "100%",
-                  objectFit: "cover", borderRadius: 32, display: "block",
+                  objectFit: "cover", display: "block",
                 }}
               />
             </div>
