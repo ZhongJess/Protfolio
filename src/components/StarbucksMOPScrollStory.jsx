@@ -202,24 +202,6 @@ function SectionAbout() {
 }
 
 // ── RESEARCH（App Store 評論分析）────────────────────────────────────────────
-const REVIEWS = [
-  {
-    stars: 4, tag: "UX 建議",
-    author: "Tingyu0721 · 2023/10/11",
-    text: "門市可以有個提醒服務用戶，下次登入要用新密碼。並且建議增加一個在個別門市一起搜查，讓顧客能更快速地找到合適門市。",
-  },
-  {
-    stars: 3, tag: "功能建議",
-    author: "Lee Da · 2023/11/15",
-    text: "行動預點連結通告可改進，且小額儲值需求高——希望能提供 100 元以下的儲值選項，方便顧客彈性使用。",
-  },
-  {
-    stars: 3, tag: "手機適配",
-    author: "MoMei Chou",
-    text: "使用 iPhone SE(2020) 操作行動預點時，右側的「時間調整」按鈕因螢幕較小而難以點擊，希望能優化介面讓各種手機都能流暢使用。",
-  },
-];
-
 const PAIN_SUMMARY = [
   { no: "01", title: "特殊牛奶選項不明確",     desc: "植物奶加購入口隱藏，顧客難以辨識如何客製飲品。" },
   { no: "02", title: "無法設置常用門市",       desc: "每次預點都需重新搜尋門市，流程繁瑣且費時。" },
@@ -273,41 +255,74 @@ function SectionResearch() {
           />
         </div>
 
-        {/* Review cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 48 }}>
-          {REVIEWS.map(({ stars, author, text, tag }) => (
-            <div key={author} style={{
-              padding: "20px 24px", background: "#FAFAFA",
-              borderRadius: 14, border: "1px solid #E8E5E0",
+        {/* 找出問題 / 並解決 */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: isDesktop ? "1fr 2fr" : "1fr",
+          gap: isDesktop ? 48 : 32,
+          alignItems: "center",
+          marginTop: 8,
+        }}>
+          {/* 左側：大字標題 */}
+          <div>
+            <div style={{
+              fontFamily: "'Noto Sans TC', 'PingFang TC', sans-serif",
+              fontSize: isDesktop ? 52 : 40,
+              fontWeight: 700,
+              color: BRAND,
+              lineHeight: 1.15,
+              marginBottom: isDesktop ? 20 : 16,
+              letterSpacing: "-1px",
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10, flexWrap: "wrap" }}>
-                <span style={{ color: "#F5A623", fontSize: 14, letterSpacing: 2 }}>
-                  {"★".repeat(stars)}{"☆".repeat(5 - stars)}
-                </span>
-                <span style={{ fontFamily: FONT, fontSize: 12, color: "#aaa" }}>{author}</span>
-                <span style={{
-                  marginLeft: "auto", padding: "3px 12px", borderRadius: 9999,
-                  background: BG, color: GREEN,
-                  fontFamily: FONT, fontSize: 11, fontWeight: 600,
-                }}>{tag}</span>
-              </div>
-              <p style={{ fontFamily: FONT, fontSize: 14, color: "#444", lineHeight: 1.75, margin: 0 }}>{text}</p>
+              找出問題
             </div>
-          ))}
-        </div>
+            <div style={{
+              fontFamily: "'Noto Sans TC', 'PingFang TC', sans-serif",
+              fontSize: isDesktop ? 68 : 52,
+              fontWeight: 700,
+              color: GREEN,
+              lineHeight: 1.1,
+              letterSpacing: "-1.5px",
+            }}>
+              並解決
+            </div>
+          </div>
 
-        {/* Pain point summary — 5 問題 */}
-        <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "1fr 1fr 1fr" : "1fr", gap: 14 }}>
-          {PAIN_SUMMARY.map(({ no, title, desc }) => (
-            <div key={no} style={{
-              padding: "24px", borderRadius: 14,
-              border: `1px solid ${GREEN}20`, background: `${GREEN}04`,
-            }}>
-              <div style={{ fontFamily: "Menlo, monospace", fontSize: 10, color: BRAND, letterSpacing: "0.1em", marginBottom: 10 }}>{no}</div>
-              <div style={{ fontFamily: FONT, fontSize: 16, fontWeight: 600, color: GREEN, marginBottom: 8 }}>{title}</div>
-              <div style={{ fontFamily: FONT, fontSize: 14, color: `${GREEN}BB`, lineHeight: 1.75 }}>{desc}</div>
-            </div>
-          ))}
+          {/* 右側：深綠圓角卡片 + 編號清單 */}
+          <div style={{
+            background: BRAND,
+            borderRadius: 28,
+            padding: isDesktop ? "44px 52px" : "32px 28px",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            {/* 裝飾性大數字 */}
+            <div style={{
+              position: "absolute", top: -20, right: 20,
+              fontFamily: "Georgia, serif",
+              fontSize: isDesktop ? 160 : 120,
+              fontWeight: 800,
+              color: "rgba(255,255,255,0.08)",
+              lineHeight: 1,
+              userSelect: "none",
+              pointerEvents: "none",
+            }}>5</div>
+
+            <ol style={{ margin: 0, padding: "0 0 0 24px" }}>
+              {PAIN_SUMMARY.map(({ no, title }) => (
+                <li key={no} style={{
+                  fontFamily: "'Noto Sans TC', 'PingFang TC', sans-serif",
+                  fontSize: isDesktop ? 20 : 16,
+                  fontWeight: 600,
+                  color: "#fff",
+                  lineHeight: 1.9,
+                  paddingLeft: 8,
+                }}>
+                  {title}
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>
