@@ -588,7 +588,7 @@ function OptCard({ item, isDesktop, index }) {
               padding: "3px 10px", borderRadius: 4, marginBottom: 10,
             }}>AFTER</span>
             <div style={{ borderRadius: 14, overflow: "hidden" }}>
-              <img src={item.after} alt={`${item.title} after`} style={{ width: "100%", display: "block", mixBlendMode: "multiply" }} />
+              <img src={item.after} alt={`${item.title} after`} style={{ width: "100%", display: "block" }} />
             </div>
           </div>
         </div>
