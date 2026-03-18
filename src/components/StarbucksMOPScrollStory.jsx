@@ -187,7 +187,7 @@ function SectionHero() {
             lineHeight: 1.55, letterSpacing: "-0.3px",
           }}>彈性省時，預約星體驗</div>
           <img
-            src="/images/banner.png"
+            src="/images/homepage/banner.png"
             alt="Starbucks MOP App 裝置展示"
             style={{
               width: isDesktop ? "75%" : "60%",
@@ -240,7 +240,7 @@ function SectionAbout() {
               filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.15))",
             }}>
               <img
-                src="/images/banner.png"
+                src="/images/homepage/banner.png"
                 alt="Starbucks MOP App 介面截圖"
                 style={{
                   width: "100%", height: "100%",
@@ -326,7 +326,7 @@ function SectionResearch() {
         {/* App Store header image */}
         <div style={{ marginBottom: 24 }}>
           <img
-            src="/images/sbux-appstore-header.png"
+            src="/images/sbux/sbux-appstore-header.png"
             alt="Starbucks TW App Store 評分與評論"
             style={{ width: "100%", display: "block", borderRadius: 16 }}
           />
@@ -336,29 +336,29 @@ function SectionResearch() {
         {isDesktop ? (
           <div style={{ position: "relative", height: 560, marginBottom: 56 }}>
             {/* UX card — left */}
-            <img src="/images/sbux-review-ux.png" alt="UX優化建議評論"
+            <img src="/images/sbux/sbux-review-ux.png" alt="UX優化建議評論"
               style={{ position: "absolute", left: "0%", top: "30%", width: "26%", transform: "rotate(-1.5deg)", borderRadius: 12, zIndex: 1 }} />
             {/* Cancel card — top right */}
-            <img src="/images/sbux-review-cancel.png" alt="預約取餐取消評論"
+            <img src="/images/sbux/sbux-review-cancel.png" alt="預約取餐取消評論"
               style={{ position: "absolute", right: "0%", top: "3%", width: "28%", transform: "rotate(1deg)", borderRadius: 12, zIndex: 2 }} />
             {/* Store card — center, on top */}
-            <img src="/images/sbux-review-store.png" alt="門市儲存常用評論"
+            <img src="/images/sbux/sbux-review-store.png" alt="門市儲存常用評論"
               style={{ position: "absolute", left: "27%", top: "10%", width: "30%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 3 }} />
             {/* MOP card — center bottom */}
-            <img src="/images/sbux-review-mop.png" alt="行動預點評論"
+            <img src="/images/sbux/sbux-review-mop.png" alt="行動預點評論"
               style={{ position: "absolute", left: "38%", top: "55%", width: "26%", transform: "rotate(-1deg)", borderRadius: 12, zIndex: 3 }} />
             {/* Time card — right bottom */}
-            <img src="/images/sbux-review-time.png" alt="取餐時間無法更改評論"
+            <img src="/images/sbux/sbux-review-time.png" alt="取餐時間無法更改評論"
               style={{ position: "absolute", right: "0%", top: "46%", width: "30%", transform: "rotate(1.5deg)", borderRadius: 12, zIndex: 4 }} />
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 40 }}>
             {[
-              { src: "/images/sbux-review-ux.png",     alt: "UX優化建議" },
-              { src: "/images/sbux-review-store.png",  alt: "門市儲存常用" },
-              { src: "/images/sbux-review-cancel.png", alt: "預約取餐取消" },
-              { src: "/images/sbux-review-mop.png",    alt: "行動預點" },
-              { src: "/images/sbux-review-time.png",   alt: "取餐時間" },
+              { src: "/images/sbux/sbux-review-ux.png",     alt: "UX優化建議" },
+              { src: "/images/sbux/sbux-review-store.png",  alt: "門市儲存常用" },
+              { src: "/images/sbux/sbux-review-cancel.png", alt: "預約取餐取消" },
+              { src: "/images/sbux/sbux-review-mop.png",    alt: "行動預點" },
+              { src: "/images/sbux/sbux-review-time.png",   alt: "取餐時間" },
             ].map(({ src, alt }) => (
               <img key={src} src={src} alt={alt} style={{ width: "100%", display: "block", borderRadius: 12 }} />
             ))}
@@ -407,7 +407,7 @@ function SectionResearch() {
                 zIndex: 1,
               }}>
                 <img
-                  src="/images/sbux-after-01.webp"
+                  src="/images/sbux/sbux-after-01.webp"
                   alt=""
                   style={{
                     width: "100%", display: "block",
@@ -437,10 +437,10 @@ function SectionResearch() {
 
 // ── DESIGN SYSTEM（Figma 中排在優化方案前）────────────────────────────────────
 const DS_ITEMS = [
-  { label: "TYPOGRAPHY", src: "/images/sbux-ds-typography.png", alt: "Typography 字體系統" },
-  { label: "COLOUR",     src: "/images/sbux-ds-colour.png",     alt: "Colour 色彩系統"     },
-  { label: "ICONS",      src: "/images/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "50%" },
-  { label: "ASSETS",     src: "/images/sbux-ds-assets.png",     alt: "Assets UI 元件"       },
+  { label: "TYPOGRAPHY", src: "/images/sbux/sbux-ds-typography.png", alt: "Typography 字體系統" },
+  { label: "COLOUR",     src: "/images/sbux/sbux-ds-colour.png",     alt: "Colour 色彩系統"     },
+  { label: "ICONS",      src: "/images/sbux/sbux-ds-icons.png",      alt: "Icons 圖示集",  cardWidth: "50%" },
+  { label: "ASSETS",     src: "/images/sbux/sbux-ds-assets.png",     alt: "Assets UI 元件"       },
 ];
 
 function SectionDesign() {
@@ -504,31 +504,31 @@ const OPT_ITEMS = [
   {
     no: "01", title: "取餐門市頁面", sub: "設置常用門市",
     desc: "快速找到常用的取餐門市，對於新手用戶也能快速找到附近取餐門市，並決定哪種取餐方式較為方便。",
-    after: "/images/sbux-after-01.webp",
+    after: "/images/sbux/sbux-after-01.webp",
     singleImage: true,
   },
   {
     no: "02", title: "飲品冷熱同一品項", sub: "冷熱我都在",
     desc: "飲品冷熱不同地方，常造成顧客點錯，或是找不到適合溫度的飲品。",
-    before: "/images/sbux-before-02.webp",
-    after:  "/images/sbux-after-02.webp",
+    before: "/images/sbux/sbux-before-02.webp",
+    after:  "/images/sbux/sbux-after-02.webp",
   },
   {
     no: "03", title: "植物奶快速選", sub: "特殊牛奶選項",
     desc: "無需另外點開跳轉頁面，同頁面選擇是否加購換特殊植物奶，減少操作步驟。",
-    before: "/images/sbux-before-03.webp",
-    after:  "/images/sbux-after-03.webp",
+    before: "/images/sbux/sbux-before-03.webp",
+    after:  "/images/sbux/sbux-after-03.webp",
   },
   {
     no: "04", title: "快速儲值", sub: "小額也行",
     desc: "在下單前看到卡片餘額，避免下單後發現餘額不足需重新選購，且提供小額線上儲值。",
-    after: "/images/sbux-after-04.webp",
+    after: "/images/sbux/sbux-after-04.webp",
     singleImage: true,
   },
   {
     no: "05", title: "訂單完成", sub: "快與友人分享",
     desc: "訂單完成後跳出通知與詳細支付資訊，提供截圖、分享或致電門市三種方式。",
-    after: "/images/sbux-feature-05.webp",
+    after: "/images/sbux/sbux-feature-05.webp",
     singleImage: true,
   },
 ];

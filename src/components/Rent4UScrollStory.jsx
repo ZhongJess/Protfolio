@@ -213,7 +213,7 @@ function ProductScreenshot() {
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
       <img
-        src="/images/rent4u-hero.webp"
+        src="/images/rent4u/rent4u-hero.webp"
         alt="Rent4U 產品網站首頁截圖"
         style={{ width: "100%", height: "auto", display: "block" }}
       />
@@ -557,9 +557,9 @@ function SectionResearch() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ height: 417, borderRadius: 16, overflow: "hidden", width: "100%", flexShrink: 0, position: "relative" }}>
               <picture style={{ position: "absolute", width: "110.84%", height: "100%", left: "-5.42%", top: 0 }}>
-                <source media="(max-width: 767px)" srcSet="/images/market-research-mobile.png" />
+                <source media="(max-width: 767px)" srcSet="/images/rent4u/market-research-mobile.png" />
                 <img
-                  src="/images/market-research.webp"
+                  src="/images/rent4u/market-research.webp"
                   alt="市場研究"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -589,7 +589,7 @@ function SectionResearch() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ height: 417, borderRadius: 16, overflow: "hidden", width: "100%", flexShrink: 0, position: "relative" }}>
               <img
-                src="/images/stakeholder-interview.webp"
+                src="/images/rent4u/stakeholder-interview.webp"
                 alt="利害關係人訪談"
                 style={{ position: "absolute", width: "110.84%", height: "100%", objectFit: "cover", left: "-5.42%", top: 0 }}
               />
@@ -1347,7 +1347,7 @@ function SectionImpact() {
                 position: "relative",
               }}>
                 <img
-                  src="/images/inquiry-form.png"
+                  src="/images/rent4u/inquiry-form.png"
                   alt="新北市長照輔具無障礙評估表—傳統紙本"
                   style={{ width: "100%", display: "block" }}
                 />
@@ -1432,7 +1432,7 @@ function SectionImpact() {
             {/* ❶ 手風琴 */}
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-                <img src="/images/gmfcs-accordion.webp" alt="手風琴選單設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+                <img src="/images/rent4u/gmfcs-accordion.webp" alt="手風琴選單設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -1448,7 +1448,7 @@ function SectionImpact() {
             {/* ❷ 圖文卡片 */}
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-                <img src="/images/gmfcs-card.webp" alt="圖文卡片設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+                <img src="/images/rent4u/gmfcs-card.webp" alt="圖文卡片設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -1464,7 +1464,7 @@ function SectionImpact() {
             {/* ❸ 垂直標籤頁 */}
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid #E8E5E0", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-                <img src="/images/gmfcs-tabs.png" alt="垂直標籤頁設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
+                <img src="/images/rent4u/gmfcs-tabs.png" alt="垂直標籤頁設計" style={{ width: "100%", display: "block", objectFit: "cover" }} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -1491,7 +1491,7 @@ function SectionImpact() {
           {/* 截圖主體 */}
           <div style={{ borderRadius: 12, overflow: "hidden" }}>
             <img
-              src="/images/jianyi.webp"
+              src="/images/rent4u/jianyi.webp"
               alt="回覆建議單介面截圖"
               style={{ width: "100%", display: "block" }}
             />
@@ -1509,7 +1509,7 @@ function SectionImpact() {
             串連Line功能考慮到照護者的高壓力，我們捨棄複雜的 App，選擇 LINE 作為服務閉環，確保專業建議單能直接推送到家屬手中，確定輔具沒問題後，再進行線上租賃。
           </p>
           <img
-            src="/images/line.webp"
+            src="/images/rent4u/line.webp"
             alt="串連 LINE 系統截圖：Line Message、Line Login、Line Pay"
             style={{ width: "100%", display: "block", borderRadius: 12 }}
           />
@@ -1534,7 +1534,7 @@ function SectionImpact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
                 <div style={{ height: 224, borderRadius: 10, overflow: "hidden", border: "1px solid #eeeeee" }}>
-                  <img src="/images/notion-timeline.webp" alt="Notion 專案時程" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+                  <img src="/images/rent4u/notion-timeline.webp" alt="Notion 專案時程" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1551,7 +1551,7 @@ function SectionImpact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
                 <div style={{ height: 224, borderRadius: 10, overflow: "hidden", border: "1px solid #eeeeee" }}>
-                  <img src="/images/notion-issues.webp" alt="Notion Issue 管理" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+                  <img src="/images/rent4u/notion-issues.webp" alt="Notion Issue 管理" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1570,7 +1570,7 @@ function SectionImpact() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ background: "#F5F4F2", borderRadius: 16, padding: 8 }}>
               <div style={{ height: 224, borderRadius: 10, overflow: "hidden" }}>
-                <img src="/images/miro-ia.webp" alt="Miro 資訊架構與使用者地圖" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <img src="/images/rent4u/miro-ia.webp" alt="Miro 資訊架構與使用者地圖" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1599,7 +1599,7 @@ function SectionImpact() {
           {/* 截圖 */}
           <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)", border: "1px solid #E8E8E8", position: "relative" }}>
             <img
-              src="/images/design-guide.webp"
+              src="/images/rent4u/design-guide.webp"
               alt="Rent4U 設計系統：品牌色彩、字體、元件庫"
               style={{ width: "100%", display: "block" }}
             />
@@ -1632,9 +1632,9 @@ function SectionOutro() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: isDesktop ? "repeat(3, 1fr)" : "1fr", gap: 24 }}>
             {[
-              { icon: "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a", img: "/images/value-product.jpg", title: "使用者端", desc: "減少照護者的輔具選擇焦慮" },
-              { icon: "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4", img: "/images/value-user.jpg",    title: "商業端",  desc: "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。" },
-              { icon: "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22", img: "/images/value-business.png", title: "產品端",  desc: "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。" },
+              { icon: "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a", img: "/images/rent4u/value-product.jpg", title: "使用者端", desc: "減少照護者的輔具選擇焦慮" },
+              { icon: "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4", img: "/images/rent4u/value-user.jpg",    title: "商業端",  desc: "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。" },
+              { icon: "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22", img: "/images/rent4u/value-business.png", title: "產品端",  desc: "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。" },
             ].map((card, i) => (
               <div key={i} style={{ display: "flex", flexDirection: "column", gap: 24, borderRadius: 8 }}>
                 <div style={{ height: 252, borderRadius: 12, overflow: "hidden", position: "relative", width: "100%", flexShrink: 0 }}>
@@ -1677,7 +1677,7 @@ function SectionStrategy() {
             商業策略
           </h2>
           <img
-            src={isDesktop ? "/images/biz-strategy.webp" : "/images/biz-strategy-mobile.webp"}
+            src={isDesktop ? "/images/rent4u/biz-strategy.webp" : "/images/rent4u/biz-strategy-mobile.webp"}
             alt="商業策略：價值、供給、需求、財務"
             style={{ width: "100%", display: "block", borderRadius: 16 }}
           />
