@@ -614,11 +614,14 @@ function OptCard({ item, isDesktop, index }) {
     <div>
       {item.singleImage ? (
         <div style={{
-          borderRadius: 20, overflow: "hidden",
-          boxShadow: item.imgMaxWidth ? "none" : `0 8px 40px ${GREEN}14`,
+          boxShadow: (item.imgMaxWidth || item.removeWhiteBg) ? "none" : `0 8px 40px ${GREEN}14`,
           maxWidth: item.imgMaxWidth || 320, margin: "0 auto",
         }}>
-          <img src={item.after} alt={item.title} style={{ width: "100%", display: "block", mixBlendMode: item.removeWhiteBg ? "multiply" : "normal" }} />
+          <img src={item.after} alt={item.title} style={{
+            width: "100%", display: "block",
+            borderRadius: item.removeWhiteBg ? 0 : 20,
+            mixBlendMode: item.removeWhiteBg ? "multiply" : "normal",
+          }} />
         </div>
       ) : (
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, alignItems: isDesktop ? "start" : "stretch" }}>
