@@ -256,7 +256,7 @@ function SectionAbout() {
         fontSize: isDesktop ? 160 : 100,
         fontWeight: 800, color: `${BRAND}18`,
         lineHeight: 1, userSelect: "none", pointerEvents: "none",
-        letterSpacing: "-4px",
+        letterSpacing: "-4px", width: "100%", overflow: "hidden",
       }}>ABOUT</div>
 
       <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative" }}>
@@ -345,7 +345,7 @@ function SectionResearch() {
         fontSize: isDesktop ? 150 : 90,
         fontWeight: 800, color: `${BRAND}12`,
         lineHeight: 1, userSelect: "none", pointerEvents: "none",
-        letterSpacing: "-4px",
+        letterSpacing: "-4px", width: "100%", overflow: "hidden",
       }}>RESEARCH</div>
 
       <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative" }}>
@@ -503,7 +503,7 @@ function SectionDesign() {
         fontSize: isDesktop ? 120 : 72,
         fontWeight: 800, color: `${BRAND}12`,
         lineHeight: 1, userSelect: "none", pointerEvents: "none",
-        letterSpacing: "-3px", whiteSpace: "nowrap",
+        letterSpacing: "-3px", whiteSpace: "nowrap", width: "100%", overflow: "hidden",
       }}>Design System</div>
 
       <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative" }}>
@@ -717,7 +717,7 @@ function SectionOptimization() {
           fontSize: isDesktop ? 140 : 80,
           fontWeight: 800, color: `${BRAND}12`,
           lineHeight: 1, userSelect: "none", pointerEvents: "none",
-          letterSpacing: "-3px", whiteSpace: "nowrap",
+          letterSpacing: "-3px", whiteSpace: "nowrap", width: "100%", overflow: "hidden",
         }}>Optimization</div>
 
         <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative" }}>
