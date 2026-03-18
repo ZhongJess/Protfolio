@@ -45,7 +45,6 @@ function SectionNav({ active }) {
       height: 56,
       background: `${GREEN}F0`,
       backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
-      borderBottom: `1px solid ${ACCENT}40`,
       fontFamily: FONT, overflowX: "auto",
     }}>
       <span style={{
