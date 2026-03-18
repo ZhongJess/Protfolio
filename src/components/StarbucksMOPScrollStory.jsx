@@ -507,7 +507,7 @@ const OPT_ITEMS = [
   {
     no: "02", title: "飲品冷熱同一品項", sub: "冷熱我都在",
     desc: "飲品冷熱不同地方，常造成顧客點錯，或是找不到適合溫度的飲品。",
-    before: "/images/sbux/sbux-before-02.webp",
+    before: "/images/sbux/sbux-before-02.webp", beforeHeight: 490,
     after:  "/images/sbux/sbux-after-02.webp",
   },
   {
@@ -577,7 +577,7 @@ function OptCard({ item, isDesktop, index }) {
               padding: "3px 10px", borderRadius: 4, marginBottom: 10,
             }}>BEFORE</span>
             <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20` }}>
-              <img src={item.before} alt={`${item.title} before`} style={{ width: "100%", display: "block" }} />
+              <img src={item.before} alt={`${item.title} before`} style={{ width: "100%", display: "block", height: item.beforeHeight || "auto", objectFit: "cover" }} />
             </div>
           </div>
           <div>
