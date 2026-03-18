@@ -7,8 +7,8 @@ const FONT  = "Inter, 'Noto Sans TC', system-ui, sans-serif";
 const TC    = "'Noto Sans TC', 'PingFang TC', sans-serif";
 const BG    = "#F5F4F2";
 const GREEN = "#111111";
-const BRAND = "#FF6200";
-const ACCENT = "#FF6200";
+const BRAND = "#306242";
+const ACCENT = "#306242";
 
 function useIsDesktop() {
   const [v, setV] = useState(window.innerWidth >= 768);
