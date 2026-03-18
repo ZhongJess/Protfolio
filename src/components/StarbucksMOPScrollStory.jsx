@@ -537,20 +537,36 @@ function SectionDesign() {
               margin: "0 0 20px",
             }}>COLOUR</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {/* Row 1：Starbucks Green 全寬，高度最高 */}
-              <div style={{
-                background: BRAND, borderRadius: 14, height: 96,
-                display: "flex", flexDirection: "column",
-                justifyContent: "flex-end", padding: "10px 16px",
-              }}>
-                <span style={{
-                  fontFamily: "Menlo, monospace", fontSize: 9,
-                  color: `${BG}BB`, letterSpacing: "0.1em",
-                }}>{BRAND}</span>
-                <span style={{
-                  fontFamily: FONT, fontSize: 11, fontWeight: 600,
-                  color: BG, letterSpacing: "0.06em", marginTop: 2,
-                }}>STARBUCKS GREEN</span>
+              {/* Row 1：Starbucks Green（寬 2/3）＋ Accent Green（窄 1/3）並排 */}
+              <div style={{ display: "flex", gap: 6 }}>
+                <div style={{
+                  flex: 2, height: 112, borderRadius: 14, background: BRAND,
+                  display: "flex", flexDirection: "column",
+                  justifyContent: "flex-end", padding: "10px 16px",
+                }}>
+                  <span style={{
+                    fontFamily: "Menlo, monospace", fontSize: 9,
+                    color: `${BG}BB`, letterSpacing: "0.1em",
+                  }}>{BRAND}</span>
+                  <span style={{
+                    fontFamily: FONT, fontSize: 11, fontWeight: 600,
+                    color: BG, letterSpacing: "0.06em", marginTop: 2,
+                  }}>STARBUCKS GREEN</span>
+                </div>
+                <div style={{
+                  flex: 1, height: 112, borderRadius: 14, background: ACCENT,
+                  display: "flex", flexDirection: "column",
+                  justifyContent: "flex-end", padding: "10px 12px",
+                }}>
+                  <span style={{
+                    fontFamily: "Menlo, monospace", fontSize: 9,
+                    color: `${BG}BB`, letterSpacing: "0.1em",
+                  }}>{ACCENT}</span>
+                  <span style={{
+                    fontFamily: FONT, fontSize: 10, fontWeight: 600,
+                    color: BG, marginTop: 2,
+                  }}>ACCENT GREEN</span>
+                </div>
               </div>
               {/* Row 2：Light Green ＋ House Green */}
               <div style={{ display: "flex", gap: 6 }}>
