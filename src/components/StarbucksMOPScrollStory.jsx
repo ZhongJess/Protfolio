@@ -343,7 +343,7 @@ function SectionResearch() {
               style={{ position: "absolute", right: "0%", top: "3%", width: "42%", transform: "rotate(1deg)", borderRadius: 12, zIndex: 2 }} />
             {/* Store card — center, on top */}
             <img src="/images/sbux/sbux-review-store.png" alt="門市儲存常用評論"
-              style={{ position: "absolute", left: "27%", top: "10%", width: "45%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 3 }} />
+              style={{ position: "absolute", left: "27%", top: "10%", width: "45%", transform: "rotate(-2deg)", borderRadius: 12, zIndex: 5 }} />
             {/* MOP card — center bottom */}
             <img src="/images/sbux/sbux-review-mop.png" alt="行動預點評論"
               style={{ position: "absolute", left: "38%", top: "55%", width: "26%", transform: "rotate(-1deg)", borderRadius: 12, zIndex: 3 }} />
