@@ -576,7 +576,7 @@ function OptCard({ item, isDesktop, index }) {
               letterSpacing: "0.14em", color: "#999", background: `${GREEN}10`,
               padding: "3px 10px", borderRadius: 4, marginBottom: 10,
             }}>BEFORE</span>
-            <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20` }}>
+            <div style={{ borderRadius: 14, overflow: "hidden", border: `1px solid ${GREEN}20`, width: item.beforeHeight ? "fit-content" : "100%" }}>
               <img src={item.before} alt={`${item.title} before`} style={{ width: item.beforeHeight ? "auto" : "100%", height: item.beforeHeight || "auto", display: "block" }} />
             </div>
           </div>
