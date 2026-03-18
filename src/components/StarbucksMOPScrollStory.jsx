@@ -77,112 +77,124 @@ function SectionNav({ active }) {
 }
 
 // ── HERO ─────────────────────────────────────────────────────────────────────
-const INFO_CARDS = [
-  { label: "類型", value: "UX/UI Redesign"   },
-  { label: "工具", value: "Figma"             },
-  { label: "研究", value: "App Store 評論分析" },
-  { label: "發布", value: "2024"              },
-];
+function CoffeeCupSVG({ size = 280 }) {
+  return (
+    <svg viewBox="0 0 280 280" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        {/* Arc for curved "MOBILE ORDER PAY" text */}
+        <path id="textCurve" d="M 18,195 A 122,122 0 1,1 262,195" fill="none" />
+      </defs>
+
+      {/* Curved text label */}
+      <text fontFamily="'Georgia', serif" fontSize="17" fontWeight="900" fill="#1E3932" letterSpacing="4">
+        <textPath href="#textCurve" startOffset="50%" textAnchor="middle">
+          MOBILE ORDER · PAY
+        </textPath>
+      </text>
+
+      {/* Left arm */}
+      <path d="M 42,272 Q 62,242 88,230 Q 98,225 108,223"
+        stroke="#E8A278" strokeWidth="40" fill="none" strokeLinecap="round" />
+      {/* Right arm */}
+      <path d="M 238,272 Q 218,242 192,230 Q 182,225 172,223"
+        stroke="#E8A278" strokeWidth="40" fill="none" strokeLinecap="round" />
+
+      {/* Cup shadow */}
+      <ellipse cx="140" cy="256" rx="46" ry="7" fill="rgba(0,0,0,0.09)" />
+
+      {/* Cup body */}
+      <path d="M 88,112 L 192,112 L 177,248 L 103,248 Z"
+        fill="white" stroke="#DDD9D0" strokeWidth="1.5" />
+
+      {/* Cup sleeve */}
+      <path d="M 91,158 L 189,158 L 182,208 L 98,208 Z" fill="#F0EAE0" />
+
+      {/* Lid base */}
+      <rect x="82" y="99" width="116" height="17" rx="5" fill="#EAE4DA" />
+      {/* Lid dome arc */}
+      <path d="M 108,99 Q 140,83 172,99" stroke="#D4CEBF" strokeWidth="1.5" fill="none" />
+
+      {/* Straw */}
+      <rect x="136" y="60" width="9" height="42" rx="4.5" fill="#C0B8AE" />
+
+      {/* Starbucks logo circle on cup */}
+      <circle cx="140" cy="182" r="27" fill="#036242" />
+      <circle cx="140" cy="182" r="22" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
+      <text x="140" y="191" textAnchor="middle" fontSize="24" fill="white" fontWeight="700" fontFamily="serif">★</text>
+    </svg>
+  );
+}
 
 function SectionHero() {
   const isDesktop = useIsDesktop();
+  const cupSize   = isDesktop ? 280 : 210;
   return (
-    <section style={{ background: GREEN, fontFamily: FONT, overflow: "hidden" }}>
+    <section style={{ background: BG, fontFamily: FONT, overflow: "hidden", flexShrink: 0 }}>
+      {/* 首頁 breadcrumb */}
       <div style={{
-        padding: isDesktop ? "80px 40px 0" : "48px 20px 40px",
-        maxWidth: 1080, margin: "0 auto",
-      }}>
-        {/* 兩欄：左文字 + 右裝置 */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: isDesktop ? "1fr 420px" : "1fr",
-          gap: isDesktop ? 40 : 0,
-          alignItems: "center",
-        }}>
-          {/* 左欄：文字內容 */}
-          <div>
-            {/* Tags */}
-            <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-              {["UX / UI", "Redesign", "Mobile App"].map(tag => (
-                <span key={tag} style={{
-                  padding: "4px 14px", borderRadius: 9999,
-                  border: `1px solid ${BG}40`, color: `${BG}CC`,
-                  fontSize: 12, fontWeight: 500, letterSpacing: "0.06em",
-                }}>{tag}</span>
-              ))}
-            </div>
+        padding: isDesktop ? "14px 56px" : "12px 24px",
+        fontSize: 13, color: `${GREEN}70`, fontFamily: FONT,
+        letterSpacing: "0.02em",
+      }}>首頁</div>
 
-            {/* 大標題 */}
-            <h1 style={{
-              fontFamily: "Georgia, serif",
-              fontSize: isDesktop ? "clamp(40px, 5vw, 68px)" : 36,
-              fontWeight: 800, margin: "0 0 20px",
-              letterSpacing: "-1.5px", lineHeight: 1.05, color: BG,
-            }}>
-              Starbucks<br />行動預點 MOP
-            </h1>
-            <p style={{
-              fontSize: isDesktop ? 18 : 16, color: `${BG}BB`,
-              lineHeight: 1.75, margin: "0 0 40px", maxWidth: 480,
-            }}>
-              彈性省時，預約星體驗——重新設計星巴克行動預點（Mobile Order &amp; Pay）的點餐流程。
-            </p>
-
-            {/* Info grid */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 1, background: `${BG}15`,
-              border: `1px solid ${BG}15`, borderRadius: 12, overflow: "hidden",
-              maxWidth: 420,
-            }}>
-              {INFO_CARDS.map(({ label, value }) => (
-                <div key={label} style={{ padding: "16px 20px", background: `${BG}08` }}>
-                  <div style={{ fontSize: 10, color: `${BG}60`, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
-                  <div style={{ fontSize: 14, color: BG, fontWeight: 600 }}>{value}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* 右欄：裝置照片 */}
-          {isDesktop && (
-            <div style={{
-              display: "flex", justifyContent: "center", alignItems: "flex-end",
-              paddingTop: 20,
-            }}>
-              <img
-                src="/images/banner.webp"
-                alt="Starbucks MOP App 裝置展示"
-                style={{
-                  width: "100%", maxWidth: 380,
-                  display: "block",
-                  filter: `drop-shadow(0 24px 48px rgba(0,0,0,0.45))`,
-                }}
-              />
-            </div>
-          )}
-        </div>
+      {/* Giant STARBUCKS heading */}
+      <div style={{ textAlign: "center", padding: "4px 16px 0", overflow: "hidden" }}>
+        <h1 style={{
+          fontFamily: "Georgia, serif",
+          fontSize: isDesktop ? "clamp(80px, 14vw, 192px)" : "clamp(52px, 18vw, 108px)",
+          fontWeight: 900, margin: 0,
+          letterSpacing: isDesktop ? "-5px" : "-3px",
+          lineHeight: 0.92, color: GREEN,
+        }}>STARBUCKS</h1>
       </div>
 
-      {/* 底部全寬 hero 圖（手機版才顯示裝置照）*/}
-      <div style={{ maxWidth: 1080, margin: isDesktop ? "0 auto" : "32px auto 0", padding: isDesktop ? "0 40px" : "0 20px" }}>
-        {/* 手機版顯示裝置照 */}
-        {!isDesktop && (
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <img
-              src="/images/banner.webp"
-              alt="Starbucks MOP App 裝置展示"
-              style={{
-                width: "60%", maxWidth: 240, display: "inline-block",
-                filter: "drop-shadow(0 16px 32px rgba(0,0,0,0.4))",
-              }}
-            />
-          </div>
-        )}
-        {/* sbux-hero.webp 全寬底圖 */}
-        <div style={{ borderRadius: isDesktop ? "16px 16px 0 0" : 0, overflow: "hidden", background: `${BG}20`, minHeight: 180 }}>
-          <img src="/images/sbux-hero.webp" alt="Starbucks MOP" style={{ width: "100%", display: "block" }} />
+      {/* Two-column: left (cup) + right (phone) */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
+        gap: isDesktop ? 48 : 0,
+        maxWidth: 1080, margin: "0 auto",
+        padding: isDesktop ? "28px 56px 80px" : "20px 24px 56px",
+        alignItems: "center",
+      }}>
+        {/* 左欄：行動預點 + SVG 咖啡杯 */}
+        <div style={{
+          display: "flex", flexDirection: "column",
+          alignItems: isDesktop ? "flex-start" : "center",
+        }}>
+          <div style={{
+            fontFamily: TC,
+            fontSize: isDesktop ? 30 : 22,
+            fontWeight: 700, color: GREEN,
+            marginBottom: isDesktop ? 28 : 20,
+            letterSpacing: "-0.5px",
+          }}>行動預點</div>
+          <CoffeeCupSVG size={cupSize} />
+        </div>
+
+        {/* 右欄：彈性省時 + 手機 */}
+        <div style={{
+          display: "flex", flexDirection: "column",
+          alignItems: isDesktop ? "flex-end" : "center",
+          paddingTop: isDesktop ? 0 : 32,
+        }}>
+          <div style={{
+            fontFamily: TC,
+            fontSize: isDesktop ? 24 : 18,
+            fontWeight: 600, color: GREEN,
+            marginBottom: isDesktop ? 28 : 20,
+            textAlign: isDesktop ? "right" : "center",
+            lineHeight: 1.55, letterSpacing: "-0.3px",
+          }}>彈性省時，預約星體驗</div>
+          <img
+            src="/images/banner.png"
+            alt="Starbucks MOP App 裝置展示"
+            style={{
+              width: isDesktop ? "75%" : "60%",
+              maxWidth: 300, display: "block",
+              filter: "drop-shadow(0 20px 48px rgba(0,0,0,0.18))",
+            }}
+          />
         </div>
       </div>
     </section>
