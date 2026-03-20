@@ -6,6 +6,19 @@ import T from "./tokens";
 // ── 作品集專案 ─────────────────────────────────────────────────────────────────
 export const PROJECTS = [
   {
+    id: "hoxinyi",
+    num: "00",
+    title: "好心驛 志工媒合平台",
+    tags: ["UX Research", "UI Design", "Usability Testing"],
+    tagColor: "#C7626E",
+    desc: "讓志工報名更簡單、培訓更清楚、交流更順暢——為台灣樸石人文關懷協會打造的志願服務媒合平台。",
+    year: "2025",
+    img: "/images/hoxinyi/cover.webp",
+    scrollStory: "hoxinyi",
+    impact: [],
+    sections: [],
+  },
+  {
     id: "rent4u",
     num: "00",
     title: "Rent4U 輔具租賃平台",
