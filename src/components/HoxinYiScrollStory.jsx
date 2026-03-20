@@ -523,8 +523,20 @@ function UserResearch() {
             gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
             gap: 24, marginBottom: 64,
           }}>
-            <img src={imgResearchInterview} alt="受訪者照片" style={{ width: "100%", borderRadius: 16, display: "block" }} />
-            <img src={imgResearchMaze} alt="受訪者照片" style={{ width: "100%", borderRadius: 16, display: "block" }} />
+            {[
+              { src: imgResearchInterview, label: "線上訪談" },
+              { src: imgResearchMaze,      label: "maze流程側錄" },
+            ].map(({ src, label }) => (
+              <div key={label}>
+                <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10" }}>
+                  <img src={src} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <p style={{
+                  fontFamily: FONT_TC, fontSize: 14, color: GRAY,
+                  textAlign: "center", margin: "10px 0 0",
+                }}>{label}</p>
+              </div>
+            ))}
           </div>
 
           {/* User Journey Map */}
