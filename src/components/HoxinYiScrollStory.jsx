@@ -21,7 +21,7 @@ import imgResultsCard01 from '../assets/hoxinyi/results-card-01.png';
 import imgResultsCard02 from '../assets/hoxinyi/results-card-02.png';
 import imgResultsCard03 from '../assets/hoxinyi/results-card-03.png';
 import imgResultsCard04 from '../assets/hoxinyi/results-card-04.png';
-import imgBanner from '../assets/hoxinyi/banner.png';
+import imgBanner from '../assets/hoxinyi/banner.webp';
 import imgTesterMvp from '../assets/hoxinyi/tester-mvp.png';
 
 // ── Design Tokens ─────────────────────────────────────────────────────────────
