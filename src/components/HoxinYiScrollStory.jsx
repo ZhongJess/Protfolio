@@ -525,7 +525,7 @@ function UserResearch() {
           }}>
             {[
               { src: imgResearchInterview, label: "線上訪談" },
-              { src: imgResearchMaze,      label: "maze流程側錄" },
+              { src: imgResearchMaze,      label: "A/B Testing 側錄｜Maze" },
             ].map(({ src, label }) => (
               <div key={label}>
                 <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10" }}>
