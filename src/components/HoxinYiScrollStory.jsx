@@ -550,7 +550,7 @@ function Results() {
             <div className={styles.testerBoxLabel}>測試者篩選方法</div>
             <div className={styles.testerGrid}>
               {[
-                { label: "原MVP",  desc: "模仿人文協會使用情境",             imgSrc: imgTesterMvp, highlight: false },
+                { label: "原MVP",  desc: "串接「樸石人文協會」資源，引入真實志工受測",             imgSrc: imgTesterMvp, highlight: false },
                 { label: "好心驛", desc: "測試過原MVP的測試者\n長期志工／自我成長求型", imgSrc: imgIaPersona, highlight: true  },
               ].map(p => (
                 <div key={p.label} className={styles.testerCol}>
