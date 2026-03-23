@@ -478,7 +478,7 @@ function Results() {
 
   const tableRows = [
     { label: "原MVP",  n: "7 人", misclick: "64.3%", time: "255.0s", success: "28.6%", error: "0%",    score: "27", highlight: false, hot: [2, 4] },
-    { label: "好心驛", n: "8 人", misclick: "47.2%", time: "838.3s", success: "37.5%", error: "12.5%", score: "34", highlight: false, hot: [1, 3] },
+    { label: "好心驛", n: "8 人", misclick: "47.2%", time: "838.3s", success: "37.5%", error: "12.5%", score: "34", highlight: false, hot: [3] },
   ];
 
   // `color` per metric is runtime data (TEAL vs RED), kept inline
