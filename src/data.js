@@ -22,7 +22,7 @@ export const PROJECTS = [
     id: "rent4u",
     num: "01",
     title: "Rent4U 輔具租賃平台",
-    tags: ["Designer", "Project Manager"],
+    tags: ["Market Research", "UX Strategy", "Design System", "PM"],
     tagColor: "#FF6200",
     desc: "讓輔具借用像借書一樣簡單——適配、諮詢、租賃三步驟無縫整合的數位平台。",
     year: "2025",
