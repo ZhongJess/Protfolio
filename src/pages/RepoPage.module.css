@@ -29,7 +29,7 @@
   gap: 20px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -124,6 +124,15 @@
   overflow: hidden;
 }
 
+/* Bottom row */
+.cardBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
 /* Tags */
 .tags {
   display: flex;
@@ -140,14 +149,15 @@
   background: color-mix(in srgb, var(--color) 5%, transparent);
 }
 
-/* CTA */
-.cta {
-  @apply font-mono text-[12px] text-fg-sub;
-  margin-top: 4px;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+/* Arrow */
+.arrow {
+  @apply font-mono text-[14px] text-fg-muted;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s;
+  line-height: 1;
 }
 
-.card:hover .cta {
+.card:hover .arrow {
+  transform: translate(3px, -2px);
   color: #C7626E;
 }
