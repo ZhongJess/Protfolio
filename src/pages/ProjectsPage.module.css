@@ -21,6 +21,7 @@
 .cursorImg {
   @apply fixed pointer-events-none z-[999] overflow-hidden rounded-[4px];
   width: 240px; height: 160px;
+  background: #F5F4F2;
   opacity: 0;
   transform: scale(0.95) translateY(8px);
   transition: opacity 0.22s ease, transform 0.22s ease;
