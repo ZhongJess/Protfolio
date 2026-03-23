@@ -51,7 +51,7 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 9999px;
   padding: 4px 14px;
-  font-size: 12px;
+  font-size: 16px;
   color: #FFFFFF;
   font-family: var(--font);
   cursor: pointer;
@@ -65,7 +65,7 @@
   cursor: pointer;
   padding: 4px 10px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
   font-family: var(--font);
   color: rgba(255, 255, 255, 0.5);
@@ -89,7 +89,7 @@
 @media (min-width: 768px) {
   .navItem {
     padding: 5px 16px;
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -125,7 +125,7 @@
 
 .imgPlaceholderLabel {
   font-family: var(--font-tc);
-  font-size: 13px;
+  font-size: 16px;
   color: #A89A90;
   text-align: center;
   padding: 0 20px;
@@ -147,7 +147,7 @@
 .sectionBadgeEn {
   font-family: var(--font);
   font-weight: 700;
-  font-size: 11px;
+  font-size: 16px;
   color: #FFFFFF;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -155,13 +155,13 @@
 
 .sectionBadgeDot {
   color: rgba(255, 255, 255, 0.31);
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .sectionBadgeTc {
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 16px;
   color: #FFFFFF;
 }
 
@@ -217,7 +217,7 @@
 
 .sectionCoverDesc {
   font-family: var(--font-tc);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gray);
   margin: 0;
   max-width: 500px;
@@ -276,7 +276,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 16px;
   color: rgba(26, 26, 26, 0.435);
   background: transparent;
   border: none;
@@ -306,7 +306,7 @@
   border: 1px solid rgba(199, 98, 110, 0.376);
   border-radius: 9999px;
   padding: 4px 12px;
-  font-size: 14px;
+  font-size: 16px;
   color: #C7626E;
   letter-spacing: 0.057em;
   font-family: Menlo, monospace;
@@ -372,7 +372,7 @@
 }
 
 .infoCardLabel {
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(26, 26, 26, 0.435);
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -432,7 +432,7 @@
 
 .challengeCardDesc {
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   color: #6B6760;
   line-height: 1.75;
   margin: 0;
@@ -465,7 +465,7 @@
   border-radius: 9999px;
   border: 2px solid #D17953;
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
@@ -527,26 +527,26 @@
 .researchStatLabel {
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   color: #1A1A1A;
   margin-bottom: 4px;
 }
 
 @media (min-width: 768px) {
   .researchStatLabel {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 .researchStatSub {
   font-family: var(--font-tc);
-  font-size: 10px;
+  font-size: 16px;
   color: #6B6760;
 }
 
 @media (min-width: 768px) {
   .researchStatSub {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
@@ -592,7 +592,7 @@
 
 .researchPhotoCaption {
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   color: #6B6760;
   text-align: center;
   margin: 10px 0 0;
@@ -675,7 +675,7 @@
 
 .iaChangeItem {
   font-family: var(--font-tc);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   color: #3A3A3A;
 }
@@ -717,7 +717,7 @@
 
 .iaSpeechText {
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   color: #1A1A1A;
   line-height: 1.75;
   margin: 0;
@@ -808,7 +808,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--font-tc);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: #1A1A1A;
 }
@@ -827,7 +827,7 @@
   display: inline-block;
   font-family: var(--font);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   margin-bottom: 16px;
 }
@@ -848,7 +848,7 @@
 
 .outcomesItemDesc {
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   color: #6B6760;
   line-height: 1.8;
   margin: 0;
@@ -916,7 +916,7 @@
 
 .resultsCoverSub {
   font-family: var(--font-tc);
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }
@@ -1028,7 +1028,7 @@
   display: inline-block;
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 16px;
 }
 
@@ -1064,7 +1064,7 @@
 
 .usabilityListText {
   font-family: var(--font-tc);
-  font-size: 14px;
+  font-size: 16px;
   color: #1A1A1A;
   line-height: 1.7;
 }
@@ -1086,7 +1086,7 @@
   display: inline-block;
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
@@ -1113,7 +1113,7 @@
 
 .testerDesc {
   font-family: var(--font-tc);
-  font-size: 12px;
+  font-size: 16px;
   color: #6B6760;
   text-align: center;
   line-height: 1.5;
@@ -1129,13 +1129,13 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-tc);
-  font-size: 13px;
+  font-size: 16px;
   min-width: 560px;
 }
 
 @media (min-width: 768px) {
   .mazeTable {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -1162,7 +1162,7 @@
 
 .mazeHotCell {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: #D17953;
 }
 
@@ -1205,7 +1205,7 @@
 
 .metricEn {
   font-family: var(--font);
-  font-size: 11px;
+  font-size: 16px;
   color: #6B6760;
   letter-spacing: 0.12em;
   margin-bottom: 12px;
@@ -1252,7 +1252,7 @@
   display: inline-block;
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 12px;
 }
 
@@ -1264,7 +1264,7 @@
   display: inline-block;
   font-family: var(--font-tc);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 12px;
 }
 
