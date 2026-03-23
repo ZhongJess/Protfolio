@@ -619,7 +619,7 @@ function InfoArchitecture() {
           display: isDesktop ? "grid" : "flex",
           gridTemplateColumns: isDesktop ? "240px 1fr" : undefined,
           flexDirection: isDesktop ? undefined : "column",
-          gap: 32, marginBottom: 72, alignItems: "start",
+          gap: 32, marginBottom: 72, alignItems: isDesktop ? "start" : "stretch",
         }}>
           {/* Left: persona + speech bubble */}
           <div>
