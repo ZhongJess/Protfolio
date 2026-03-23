@@ -1049,6 +1049,12 @@
   margin-top: 8px;
 }
 
+.usabilityCheckIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .usabilityListText {
   font-family: var(--font-tc);
   font-size: 14px;

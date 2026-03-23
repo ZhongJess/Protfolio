@@ -391,9 +391,9 @@ function InfoArchitecture() {
 // ── DESIGN OUTCOMES ───────────────────────────────────────────────────────────
 function DesignOutcomes() {
   const items = [
-    { n: "01", title: "完成註冊登入及活動報名",   desc: "重新設計報名頁面，合併步驟、優化表單結構，讓使用者在 3 個步驟內完成報名，大幅降低放棄率。" },
-    { n: "02", title: "完成報名參加志工培訓", desc: "新增志工培訓進度頁，以視覺化方式展示學習路徑與任務狀態，讓志工清楚掌握每個階段。" },
-    { n: "03", title: "完成活動後心得經驗報分享",   desc: "建立「認識夥伴」模組，讓志工可私訊、分享心得，強化社群連結與長期參與意願。" },
+    { n: "01", title: "簡化報名流程",   desc: "重新設計報名頁面，合併步驟、優化表單結構，讓使用者在 3 個步驟內完成報名，大幅降低放棄率。" },
+    { n: "02", title: "培訓進度條", desc: "新增志工培訓進度頁，以視覺化方式展示學習路徑與任務狀態，讓志工清楚掌握每個階段。" },
+    { n: "03", title: "志工交流功能",   desc: "建立「認識夥伴」模組，讓志工可私訊、分享心得，強化社群連結與長期參與意願。" },
   ];
 
   // The alternating layout (text-left vs text-right on desktop) depends on
@@ -519,7 +519,10 @@ function Results() {
               <ul className={styles.usabilityList}>
                 {tasks.map((t, i) => (
                   <li key={i} className={styles.usabilityListItem}>
-                    <span className={styles.usabilityDot} />
+                    <svg className={styles.usabilityCheckIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="10" fill="#C7626E" fillOpacity="0.15"/>
+                      <path d="M5.5 10.5L8.5 13.5L14.5 7.5" stroke="#C7626E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     <span className={styles.usabilityListText}>{t}</span>
                   </li>
                 ))}
