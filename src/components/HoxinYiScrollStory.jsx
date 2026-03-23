@@ -63,7 +63,7 @@ function scrollToSection(id) {
 const NAV_ITEMS = [
   { id: "hxy-research",   label: "用戶研究" },
   { id: "hxy-ia",         label: "資訊架構" },
-  { id: "hxy-results",    label: "結果" },
+  { id: "hxy-results",    label: "設計成效" },
 ];
 
 function SectionNav({ active }) {
@@ -412,8 +412,8 @@ function DesignOutcomes() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.outcomesCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="DESIGN OUTCOMES" tc="設計成果與洞察" color={PRIMARY} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成果與洞察</div>
+          <SectionBadge en="DESIGN OUTCOMES" tc="設計成效與洞察" color={PRIMARY} />
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成效與洞察</div>
           <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
         </div>
         <WaveBottom fill={WHITE} flip />
@@ -510,8 +510,8 @@ function Results() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.resultsCover}`}>
         <div className={styles.resultsCoverInner}>
-          <SectionBadge en="RESULTS" tc="結果" color={`${WHITE}30`} />
-          <div className={styles.resultsCoverTitle}>結果</div>
+          <SectionBadge en="DESIGN OUTCOMES" tc="設計成效" color={`${WHITE}30`} />
+          <div className={styles.resultsCoverTitle}>設計成效</div>
           <p className={styles.resultsCoverSub}>易用性 &amp; SUS分析</p>
         </div>
         <WaveBottom fill={WHITE} />
@@ -687,10 +687,10 @@ function Results() {
           </div>
         </div>
 
-        {/* ── 成果分析 ── */}
+        {/* ── 成效分析 ── */}
         <h3 className={styles.resultsSectionH3md}>
           <span className={styles.orangeDot} />
-          成果分析
+          成效分析
         </h3>
         <div className={styles.outcomesCardsGrid}>
           <img src={imgResultsCard01} alt="27→34 報名完成度提高"  className={styles.outcomesCardImg} />
