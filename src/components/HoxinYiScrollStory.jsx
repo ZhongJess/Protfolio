@@ -412,8 +412,8 @@ function DesignOutcomes() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.outcomesCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="DESIGN OUTCOMES" tc="設計成果" color={PRIMARY} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成果</div>
+          <SectionBadge en="DESIGN OUTCOMES" tc="設計成果與洞察" color={PRIMARY} />
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成果與洞察</div>
           <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
         </div>
         <WaveBottom fill={WHITE} flip />
