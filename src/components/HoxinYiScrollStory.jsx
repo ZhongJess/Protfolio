@@ -562,15 +562,14 @@ function Results() {
             </div>
           </div>
 
-          {/* Right: 使用者驗證與研究策略 */}
+          {/* Right: 測試者篩選機制 */}
           <div className={styles.testerBox}>
-            <div className={styles.testerBoxLabel}>使用者驗證與研究策略</div>
+            <div className={styles.testerBoxLabel}>測試者篩選機制</div>
             <p className={styles.testerStrategyText}>
               為確保迭代設計能精準對齊真實服務場景，本次專案透過
               <strong>「台灣樸石人文協會」精準招募受測者。樣本涵蓋首輪 MVP 回訪使用者（驗證改版成效）與高度符合 Persona 特徵的長期志工</strong>
               （深度洞察專業需求），透過多元的樣本組成，補齊原始架構中的資訊斷點與操作瓶頸。
             </p>
-            <div className={styles.testerSubLabel}>測試者篩選機制</div>
             <div className={styles.testerGrid}>
               {[
                 { label: "原MVP",  imgSrc: imgTesterMvp, highlight: false },
