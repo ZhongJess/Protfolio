@@ -1,5 +1,6 @@
 // ── 好心驛 志工媒合平台 ScrollStory ──────────────────────────────────────────
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import styles from './HoxinYiScrollStory.module.css';
 
@@ -85,7 +86,6 @@ function SectionNav({ active }) {
             >{label}</button>
           );
         })}
-        <button onClick={scrollToTop} className={styles.navScrollTop} aria-label="回頂端">↑</button>
       </div>
     </nav>
   );
@@ -724,6 +724,12 @@ export default function HoxinYiScrollStory() {
       <InfoArchitecture />
       <DesignOutcomes />
       <Results />
+      {createPortal(
+        <button onClick={scrollToTop} className={`${styles.glassBtn} ${styles.glassBtnRight}`}>
+          ↑ 回到頂部
+        </button>,
+        document.body
+      )}
     </>
   );
 }
