@@ -18,15 +18,15 @@ function IconPixelArrow() {
 }
 
 function IconPixelArrowLeft() {
-  return <span style={{ fontSize: 13 }}>←</span>;
+  return <span className={styles.arrowLeft}>←</span>;
 }
 
 function WindowDots() {
   return (
     <div className="flex gap-[6px]">
-      {["#FF5F57", "#FFBD2E", "#28C840"].map(color => (
-        <div key={color} className="w-[10px] h-[10px] rounded-full" style={{ background: color }} />
-      ))}
+      <div className={`w-[10px] h-[10px] rounded-full ${styles.dotRed}`} />
+      <div className={`w-[10px] h-[10px] rounded-full ${styles.dotYellow}`} />
+      <div className={`w-[10px] h-[10px] rounded-full ${styles.dotGreen}`} />
     </div>
   );
 }

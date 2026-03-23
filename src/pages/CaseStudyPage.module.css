@@ -9,6 +9,8 @@
 }
 .backBtn:hover { @apply text-accent; }
 
+.arrowLeft { font-size: 13px; }
+
 .heroWrap  { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-4; }
 
 .heroTitle {

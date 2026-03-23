@@ -211,6 +211,10 @@
   }
 }
 
+.sectionCoverTitleOrange { color: #D17953; }
+.sectionCoverTitleRed    { color: #E16C54; }
+.sectionCoverTitleRose   { color: #C7626E; }
+
 .sectionCoverDesc {
   font-family: var(--font-tc);
   font-size: 15px;

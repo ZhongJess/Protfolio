@@ -227,7 +227,7 @@ export default function ConstellationSkills() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ width: "100%", height: "100%", display: "block", pointerEvents: "none" }}
+      className="w-full h-full block pointer-events-none"
     />
   );
 }
