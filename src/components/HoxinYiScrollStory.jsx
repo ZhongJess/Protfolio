@@ -467,7 +467,7 @@ function Results() {
   const tasks = [
     "完成註冊登入及活動報名",
     "完成報名參加志工培訓",
-    "完成活動後心得經驗報分享",
+    "完成活動後心得經驗分享",
   ];
 
   const methods = [
