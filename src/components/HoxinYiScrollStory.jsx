@@ -56,7 +56,12 @@ function useActiveSection(ids) {
 function scrollToSection(id) {
   const el     = document.getElementById("main-scroll");
   const target = document.getElementById(id);
-  if (el && target) el.scrollTo({ top: target.offsetTop - 56, behavior: "smooth" });
+  if (el && target) el.scrollTo({ top: target.offsetTop - 48, behavior: "smooth" });
+}
+
+function scrollToTop() {
+  const el = document.getElementById("main-scroll");
+  if (el) el.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ── Nav ───────────────────────────────────────────────────────────────────────
@@ -67,20 +72,21 @@ const NAV_ITEMS = [
 ];
 
 function SectionNav({ active }) {
-  const navigate = useNavigate();
   return (
     <nav className={styles.nav}>
-      <button onClick={() => navigate("/projects")} className={styles.navBack}>← 返回</button>
-      {NAV_ITEMS.map(({ id, label }) => {
-        const isActive = active === id;
-        return (
-          <button
-            key={id}
-            onClick={() => scrollToSection(id)}
-            className={`${styles.navItem} ${isActive ? styles.navItemActive : ""}`}
-          >{label}</button>
-        );
-      })}
+      <div className={styles.navInner}>
+        {NAV_ITEMS.map(({ id, label }) => {
+          const isActive = active === id;
+          return (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className={`${styles.navItem} ${isActive ? styles.navItemActive : ""}`}
+            >{label}</button>
+          );
+        })}
+        <button onClick={scrollToTop} className={styles.navScrollTop} aria-label="回頂端">↑</button>
+      </div>
     </nav>
   );
 }
@@ -711,8 +717,8 @@ export default function HoxinYiScrollStory() {
   const active = useActiveSection(SECTION_IDS);
   return (
     <>
-      <SectionNav active={active} />
       <Hero />
+      <SectionNav active={active} />
       <Challenges />
       <UserResearch />
       <InfoArchitecture />
