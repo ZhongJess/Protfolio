@@ -1,10 +1,19 @@
 // Repo 策展式卡片頁
+import { useNavigate } from "react-router-dom";
 import { REPOS } from "../data";
 import styles from './RepoPage.module.css';
 
 function RepoCard({ repo }) {
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      onClick={() => navigate(`/repo/${repo.id}`)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => e.key === "Enter" && navigate(`/repo/${repo.id}`)}
+    >
       {/* Preview Image */}
       <div className={styles.cardImg}>
         <img src={repo.screenshot} alt={repo.name} className={styles.img} />
@@ -20,7 +29,7 @@ function RepoCard({ repo }) {
         {/* Title */}
         <h2 className={styles.cardTitle}>{repo.name}</h2>
 
-        {/* Description */}
+        {/* One-line desc */}
         <p className={styles.cardDesc}>{repo.desc}</p>
 
         {/* Tags */}
@@ -34,15 +43,8 @@ function RepoCard({ repo }) {
           ))}
         </div>
 
-        {/* GitHub link */}
-        <a
-          href={repo.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.githubBtn}
-        >
-          Explore Source Code on GitHub ↗
-        </a>
+        {/* CTA */}
+        <span className={styles.cta}>查看詳情 →</span>
       </div>
     </div>
   );
