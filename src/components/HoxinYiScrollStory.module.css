@@ -793,6 +793,30 @@
   /* used for both left and right text blocks */
 }
 
+.outcomesGoalList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.outcomesGoalItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-tc);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1A1A1A;
+}
+
+.outcomesGoalIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
 .outcomesNumBadge {
   background: #C7626E;
   color: #FFFFFF;
