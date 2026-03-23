@@ -997,7 +997,7 @@
 @media (min-width: 768px) {
   .usabilityGrid {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 3fr;
     align-items: stretch;
   }
 }
