@@ -32,19 +32,19 @@ function RepoCard({ repo }) {
         {/* One-line desc */}
         <p className={styles.cardDesc}>{repo.desc}</p>
 
-        {/* Tags */}
-        <div className={styles.tags}>
-          {repo.tags.map(tag => (
-            <span
-              key={tag}
-              className={styles.tag}
-              style={{ '--color': repo.langColor }}
-            >{tag}</span>
-          ))}
+        {/* Bottom row: tags + arrow */}
+        <div className={styles.cardBottom}>
+          <div className={styles.tags}>
+            {repo.tags.map(tag => (
+              <span
+                key={tag}
+                className={styles.tag}
+                style={{ '--color': repo.langColor }}
+              >{tag}</span>
+            ))}
+          </div>
+          <span className={styles.arrow}>→</span>
         </div>
-
-        {/* CTA */}
-        <span className={styles.cta}>查看詳情 →</span>
       </div>
     </div>
   );
