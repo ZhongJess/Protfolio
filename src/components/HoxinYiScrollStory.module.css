@@ -888,6 +888,11 @@
   margin: 0;
 }
 
+.outcomesItemDesc strong {
+  font-weight: 700;
+  color: #C7626E;
+}
+
 @media (min-width: 768px) {
   .outcomesItemDesc {
     font-size: 16px;
