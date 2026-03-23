@@ -391,9 +391,18 @@ function InfoArchitecture() {
 // ── DESIGN OUTCOMES ───────────────────────────────────────────────────────────
 function DesignOutcomes() {
   const items = [
-    { n: "01", title: "簡化報名流程",   desc: "重新設計報名頁面，合併步驟、優化表單結構，讓使用者在 3 個步驟內完成報名，大幅降低放棄率。" },
-    { n: "02", title: "培訓進度條", desc: "新增志工培訓進度頁，以視覺化方式展示學習路徑與任務狀態，讓志工清楚掌握每個階段。" },
-    { n: "03", title: "志工交流功能",   desc: "建立「認識夥伴」模組，讓志工可私訊、分享心得，強化社群連結與長期參與意願。" },
+    {
+      n: "01", subtitle: "流程優化", title: "簡化報名流程", badge: "+31% 完成率",
+      desc: "透過合併冗餘表單並導入進度分段機制，我們成功將複雜的報名流程精簡為 3 個核心步驟。這不僅降低了使用者的認知負荷，更有效消弭了填表時的心理阻礙，使報名完成率顯著提升 31%。",
+    },
+    {
+      n: "02", subtitle: "視覺化進度", title: "培訓進度條", badge: null,
+      desc: "針對志工對培訓體系不透明的焦慮感，我們建構了視覺化學習路徑。透過即時的反饋進度條，讓志工能預期接下來的每一步任務，大幅降低了服務初期的不確定感與挫折感。",
+    },
+    {
+      n: "03", subtitle: "社群連結", title: "志工交流功能", badge: "強化長期黏著",
+      desc: "為了解決社群連結薄弱的痛點，我們建立了「認識夥伴」社交模組。透過心得分享與私訊互動，將單次的志工任務轉化為具備歸屬感的社群體驗，從而強化志工的長期參與意願與情感黏著度。",
+    },
   ];
 
   // The alternating layout (text-left vs text-right on desktop) depends on
@@ -432,8 +441,13 @@ function DesignOutcomes() {
                 {/* Text left (even items) */}
                 {i % 2 === 0 && (
                   <div>
-                    <div className={styles.outcomesNumBadge}>{item.n}</div>
+                    <div className={styles.outcomesNumRow}>
+                      <div className={styles.outcomesNumBadge}>{item.n}</div>
+                      <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
+                      {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
+                    </div>
                     <h3 className={styles.outcomesItemH3}>{item.title}</h3>
+                    <p className={styles.outcomesInsightLabel}>設計洞察</p>
                     <p className={styles.outcomesItemDesc}>{item.desc}</p>
                   </div>
                 )}
@@ -448,8 +462,13 @@ function DesignOutcomes() {
                 {/* Text right (odd items) */}
                 {i % 2 !== 0 && (
                   <div>
-                    <div className={styles.outcomesNumBadge}>{item.n}</div>
+                    <div className={styles.outcomesNumRow}>
+                      <div className={styles.outcomesNumBadge}>{item.n}</div>
+                      <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
+                      {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
+                    </div>
                     <h3 className={styles.outcomesItemH3}>{item.title}</h3>
+                    <p className={styles.outcomesInsightLabel}>設計洞察</p>
                     <p className={styles.outcomesItemDesc}>{item.desc}</p>
                   </div>
                 )}
