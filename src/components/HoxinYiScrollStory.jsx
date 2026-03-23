@@ -447,7 +447,6 @@ function DesignOutcomes() {
                       {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
                     </div>
                     <h3 className={styles.outcomesItemH3}>{item.title}</h3>
-                    <p className={styles.outcomesInsightLabel}>設計洞察</p>
                     <p className={styles.outcomesItemDesc}>{item.desc}</p>
                   </div>
                 )}
@@ -468,7 +467,6 @@ function DesignOutcomes() {
                       {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
                     </div>
                     <h3 className={styles.outcomesItemH3}>{item.title}</h3>
-                    <p className={styles.outcomesInsightLabel}>設計洞察</p>
                     <p className={styles.outcomesItemDesc}>{item.desc}</p>
                   </div>
                 )}
