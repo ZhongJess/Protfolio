@@ -494,8 +494,8 @@ function Results() {
   ];
 
   const tableRows = [
-    { label: "原MVP",  n: "7 人", misclick: "64.3%", time: "255.0s", success: "28.6%", error: "0%",    score: "27", highlight: false, hot: [2, 4] },
-    { label: "好心驛", n: "8 人", misclick: "47.2%", time: "838.3s", success: "37.5%", error: "12.5%", score: "34", highlight: false, hot: [3] },
+    { label: "原MVP",  n: "7 人", misclick: "64.3%", time: "255.0s", success: "28.6%", error: "0%",    score: "27", highlight: false, scoreHot: false, hot: [2, 4] },
+    { label: "好心驛", n: "8 人", misclick: "47.2%", time: "838.3s", success: "37.5%", error: "12.5%", score: "34", highlight: false, scoreHot: true,  hot: [3] },
   ];
 
   // `color` per metric is runtime data (TEAL vs RED), kept inline
@@ -628,7 +628,7 @@ function Results() {
                       fontFamily: "Poppins, 'Noto Sans TC', system-ui, sans-serif",
                       fontWeight: 700,
                       fontSize:   20,
-                      color:      row.highlight ? ORANGE : DARK,
+                      color:      (row.highlight || row.scoreHot) ? ORANGE : DARK,
                     }}>{row.score}</span>,
                   ].map((cell, ci) => (
                     <td key={ci} className={styles.mazeTableTd}>
