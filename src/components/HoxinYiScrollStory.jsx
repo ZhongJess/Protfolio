@@ -553,6 +553,7 @@ function Results() {
               <strong>「樸石人文協會」精準招募受測者。樣本涵蓋首輪 MVP 回訪使用者（驗證改版成效）與高度符合 Persona 特徵的長期志工</strong>
               （深度洞察專業需求），透過多元的樣本組成，補齊原始架構中的資訊斷點與操作瓶頸。
             </p>
+            <div className={styles.testerSubLabel}>測試者篩選機制</div>
             <div className={styles.testerGrid}>
               {[
                 { label: "原MVP",  imgSrc: imgTesterMvp, highlight: false },

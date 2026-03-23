@@ -1098,6 +1098,14 @@
   margin: 0 0 20px;
 }
 
+.testerSubLabel {
+  font-family: var(--font-tc);
+  font-size: 16px;
+  font-weight: 700;
+  color: #3A3A3A;
+  margin: 0 0 12px;
+}
+
 .testerGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
