@@ -551,7 +551,7 @@ function Results() {
             <div className={styles.testerGrid}>
               {[
                 { label: "原MVP",  desc: "串接「樸石人文協會」資源，引入真實志工受測",             imgSrc: imgTesterMvp, highlight: false },
-                { label: "好心驛", desc: "測試過原MVP的測試者\n長期志工／自我成長求型", imgSrc: imgIaPersona, highlight: true  },
+                { label: "好心驛", desc: "受測者涵蓋首輪測試者與符合 Persona 定義的長期志工", imgSrc: imgIaPersona, highlight: true  },
               ].map(p => (
                 <div key={p.label} className={styles.testerCol}>
                   {/* Badge color is runtime-dynamic: PRIMARY vs ORANGE */}
