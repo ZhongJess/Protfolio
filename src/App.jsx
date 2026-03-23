@@ -13,6 +13,7 @@ import ProjectsPage      from "./pages/ProjectsPage";
 import CaseStudyPage     from "./pages/CaseStudyPage";
 import Rent4UScrollStory       from "./components/Rent4UScrollStory";
 import StarbucksMOPScrollStory from "./components/StarbucksMOPScrollStory";
+import HoxinYiScrollStory     from "./components/HoxinYiScrollStory";
 import RepoPage          from "./pages/RepoPage";
 import RepoDetailPage    from "./pages/RepoDetailPage";
 import ContactPage       from "./pages/ContactPage";
@@ -25,6 +26,7 @@ function ProjectRoute() {
 
   if (!project) return <Navigate to="/projects" replace />;
   if (project.scrollStory === "starbucks-mop") return <StarbucksMOPScrollStory />;
+  if (project.scrollStory === "hoxinyi") return <HoxinYiScrollStory />;
   if (project.scrollStory) return <Rent4UScrollStory />;
   return <CaseStudyPage project={project} onBack={() => navigate("/projects")} />;
 }

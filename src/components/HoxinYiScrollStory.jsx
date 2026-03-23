@@ -21,6 +21,8 @@ import imgResultsCard01 from '../assets/hoxinyi/results-card-01.png';
 import imgResultsCard02 from '../assets/hoxinyi/results-card-02.png';
 import imgResultsCard03 from '../assets/hoxinyi/results-card-03.png';
 import imgResultsCard04 from '../assets/hoxinyi/results-card-04.png';
+import imgBanner from '../assets/hoxinyi/banner.webp';
+import imgTesterMvp from '../assets/hoxinyi/tester-mvp.png';
 
 // ── Design Tokens ─────────────────────────────────────────────────────────────
 const BG      = "#F5F4F2";   // warm off-white (matches Rent4U)
@@ -308,7 +310,7 @@ function Hero() {
           boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
           width: "100%",
         }}>
-          <ImgPlaceholder label={"Banner 主視覺\n（圖片稍後補上）"} aspect="42%" radius={17} />
+          <img src={imgBanner} alt="好心驛 Banner" style={{ width: "100%", display: "block" }} />
         </div>
 
         <div style={{ height: isDesktop ? 80 : 48 }} />
@@ -521,8 +523,20 @@ function UserResearch() {
             gridTemplateColumns: isDesktop ? "1fr 1fr" : "1fr",
             gap: 24, marginBottom: 64,
           }}>
-            <img src={imgResearchInterview} alt="受訪者照片" style={{ width: "100%", borderRadius: 16, display: "block" }} />
-            <img src={imgResearchMaze} alt="受訪者照片" style={{ width: "100%", borderRadius: 16, display: "block" }} />
+            {[
+              { src: imgResearchInterview, label: "線上訪談" },
+              { src: imgResearchMaze,      label: "A/B Testing 側錄｜Maze" },
+            ].map(({ src, label }) => (
+              <div key={label}>
+                <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10" }}>
+                  <img src={src} alt={label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <p style={{
+                  fontFamily: FONT_TC, fontSize: 14, color: GRAY,
+                  textAlign: "center", margin: "10px 0 0",
+                }}>{label}</p>
+              </div>
+            ))}
           </div>
 
           {/* User Journey Map */}
@@ -605,7 +619,7 @@ function InfoArchitecture() {
           display: isDesktop ? "grid" : "flex",
           gridTemplateColumns: isDesktop ? "240px 1fr" : undefined,
           flexDirection: isDesktop ? undefined : "column",
-          gap: 32, marginBottom: 72, alignItems: "start",
+          gap: 32, marginBottom: 72, alignItems: isDesktop ? "start" : "stretch",
         }}>
           {/* Left: persona + speech bubble */}
           <div>
@@ -1028,10 +1042,10 @@ function Results() {
                     padding: "3px 16px",
                     fontFamily: FONT_TC, fontWeight: 700, fontSize: 13,
                   }}>{p.label}</div>
-                  <ImgPlaceholder
-                    label={p.placeholder ? "Persona（使用者提供）" : "受訪者照片（使用者提供）"}
-                    aspect="100%"
-                    radius={9999}
+                  <img
+                    src={p.placeholder ? imgTesterMvp : imgIaPersona}
+                    alt={p.label}
+                    style={{ width: "100%", borderRadius: 9999, display: "block", aspectRatio: "1/1", objectFit: "cover" }}
                   />
                   {p.desc.split("\n").map((line, i) => (
                     <span key={i} style={{
