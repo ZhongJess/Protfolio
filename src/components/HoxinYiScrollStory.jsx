@@ -545,16 +545,20 @@ function Results() {
             </div>
           </div>
 
-          {/* Right: 測試者篩選方法 — persona comparison */}
+          {/* Right: 使用者驗證與研究策略 */}
           <div className={styles.testerBox}>
-            <div className={styles.testerBoxLabel}>測試者篩選方法</div>
+            <div className={styles.testerBoxLabel}>使用者驗證與研究策略</div>
+            <p className={styles.testerStrategyText}>
+              為確保迭代設計能精準對齊真實服務場景，本次專案透過
+              <strong>「樸石人文協會」精準招募受測者。樣本涵蓋首輪 MVP 回訪使用者（驗證改版成效）與高度符合 Persona 特徵的長期志工</strong>
+              （深度洞察專業需求），透過多元的樣本組成，補齊原始架構中的資訊斷點與操作瓶頸。
+            </p>
             <div className={styles.testerGrid}>
               {[
-                { label: "原MVP",  desc: "串接「樸石人文協會」資源，引入真實志工受測",             imgSrc: imgTesterMvp, highlight: false },
-                { label: "好心驛", desc: "受測者涵蓋首輪測試者與符合 Persona 定義的長期志工", imgSrc: imgIaPersona, highlight: true  },
+                { label: "原MVP",  imgSrc: imgTesterMvp, highlight: false },
+                { label: "好心驛", imgSrc: imgIaPersona, highlight: true  },
               ].map(p => (
                 <div key={p.label} className={styles.testerCol}>
-                  {/* Badge color is runtime-dynamic: PRIMARY vs ORANGE */}
                   <div style={{
                     background: p.highlight ? ORANGE : PRIMARY,
                     color: WHITE,
@@ -564,14 +568,7 @@ function Results() {
                     fontWeight: 700,
                     fontSize: 13,
                   }}>{p.label}</div>
-                  <img
-                    src={p.imgSrc}
-                    alt={p.label}
-                    className={styles.testerImg}
-                  />
-                  {p.desc.split("\n").map((line, i) => (
-                    <span key={i} className={styles.testerDesc}>{line}</span>
-                  ))}
+                  <img src={p.imgSrc} alt={p.label} className={styles.testerImg} />
                 </div>
               ))}
             </div>
