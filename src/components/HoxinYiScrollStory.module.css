@@ -997,7 +997,8 @@
 @media (min-width: 768px) {
   .usabilityGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    align-items: stretch;
   }
 }
 
@@ -1005,6 +1006,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
 }
 
 .usabilityBox {
@@ -1067,6 +1069,8 @@
   background: #F5F4F2;
   border-radius: 16px;
   padding: 24px;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .testerBoxLabel {
