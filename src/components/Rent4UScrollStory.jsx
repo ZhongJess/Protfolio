@@ -106,7 +106,7 @@ function ProductScreenshot() {
   );
 }
 
-const HERO_TAGS = ["Designer", "Project Manager", "2025"];
+const HERO_TAGS = ["Market Research", "UX Strategy", "Design System", "PM", "2025"];
 
 function SectionSummary() {
   const navigate = useNavigate();
