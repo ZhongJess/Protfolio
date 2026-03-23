@@ -162,7 +162,7 @@ function Hero() {
           </div>
 
           {/* 主標題 */}
-          <h1 className={styles.heroH1}>數據驅動體驗革新：台灣樸石志工媒合平台之易用性重塑</h1>
+          <h1 className={styles.heroH1}>數據驅動體驗革新：樸石人文協會志工媒合平台之易用性重塑</h1>
 
           {/* 副標題 */}
           <p className={styles.heroSubtitle}>
