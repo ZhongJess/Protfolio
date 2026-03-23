@@ -587,7 +587,7 @@ function Results() {
           <table className={styles.mazeTable}>
             <thead>
               <tr className={styles.mazeTableHead}>
-                {["測試者", "錯誤點擊率", "持續時間", "完成率", "錯誤率", "綜合評分"].map(h => (
+                {["測試者", "人數", "錯誤點擊率", "持續時間", "完成率", "錯誤率", "綜合評分"].map(h => (
                   <th key={h} className={styles.mazeTableTh}>{h}</th>
                 ))}
               </tr>
@@ -608,7 +608,7 @@ function Results() {
                       fontWeight:   700,
                       fontSize:     13,
                     }}>{row.label}</span>,
-                    row.misclick, row.time, row.success, row.error,
+                    row.n, row.misclick, row.time, row.success, row.error,
                     /* Score cell: color is runtime-dynamic */
                     <span style={{
                       fontFamily: "Poppins, 'Noto Sans TC', system-ui, sans-serif",
