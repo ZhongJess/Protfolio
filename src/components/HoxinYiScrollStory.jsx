@@ -406,6 +406,17 @@ function DesignOutcomes() {
           <SectionBadge en="DESIGN OUTCOMES" tc="設計成果" color={PRIMARY} />
           <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成果</div>
           <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
+          <ul className={styles.outcomesGoalList}>
+            <li className={styles.outcomesGoalItem}>
+              <span className={styles.outcomesGoalIcon}>🐥</span>完成註冊登入及活動報名
+            </li>
+            <li className={styles.outcomesGoalItem}>
+              <span className={styles.outcomesGoalIcon}>🐥</span>完成報名參加志工培訓
+            </li>
+            <li className={styles.outcomesGoalItem}>
+              <span className={styles.outcomesGoalIcon}>🐥</span>完成活動後心得經驗分享
+            </li>
+          </ul>
         </div>
         <WaveBottom fill={WHITE} flip />
       </div>
