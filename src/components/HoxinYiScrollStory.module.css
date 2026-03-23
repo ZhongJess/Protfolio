@@ -122,6 +122,39 @@
   }
 }
 
+.glassBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-family: var(--font);
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: fixed;
+  z-index: 9999;
+}
+
+.glassBtn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glassBtnRight {
+  bottom: 72px;
+  right: 24px;
+}
+
 /* ── ImgPlaceholder ─────────────────────────────────────────────────────────── */
 .imgPlaceholder {
   width: 100%;
