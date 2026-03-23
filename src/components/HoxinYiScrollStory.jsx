@@ -162,7 +162,7 @@ function Hero() {
           </div>
 
           {/* 主標題 */}
-          <h1 className={styles.heroH1}>數據驅動體驗革新：樸石人文協會志工媒合平台之易用性重塑</h1>
+          <h1 className={styles.heroH1}>數據驅動體驗革新：台灣樸石人文協會志工媒合平台之易用性重塑</h1>
 
           {/* 副標題 */}
           <p className={styles.heroSubtitle}>
@@ -550,7 +550,7 @@ function Results() {
             <div className={styles.testerBoxLabel}>使用者驗證與研究策略</div>
             <p className={styles.testerStrategyText}>
               為確保迭代設計能精準對齊真實服務場景，本次專案透過
-              <strong>「樸石人文協會」精準招募受測者。樣本涵蓋首輪 MVP 回訪使用者（驗證改版成效）與高度符合 Persona 特徵的長期志工</strong>
+              <strong>「台灣樸石人文協會」精準招募受測者。樣本涵蓋首輪 MVP 回訪使用者（驗證改版成效）與高度符合 Persona 特徵的長期志工</strong>
               （深度洞察專業需求），透過多元的樣本組成，補齊原始架構中的資訊斷點與操作瓶頸。
             </p>
             <div className={styles.testerSubLabel}>測試者篩選機制</div>
