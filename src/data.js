@@ -59,7 +59,7 @@ export const REPOS = [
     stars: 0,
     demo: "https://zhongjess.github.io/Desinger/",
     github: "https://github.com/ZhongJess/Desinger",
-    screenshot: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75",
+    screenshot: "/images/repo/Desinger.webp",
     code: `/* 純手刻 RWD — 無框架 Grid 排版 */
 .works-grid {
   display: grid;
@@ -102,7 +102,7 @@ export const REPOS = [
     stars: 0,
     demo: "https://zhongjess.github.io/htmlcssUpdate/",
     github: "https://github.com/ZhongJess/htmlcssUpdate",
-    screenshot: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&q=75",
+    screenshot: "/images/repo/htmlcssUpdate.webp",
     code: `/* 漢堡選單切換（jQuery） */
 $('.hamburger').on('click', function () {
   $(this).toggleClass('is-active');
@@ -137,7 +137,7 @@ $('.hamburger').on('click', function () {
     stars: 0,
     demo: "https://zhongjess.github.io/Sweetaste/",
     github: "https://github.com/ZhongJess/Sweetaste",
-    screenshot: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700&q=75",
+    screenshot: "/images/repo/Sweetaste.webp",
     code: `/* 色彩系統 — 語意化 SCSS 變數 */
 $primary:  #3F5D45;  // 導覽列、按鈕、標籤
 $bg-light: #EAF0ED;  // 區塊背景
@@ -175,7 +175,7 @@ $accent:   #FFE180;  // Hover、強調元素
     stars: 0,
     demo: "https://zhongjess.github.io/Penghu-Airport/",
     github: "https://github.com/ZhongJess/Penghu-Airport",
-    screenshot: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75",
+    screenshot: "/images/repo/Penghu-Airport.png",
     code: `/* Sass 模組化入口 style.scss */
 @use 'base/variables'    as *;
 @use 'base/mixins'       as *;
