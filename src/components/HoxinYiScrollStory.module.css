@@ -712,6 +712,9 @@
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .iaSpeechText {
