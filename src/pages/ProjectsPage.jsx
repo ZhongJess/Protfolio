@@ -13,7 +13,7 @@ function CursorImage({ visible, pos, src }) {
       data-visible={visible}
       style={{ left: pos.x + 24, top: pos.y - 130 }}
     >
-      <img src={src} alt="" className="w-full h-full object-cover" />
+      <img src={src} alt="" className="w-full h-full object-contain" />
     </div>
   );
 }
