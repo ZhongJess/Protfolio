@@ -60,6 +60,8 @@ export default function RepoDetailPage({ repo, onBack }) {
 
         <div className="flex gap-2 flex-wrap mb-8">
           {repo.tags.map(tag => <Tag key={tag} label={tag} color={repo.langColor} />)}
+        </div>
+        <div className="flex gap-3 flex-wrap mb-8">
           <a
             href={repo.github}
             target="_blank" rel="noopener noreferrer"
@@ -72,6 +74,17 @@ export default function RepoDetailPage({ repo, onBack }) {
             </svg>
             View on GitHub <IconPixelArrow />
           </a>
+          {repo.demo && (
+            <a
+              href={repo.demo}
+              target="_blank" rel="noopener noreferrer"
+              className={styles.githubLink}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = repo.langColor; e.currentTarget.style.color = repo.langColor; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = ''; e.currentTarget.style.color = ''; }}
+            >
+              ↗ Live Demo
+            </a>
+          )}
         </div>
       </div>
 

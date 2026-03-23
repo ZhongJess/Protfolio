@@ -49,145 +49,155 @@ export const PROJECTS = [
 // ── GitHub Repos ───────────────────────────────────────────────────────────────
 export const REPOS = [
   {
-    id: "data-viz-component",
-    name: "data-viz-component",
-    branch: "main",
-    lang: "CSS / React",
-    langColor: T.accent,
-    desc: "政府數據專案使用的圖表組件庫。包含 Bar、Line、Choropleth Map 三種類型，支援無障礙色彩模式。",
-    tags: ["Component", "Data Viz", "A11y"],
-    stars: 12,
-    code: `/* Animated bar with CSS custom properties */
-.bar-track {
-  --bar-height: 6px;
-  --bar-radius: 3px;
-  --duration: 1s;
-
-  height: var(--bar-height);
-  background: #2A2520;
-  border-radius: var(--bar-radius);
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: var(--bar-radius);
-  background: var(--accent, #C8923A);
-  transform-origin: left;
-  animation: barGrow var(--duration)
-    cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes barGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}`,
-    screenshot: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=75",
-    github: "https://github.com/yourusername/data-viz-component",
-  },
-  {
-    id: "micro-interaction-kit",
-    name: "micro-interaction-kit",
-    branch: "main",
-    lang: "CSS",
-    langColor: "#6B4FBB",
-    desc: "純 CSS 微互動集合。Focus ring、Loading state、Success animation 等 12 個常用模式，無 JS 依賴。",
-    tags: ["CSS", "Animation", "No-JS"],
-    stars: 28,
-    code: `/* Breathing focus ring — no JS needed */
-.btn:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 2px var(--bg),
-    0 0 0 4px var(--accent),
-    0 0 12px 2px rgba(var(--accent-rgb), 0.3);
-  animation: focusPulse 2s ease-in-out infinite;
-}
-
-@keyframes focusPulse {
-  0%, 100% {
-    box-shadow:
-      0 0 0 2px var(--bg),
-      0 0 0 4px var(--accent),
-      0 0 12px 2px rgba(var(--accent-rgb), 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 0 2px var(--bg),
-      0 0 0 4px var(--accent),
-      0 0 20px 4px rgba(var(--accent-rgb), 0.4);
-  }
-}`,
-    screenshot: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=75",
-    github: "https://github.com/yourusername/micro-interaction-kit",
-  },
-  {
-    id: "form-ux-patterns",
-    name: "form-ux-patterns",
+    id: "desinger",
+    name: "Desinger",
     branch: "main",
     lang: "HTML / CSS",
-    langColor: T.green,
-    desc: "表單 UX 最佳實踐集。涵蓋即時驗證、錯誤狀態、多步驟流程，基於真實 KYC 流程重構經驗。",
-    tags: ["Forms", "Validation", "UX Pattern"],
-    stars: 7,
-    code: `/* Inline validation — calm, not alarming */
-.field {
-  position: relative;
-  transition: transform 0.15s ease;
+    langColor: "#E44D26",
+    desc: "依據 AdobeXD 設計稿，以純 HTML5 / CSS3 手刻完成的平面設計師個人作品集頁面。零框架實現 Flexbox / Grid 響應式排版，涵蓋 Hero、About、個人品牌 XXXD 介紹及 2016–2020 年平面設計作品集。",
+    tags: ["HTML5", "CSS3", "Flexbox / Grid", "RWD"],
+    stars: 0,
+    demo: "https://zhongjess.github.io/Desinger/",
+    github: "https://github.com/ZhongJess/Desinger",
+    screenshot: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75",
+    code: `/* 純手刻 RWD — 無框架 Grid 排版 */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-.field--error {
-  transform: translateX(0);
-  animation: shake 0.4s ease;
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.field__message {
-  font-size: 12px;
-  margin-top: 6px;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.2s, transform 0.2s;
+/* Flexbox 導覽列 */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
 }
 
-.field--error .field__message {
-  opacity: 1;
-  transform: translateY(0);
-  color: #E07A5F;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25%       { transform: translateX(-4px); }
-  75%       { transform: translateX(4px); }
+/* Hero 主視覺 */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10vw;
 }`,
-    screenshot: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=700&q=75",
-    github: "https://github.com/yourusername/form-ux-patterns",
   },
   {
-    id: "design-token-system",
-    name: "design-token-system",
+    id: "htmlcssupdate",
+    name: "htmlcssUpdate",
     branch: "main",
-    lang: "JSON / CSS",
-    langColor: "#BB4F7A",
-    desc: "跨平台設計 Token 管理系統。統一色彩、間距、字型等設計決策，支援 Web / iOS / Android 三端輸出。",
-    tags: ["Design System", "Token", "Cross-Platform"],
-    stars: 19,
-    code: `/* Token 結構：語意化命名 */
-:root {
-  /* Primitive */
-  --color-orange-500: #FF6200;
-  --color-gray-100:  #F5F4F2;
+    lang: "HTML / CSS / jQuery",
+    langColor: "#1572B6",
+    desc: "六角學院切版專案——以 HTML5 / CSS3 搭配 jQuery 3.7.1 實作個人品牌形象網站，涵蓋漢堡選單、六件作品卡片展示與分頁導覽，全程採用 RWD Media Queries 響應式設計。",
+    tags: ["HTML5", "CSS3", "jQuery", "RWD"],
+    stars: 0,
+    demo: "https://zhongjess.github.io/htmlcssUpdate/",
+    github: "https://github.com/ZhongJess/htmlcssUpdate",
+    screenshot: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&q=75",
+    code: `/* 漢堡選單切換（jQuery） */
+$('.hamburger').on('click', function () {
+  $(this).toggleClass('is-active');
+  $('.nav-menu').slideToggle(300);
+});
 
-  /* Semantic */
-  --color-action:    var(--color-orange-500);
-  --color-surface:   var(--color-gray-100);
+/* 作品卡片 Hover 效果 */
+.work-card {
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
 
-  /* Component */
-  --btn-bg:          var(--color-action);
-  --btn-radius:      8px;
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* RWD 斷點 */
+@media (max-width: 768px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .nav-menu   { display: none; }
 }`,
-    screenshot: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75",
-    github: "https://github.com/yourusername/design-token-system",
+  },
+  {
+    id: "sweetaste",
+    name: "Sweetaste",
+    branch: "main",
+    lang: "SCSS / Vite",
+    langColor: "#C06AC4",
+    desc: "以 Vite + EJS + SCSS + Bootstrap 5 打造的響應式甜點電商平台，完整實現從首頁瀏覽、購物車管理到訂單確認的八頁購買流程，並建構語意化 SCSS 色彩 Token 系統。",
+    tags: ["Vite", "SCSS", "Bootstrap 5", "EJS"],
+    stars: 0,
+    demo: "https://zhongjess.github.io/Sweetaste/",
+    github: "https://github.com/ZhongJess/Sweetaste",
+    screenshot: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700&q=75",
+    code: `/* 色彩系統 — 語意化 SCSS 變數 */
+$primary:  #3F5D45;  // 導覽列、按鈕、標籤
+$bg-light: #EAF0ED;  // 區塊背景
+$text-sub: #8DA291;  // 內文輔助色
+$accent:   #FFE180;  // Hover、強調元素
+
+.btn-primary {
+  background-color: $primary;
+  color: #fff;
+  border-radius: 4px;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: darken($primary, 8%);
+  }
+}
+
+/* 購物車商品列表 */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid $bg-light;
+}`,
+  },
+  {
+    id: "penghu-airport",
+    name: "Penghu-Airport",
+    branch: "main",
+    lang: "Sass / Bootstrap",
+    langColor: "#CF649A",
+    desc: "UX/UI 設計師的切版回歸練習——採用模組化 Sass（SCSS）架構重構澎湖機場頁面，補齊無障礙（A11y）設計細節，以基礎 / 元件 / 版面三層結構提升樣式可維護性。",
+    tags: ["Sass/SCSS", "Bootstrap", "A11y", "RWD"],
+    stars: 0,
+    demo: "https://zhongjess.github.io/Penghu-Airport/",
+    github: "https://github.com/ZhongJess/Penghu-Airport",
+    screenshot: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75",
+    code: `/* Sass 模組化入口 style.scss */
+@use 'base/variables'    as *;
+@use 'base/mixins'       as *;
+@use 'base/reset';
+@use 'base/accessibility';
+@use 'base/animate';
+
+@use 'components/header';
+@use 'components/banner';
+@use 'components/route';
+@use 'components/spot';
+@use 'components/modal';
+
+@use 'layout/container';
+@use 'layout/footer';
+
+/* 無障礙焦點樣式 */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}`,
   },
 ];
 
