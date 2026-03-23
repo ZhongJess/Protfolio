@@ -1010,7 +1010,7 @@
   gap: 16px;
 }
 
-.usabilityLeft .usabilityBox:last-child {
+.usabilityLeft .usabilityBox {
   flex: 1;
 }
 
