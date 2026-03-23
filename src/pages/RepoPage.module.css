@@ -1,49 +1,147 @@
 @reference "../index.css";
 
-.header { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-7 pb-4; }
+/* ── Header ──────────────────────────────────────────────────────────────────── */
+.header {
+  @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-7 pb-6;
+}
 
-.eyebrow   { @apply font-mono text-[11px] tracking-[0.12em] text-green uppercase; }
+.eyebrow {
+  @apply font-mono text-[11px] tracking-[0.12em] text-green uppercase;
+}
+
 .pageTitle {
   @apply font-serif font-bold text-fg tracking-[-0.03em] leading-[1.1] mt-5;
   font-size: clamp(26px, 3.5vw, 48px);
 }
-.pageDesc  { @apply font-sans text-[15px] leading-[1.75] text-fg-sub max-w-[480px] mt-4 font-light; }
 
-.list { @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-6; }
-
-.row {
-  @apply grid items-center gap-6 py-7 cursor-pointer relative
-         transition-colors duration-[250ms];
-  grid-template-columns: 1fr auto;
-  border-top: 1px solid #D5D3CF;
-}
-.row[data-hovered="true"] { border-top-color: #C8C6C1; }
-
-.rowGlow {
-  @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-[250ms];
-}
-.rowGlow[data-hovered="true"] { @apply opacity-100; }
-
-.repoName { @apply font-mono text-[15px] font-medium text-fg tracking-[-0.01em]; }
-
-.branch {
-  @apply font-mono text-[10px] text-fg-muted
-         px-[7px] py-[2px] border border-border rounded-[10px];
+.pageDesc {
+  @apply font-sans text-[15px] leading-[1.75] text-fg-sub max-w-[480px] mt-4 font-light;
 }
 
-.desc  { @apply font-sans text-[13px] leading-[1.65] text-fg-sub max-w-[560px] font-light mb-3; }
-.stars { @apply font-mono text-[11px] text-fg-muted; }
+/* ── Card Grid ───────────────────────────────────────────────────────────────── */
+.grid {
+  @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-12;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E5E3DF;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #FFFFFF;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+  }
+}
+
+/* ── Image ───────────────────────────────────────────────────────────────────── */
+.cardImg {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #F5F4F2;
+}
+
+@media (min-width: 768px) {
+  .cardImg {
+    width: 40%;
+    aspect-ratio: auto;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────────── */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  flex: 1;
+}
 
 .lang {
-  @apply font-mono text-[11px] px-[10px] py-[3px] rounded-[3px];
+  @apply font-mono text-[11px];
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: var(--color);
+  border: 1px solid color-mix(in srgb, var(--color) 25%, transparent);
+  background: color-mix(in srgb, var(--color) 6%, transparent);
+  align-self: flex-start;
+  letter-spacing: 0.06em;
+}
+
+.cardTitle {
+  @apply font-mono font-semibold text-fg tracking-[-0.01em];
+  font-size: 18px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cardTitle { font-size: 20px; }
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #6B6760;
+  margin: 0;
+  flex: 1;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  @apply font-mono text-[11px];
+  padding: 3px 10px;
+  border-radius: 9999px;
   color: var(--color);
   border: 1px solid color-mix(in srgb, var(--color) 20%, transparent);
   background: color-mix(in srgb, var(--color) 5%, transparent);
 }
 
-.arrow {
-  @apply text-[16px] text-fg-muted transition-all duration-[250ms] inline-block;
+/* GitHub Button */
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid #D5D3CF;
+  background: #F9F8F6;
+  @apply font-mono text-[13px] font-medium text-fg;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s, border-color 0.2s;
 }
-.arrow[data-hovered="true"] {
-  transform: translate(3px, -3px);
+
+.githubBtn:hover {
+  background: #F0EDE8;
+  border-color: #C0BDB8;
 }
