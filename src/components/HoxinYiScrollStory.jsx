@@ -374,6 +374,10 @@ function InfoArchitecture() {
 
           {/* Change highlights */}
           <h3 className={styles.iaContentH3sm}>資訊架構調整</h3>
+          <ul className={styles.iaChangeList}>
+            <li className={styles.iaChangeItem}>降低認知負荷，讓使用者更快達到目標。</li>
+            <li className={styles.iaChangeItem}>補齊核心流程與導覽層級。</li>
+          </ul>
 
           {/* IA diagram — responsive via CSS */}
           <img src={imgIaSitemap}       alt="資訊架構圖" className={styles.iaSitemapDesktop} />
