@@ -197,7 +197,7 @@ function Challenges() {
       <div className={`${styles.sectionCover} ${styles.challengesCover}`}>
         <div className={styles.sectionCoverInner}>
           <SectionBadge en="CHALLENGES & CORE DESIGN" tc="問題挑戰和核心設計" color={ORANGE} />
-          <div className={styles.sectionCoverTitle} style={{ color: ORANGE }}>問題挑戰和核心設計</div>
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleOrange}`}>問題挑戰和核心設計</div>
           <p className={styles.sectionCoverDesc}>找出平台核心痛點，訂定可量化的設計目標。</p>
         </div>
         <WaveBottom fill={WHITE} />
@@ -272,7 +272,7 @@ function UserResearch() {
       <div className={`${styles.sectionCover} ${styles.researchCover}`}>
         <div className={styles.sectionCoverInner}>
           <SectionBadge en="RESEARCH" tc="用戶研究" color={ORANGE} />
-          <div className={styles.sectionCoverTitle} style={{ color: ORANGE }}>用戶研究</div>
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleOrange}`}>用戶研究</div>
           <p className={styles.sectionCoverDesc}>深度訪談與可用性測試，了解志工的真實使用流程與痛點。</p>
         </div>
         <WaveBottom fill={WHITE} />
@@ -334,7 +334,7 @@ function InfoArchitecture() {
       <div className={`${styles.sectionCover} ${styles.iaCover}`}>
         <div className={styles.sectionCoverInner}>
           <SectionBadge en="INFORMATION ARCHITECTURE" tc="資訊架構" color={RED} />
-          <div className={styles.sectionCoverTitle} style={{ color: RED }}>資訊架構</div>
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRed}`}>資訊架構</div>
           <p className={styles.sectionCoverDesc}>重新整理網站結構，新增交流功能，讓志工更容易找到所需內容。</p>
         </div>
         <WaveBottom fill={WHITE} flip />
@@ -400,7 +400,7 @@ function DesignOutcomes() {
       <div className={`${styles.sectionCover} ${styles.outcomesCover}`}>
         <div className={styles.sectionCoverInner}>
           <SectionBadge en="DESIGN OUTCOMES" tc="設計成果" color={PRIMARY} />
-          <div className={styles.sectionCoverTitle} style={{ color: PRIMARY }}>設計成果</div>
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成果</div>
           <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
         </div>
         <WaveBottom fill={WHITE} flip />

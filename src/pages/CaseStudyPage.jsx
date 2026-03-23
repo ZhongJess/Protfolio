@@ -31,7 +31,7 @@ const glassBase = {
 };
 
 function IconPixelArrowLeft() {
-  return <span style={{ fontSize: 13 }}>←</span>;
+  return <span className={styles.arrowLeft}>←</span>;
 }
 
 // 單一數據指標卡片
