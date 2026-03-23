@@ -534,7 +534,10 @@ function Results() {
               <ul className={styles.usabilityList}>
                 {methods.map((m, i) => (
                   <li key={i} className={styles.usabilityListItem}>
-                    <span className={styles.usabilityDot} />
+                    <svg className={styles.usabilityCheckIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="10" fill="#C7626E" fillOpacity="0.15"/>
+                      <path d="M5.5 10.5L8.5 13.5L14.5 7.5" stroke="#C7626E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     <span className={styles.usabilityListText}>{m}</span>
                   </li>
                 ))}
