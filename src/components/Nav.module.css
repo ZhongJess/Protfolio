@@ -18,6 +18,12 @@
   @apply text-accent text-[8px];
 }
 
+.logoImg {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 /* 桌面導覽連結：手機隱藏 */
 .desktopLinks {
   @apply hidden md:flex gap-1;

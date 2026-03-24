@@ -60,8 +60,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       {/* Logo / 名字按鈕 */}
       <button onClick={() => navigate("/")} className={styles.logo}>
-        <span className={styles.logoDiamond}>◆</span>
-        Your Name
+        <img src="/images/logo.png" alt="Jess Zhong" className={styles.logoImg} />
       </button>
 
       {/* 桌面導覽連結 + CTA */}
