@@ -49,81 +49,38 @@ export const PROJECTS = [
 // ── GitHub Repos ───────────────────────────────────────────────────────────────
 export const REPOS = [
   {
-    id: "desinger",
-    name: "Desinger",
+    id: "penghu-airport",
+    name: "Penghu-Airport",
     branch: "main",
-    lang: "HTML / CSS",
-    langColor: "#E44D26",
-    desc: "以純 HTML5 / CSS3 手刻完成的響應式作品集頁面。不依賴框架，純粹利用 Flexbox / Grid 實現複雜排版，完整收錄個人品牌介紹與 2016–2020 年設計作品。",
-    tags: ["HTML5", "CSS3", "Flexbox / Grid", "RWD"],
+    lang: "Sass / Bootstrap",
+    langColor: "#CF649A",
+    desc: "運用模組化 SCSS 三層架構重構澎湖機場頁面。專注於提升樣式可維護性與無障礙（A11y）設計細節，是身為 UI/UX 設計師對前端切版的深度實踐。",
+    tags: ["Sass/SCSS", "Bootstrap", "A11y", "RWD"],
     stars: 0,
-    demo: "https://zhongjess.github.io/Desinger/",
-    github: "https://github.com/ZhongJess/Desinger",
-    screenshot: "/images/repo/Desinger.webp",
-    code: `/* 純手刻 RWD — 無框架 Grid 排版 */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
+    demo: "https://zhongjess.github.io/Penghu-Airport/",
+    github: "https://github.com/ZhongJess/Penghu-Airport",
+    screenshot: "/images/repo/Penghu-Airport.png",
+    code: `/* Sass 模組化入口 style.scss */
+@use 'base/variables'    as *;
+@use 'base/mixins'       as *;
+@use 'base/reset';
+@use 'base/accessibility';
+@use 'base/animate';
 
-@media (max-width: 768px) {
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
-}
+@use 'components/header';
+@use 'components/banner';
+@use 'components/route';
+@use 'components/spot';
+@use 'components/modal';
 
-/* Flexbox 導覽列 */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-}
+@use 'layout/container';
+@use 'layout/footer';
 
-/* Hero 主視覺 */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 10vw;
-}`,
-  },
-  {
-    id: "htmlcssupdate",
-    name: "htmlcssUpdate",
-    branch: "main",
-    lang: "HTML / CSS / jQuery",
-    langColor: "#1572B6",
-    desc: "個人品牌形象網站切版練習。結合 jQuery 3.7.1 實作漢堡選單與分頁導覽，並透過 Media Queries 確保在各種裝置下均有完美的響應式瀏覽體驗。",
-    tags: ["HTML5", "CSS3", "jQuery", "RWD"],
-    stars: 0,
-    demo: "https://zhongjess.github.io/htmlcssUpdate/",
-    github: "https://github.com/ZhongJess/htmlcssUpdate",
-    screenshot: "/images/repo/htmlcssUpdate.webp",
-    code: `/* 漢堡選單切換（jQuery） */
-$('.hamburger').on('click', function () {
-  $(this).toggleClass('is-active');
-  $('.nav-menu').slideToggle(300);
-});
-
-/* 作品卡片 Hover 效果 */
-.work-card {
-  transition: transform 0.25s ease,
-              box-shadow 0.25s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-/* RWD 斷點 */
-@media (max-width: 768px) {
-  .works-grid { grid-template-columns: 1fr; }
-  .nav-menu   { display: none; }
+/* 無障礙焦點樣式 */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
 }`,
   },
   {
@@ -165,68 +122,111 @@ $accent:   #FFE180;  // Hover、強調元素
 }`,
   },
   {
-    id: "penghu-airport",
-    name: "Penghu-Airport",
+    id: "htmlcssupdate",
+    name: "htmlcssUpdate",
     branch: "main",
-    lang: "Sass / Bootstrap",
-    langColor: "#CF649A",
-    desc: "運用模組化 SCSS 三層架構重構澎湖機場頁面。專注於提升樣式可維護性與無障礙（A11y）設計細節，是身為 UI/UX 設計師對前端切版的深度實踐。",
-    tags: ["Sass/SCSS", "Bootstrap", "A11y", "RWD"],
+    lang: "HTML / CSS / jQuery",
+    langColor: "#1572B6",
+    desc: "結合 jQuery 3.7.1 實作漢堡選單與分頁導覽，並透過 Media Queries 確保在各種裝置下均有完美的響應式瀏覽體驗。",
+    tags: ["HTML5", "CSS3", "jQuery", "RWD"],
     stars: 0,
-    demo: "https://zhongjess.github.io/Penghu-Airport/",
-    github: "https://github.com/ZhongJess/Penghu-Airport",
-    screenshot: "/images/repo/Penghu-Airport.png",
-    code: `/* Sass 模組化入口 style.scss */
-@use 'base/variables'    as *;
-@use 'base/mixins'       as *;
-@use 'base/reset';
-@use 'base/accessibility';
-@use 'base/animate';
+    demo: "https://zhongjess.github.io/htmlcssUpdate/",
+    github: "https://github.com/ZhongJess/htmlcssUpdate",
+    screenshot: "/images/repo/htmlcssUpdate.webp",
+    code: `/* 漢堡選單切換（jQuery） */
+$('.hamburger').on('click', function () {
+  $(this).toggleClass('is-active');
+  $('.nav-menu').slideToggle(300);
+});
 
-@use 'components/header';
-@use 'components/banner';
-@use 'components/route';
-@use 'components/spot';
-@use 'components/modal';
+/* 作品卡片 Hover 效果 */
+.work-card {
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
 
-@use 'layout/container';
-@use 'layout/footer';
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
 
-/* 無障礙焦點樣式 */
-:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
-  border-radius: 2px;
+/* RWD 斷點 */
+@media (max-width: 768px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .nav-menu   { display: none; }
+}`,
+  },
+  {
+    id: "desinger",
+    name: "Desinger",
+    branch: "main",
+    lang: "HTML / CSS",
+    langColor: "#E44D26",
+    desc: "以純 HTML5 / CSS3 手刻完成的響應式作品集頁面。不依賴框架，純粹利用 Flexbox / Grid 實現複雜排版。",
+    tags: ["HTML5", "CSS3", "Flexbox / Grid", "RWD"],
+    stars: 0,
+    demo: "https://zhongjess.github.io/Desinger/",
+    github: "https://github.com/ZhongJess/Desinger",
+    screenshot: "/images/repo/Desinger.webp",
+    code: `/* 純手刻 RWD — 無框架 Grid 排版 */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Flexbox 導覽列 */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+/* Hero 主視覺 */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10vw;
 }`,
   },
 ];
 
 // ── 設計工具跑馬燈 ──────────────────────────────────────────────────────────────
 export const DESIGN_TOOLS = [
-  { label: "Figma",          color: "#BB4F7A" },
-  { label: "Miro",           color: "#F8C300" },
-  { label: "GitHub",         color: "#6BBB4F" },
-  { label: "Notion",         color: "#888888" },
-  { label: "Claude Code",    color: "#8A6BBB" },
-  { label: "Visual Studio",  color: "#4FA8BB" },
+  { label: "Figma", color: "#BB4F7A" },
+  { label: "Miro", color: "#F8C300" },
+  { label: "GitHub", color: "#6BBB4F" },
+  { label: "Notion", color: "#888888" },
+  { label: "Claude Code", color: "#8A6BBB" },
+  { label: "Visual Studio", color: "#4FA8BB" },
 ];
 
 // ── 技能標籤（星座 Hero 用）─────────────────────────────────────────────────────
 export const SKILL_PILLS = [
-  { label: "User Research",                  color: "#BB7A4F" },
-  { label: "Market Research",               color: "#A07840" },
-  { label: "Interaction Design",            color: "#7B6FBB" },
-  { label: "Design System Guideline",       color: "#4F7FBB" },
+  { label: "User Research", color: "#BB7A4F" },
+  { label: "Market Research", color: "#A07840" },
+  { label: "Interaction Design", color: "#7B6FBB" },
+  { label: "Design System Guideline", color: "#4F7FBB" },
   { label: "Information Architecture (IA)", color: "#2DA567" },
-  { label: "User-Centered Design (UCD)",    color: "#5BAA80" },
-  { label: "Wireframe",                     color: "#7B6FBB" },
-  { label: "Prototype",                     color: "#BB9A4F" },
-  { label: "RWD",                           color: "#4F9BBB" },
-  { label: "HTML / CSS",                    color: "#BB7A4F" },
-  { label: "Figma",                         color: "#BB4F7A" },
-  { label: "Git",                           color: "#6BBB4F" },
-  { label: "Vibe Coding",                   color: "#C8923A" },
-  { label: "ClaudeCode",                    color: "#8A6BBB" },
-  { label: "APP",                           color: "#BB4F7A" },
-  { label: "A/B Testing",                   color: "#4F9BBB" },
+  { label: "User-Centered Design (UCD)", color: "#5BAA80" },
+  { label: "Wireframe", color: "#7B6FBB" },
+  { label: "Prototype", color: "#BB9A4F" },
+  { label: "RWD", color: "#4F9BBB" },
+  { label: "HTML / CSS", color: "#BB7A4F" },
+  { label: "Figma", color: "#BB4F7A" },
+  { label: "Git", color: "#6BBB4F" },
+  { label: "Vibe Coding", color: "#C8923A" },
+  { label: "ClaudeCode", color: "#8A6BBB" },
+  { label: "APP", color: "#BB4F7A" },
+  { label: "A/B Testing", color: "#4F9BBB" },
 ];

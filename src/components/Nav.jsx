@@ -76,7 +76,7 @@ export default function Nav() {
             {label}
           </button>
         ))}
-        <a href="/resume.pdf" download className={styles.ctaButton}>
+        <a href="/鍾思瑩UXUI designer.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.ctaButton}>
           <IconDownload /> 履歷下載
         </a>
       </div>
@@ -122,14 +122,14 @@ export default function Nav() {
               <a href="https://medium.com/@sk2377328815" target="_blank" rel="noopener noreferrer" className={styles.mobileIconLink} aria-label="Medium">
                 <IconMedium />
               </a>
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.mobileIconLink} aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/%E6%80%9D%E7%91%A9-%E9%8D%BE-34609b220/" target="_blank" rel="noopener noreferrer" className={styles.mobileIconLink} aria-label="LinkedIn">
                 <IconLinkedIn />
               </a>
-              <a href="https://www.cakeresume.com/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.mobileIconLink} aria-label="CakeResume">
+              <a href="https://www.cake.me/me/sk2377328815" target="_blank" rel="noopener noreferrer" className={styles.mobileIconLink} aria-label="CakeResume">
                 <IconCake />
               </a>
             </div>
-            <a href="/resume.pdf" download className={styles.mobileResumeLink}>
+            <a href="/鍾思瑩UXUI designer.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.mobileResumeLink}>
               <IconDownload /> 履歷下載
             </a>
           </div>

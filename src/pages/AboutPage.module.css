@@ -39,6 +39,24 @@
   @apply opacity-70;
 }
 
+/* Acrostic Intro */
+.acrosticIntro {
+  @apply font-sans text-[15px] leading-[1.9] text-fg-sub font-light max-w-[620px];
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.acrosticIntro p {
+  margin: 0;
+}
+
+.firstChar {
+  @apply font-serif font-bold text-fg;
+  font-size: 1.15em;
+  margin-right: 2px;
+}
+
 .divider {
   border-top: 1px solid #D5D3CF;
 }
@@ -65,4 +83,24 @@
 
 .cardDesc {
   @apply font-sans text-[13px] text-fg-sub leading-[1.6] font-light;
+}
+
+.cardSubtitle {
+  @apply font-sans text-[12px] text-fg-sub font-light;
+  margin: -4px 0 6px;
+}
+
+.cardList {
+  @apply font-sans text-[13px] text-fg-sub leading-[1.7] font-light;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardList li::before {
+  content: "·  ";
+  color: var(--color-accent, #FF6200);
 }

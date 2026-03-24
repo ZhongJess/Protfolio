@@ -22,6 +22,12 @@
          px-3 py-[7px] rounded-[6px]
          border border-transparent bg-transparent
          transition-all duration-200 cursor-pointer;
+  line-height: 1;
+}
+
+.emailLink svg {
+  display: block;
+  flex-shrink: 0;
 }
 .emailLink:hover {
   @apply text-accent border-border bg-bg-card;
@@ -40,6 +46,12 @@
          px-3 py-[7px] rounded-[6px]
          border border-transparent bg-transparent
          transition-all duration-200 cursor-pointer;
+  line-height: 1;
+}
+
+.link svg {
+  display: block;
+  flex-shrink: 0;
 }
 .link:hover {
   @apply text-fg border-border bg-bg-card;

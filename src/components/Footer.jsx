@@ -52,10 +52,10 @@ export default function Footer() {
           <a href="https://medium.com/@sk2377328815" target="_blank" rel="noopener noreferrer" className={styles.link}>
             <IconMedium /> Medium
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.link}>
+          <a href="https://www.linkedin.com/in/%E6%80%9D%E7%91%A9-%E9%8D%BE-34609b220/" target="_blank" rel="noopener noreferrer" className={styles.link}>
             <IconLinkedIn /> LinkedIn
           </a>
-          <a href="https://www.cakeresume.com/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.link}>
+          <a href="https://www.cake.me/me/sk2377328815" target="_blank" rel="noopener noreferrer" className={styles.link}>
             <IconCake /> Cake
           </a>
         </div>
