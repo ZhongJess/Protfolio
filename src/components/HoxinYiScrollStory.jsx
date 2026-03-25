@@ -5,26 +5,24 @@ import { useNavigate } from "react-router-dom";
 import styles from './HoxinYiScrollStory.module.css';
 
 // ── Assets ────────────────────────────────────────────────────────────────────
-import proto01 from '../assets/hoxinyi/prototype-01.mov';
-import proto02 from '../assets/hoxinyi/prototype-02.mov';
-import proto03 from '../assets/hoxinyi/prototype-03.mov';
-import imgResearchInterview from '../assets/hoxinyi/research-interview.png';
-import imgResearchMaze from '../assets/hoxinyi/research-maze.png';
-import imgJourneyMapTop from '../assets/hoxinyi/journey-map-top.png';
-import imgJourneyMapBottom from '../assets/hoxinyi/journey-map-bottom.png';
-import imgJourneyMapMobile from '../assets/hoxinyi/journey-map-mobile.png';
-import imgIaPersona from '../assets/hoxinyi/ia-persona.png';
-import imgIaUserflow from '../assets/hoxinyi/ia-userflow.png';
-import imgIaSitemap from '../assets/hoxinyi/ia-sitemap.png';
-import imgIaSitemapMobile from '../assets/hoxinyi/ia-sitemap-mobile.png';
-import imgSusChartMvp from '../assets/hoxinyi/sus-chart-mvp.png';
-import imgSusChartHoxy from '../assets/hoxinyi/sus-chart-hoxy.png';
-import imgResultsCard01 from '../assets/hoxinyi/results-card-01.png';
-import imgResultsCard02 from '../assets/hoxinyi/results-card-02.png';
-import imgResultsCard03 from '../assets/hoxinyi/results-card-03.png';
-import imgResultsCard04 from '../assets/hoxinyi/results-card-04.png';
-import imgBanner from '../assets/hoxinyi/banner.webp';
-import imgTesterMvp from '../assets/hoxinyi/tester-mvp.png';
+const proto01              = '/videos/hoxinyi/prototype-01.mov';
+const proto02              = '/videos/hoxinyi/prototype-02.mov';
+const proto03              = '/videos/hoxinyi/prototype-03.mov';
+const imgResearchInterview = '/images/hoxinyi/research-interview.png';
+const imgResearchMaze      = '/images/hoxinyi/research-maze.png';
+const imgJourneyMap        = '/images/hoxinyi/journey-map.webp';
+const imgIaPersona         = '/images/hoxinyi/ia-persona.png';
+const imgIaUserflow        = '/images/hoxinyi/ia-userflow.png';
+const imgIaSitemap         = '/images/hoxinyi/ia-sitemap.png';
+const imgIaSitemapMobile   = '/images/hoxinyi/ia-sitemap-mobile.png';
+const imgSusChartMvp       = '/images/hoxinyi/sus-chart-mvp.png';
+const imgSusChartHoxy      = '/images/hoxinyi/sus-chart-hoxy.png';
+const imgResultsCard01     = '/images/hoxinyi/results-card-01.png';
+const imgResultsCard02     = '/images/hoxinyi/results-card-02.png';
+const imgResultsCard03     = '/images/hoxinyi/results-card-03.png';
+const imgResultsCard04     = '/images/hoxinyi/results-card-04.png';
+const imgBanner            = '/images/hoxinyi/banner.webp';
+const imgTesterMvp         = '/images/hoxinyi/tester-mvp.png';
 
 // ── Design Tokens (kept for runtime-dynamic inline styles) ────────────────────
 const WHITE   = "#FFFFFF";
@@ -33,6 +31,110 @@ const PRIMARY = "#C7626E";   // rose
 const ORANGE  = "#D17953";   // orange
 const RED     = "#E16C54";   // coral
 const TEAL    = "#3DAB8E";   // for decrease arrows
+
+// ── Journey Map Accordion (Mobile) ────────────────────────────────────────────
+const JOURNEY_STEPS = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="7" /><line x1="16.5" y1="16.5" x2="22" y2="22" />
+      </svg>
+    ),
+    title: "搜尋志工活動",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="3" width="16" height="18" rx="2" /><line x1="9" y1="7" x2="15" y2="7" /><line x1="9" y1="11" x2="15" y2="11" /><line x1="9" y1="15" x2="12" y2="15" />
+      </svg>
+    ),
+    title: "報名志工活動",
+    discovery: "舊有的報名流程過於碎片化，使用者必須在多個頁面間跳轉才能完成單一任務",
+    opportunity: "透過「導入分段進度條」，將原本混亂的註冊與報名流程整合為透明的線性導航",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" /><path d="M9 2v4h6V2" />
+      </svg>
+    ),
+    title: "等待錄取通知",
+    discovery: "流程狀態不透明",
+    opportunity: "導入視覺化進度條（Progress Bar）",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="9" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />
+      </svg>
+    ),
+    title: "參加志工活動",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 10v12" /><path d="M15 5.88L14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88z" />
+      </svg>
+    ),
+    title: "分享活動心得",
+    discovery: "缺乏平台分享感動或反饋",
+    opportunity: "打造「志工社群功能」",
+  },
+];
+
+function JourneyMapAccordion() {
+  const [openIdx, setOpenIdx] = useState(null);
+  return (
+    <div className={styles.jmAccordion}>
+      {JOURNEY_STEPS.map((step, i) => {
+        const hasInsight = !!(step.discovery || step.opportunity);
+        const isOpen = openIdx === i;
+        return (
+          <div key={i} className={styles.jmStep}>
+            <div
+              className={styles.jmStepHeader}
+              onClick={() => hasInsight && setOpenIdx(isOpen ? null : i)}
+              style={{ cursor: hasInsight ? "pointer" : "default" }}
+            >
+              <div className={styles.jmStepIcon}>{step.icon}</div>
+              <span className={styles.jmStepTitle}>{step.title}</span>
+              {hasInsight && (
+                <div className={styles.jmStepBadges}>
+                  <span className={styles.jmBadgeRed}>發現</span>
+                  <span className={styles.jmBadgeGreen}>機會</span>
+                  <svg
+                    className={styles.jmChevron}
+                    data-open={isOpen}
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </div>
+              )}
+            </div>
+            {hasInsight && isOpen && (
+              <div className={styles.jmStepBody}>
+                {step.discovery && (
+                  <div className={styles.jmInsightRow}>
+                    <span className={styles.jmBadgeRed}>發現</span>
+                    <p className={styles.jmInsightText}>{step.discovery}</p>
+                  </div>
+                )}
+                {step.opportunity && (
+                  <div className={styles.jmInsightRow}>
+                    <span className={styles.jmBadgeGreen}>機會</span>
+                    <p className={styles.jmInsightText}>{step.opportunity}</p>
+                  </div>
+                )}
+              </div>
+            )}
+            {i < JOURNEY_STEPS.length - 1 && <div className={styles.jmConnector} />}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 // ── Hooks ─────────────────────────────────────────────────────────────────────
 function useActiveSection(ids) {
@@ -67,9 +169,10 @@ function scrollToTop() {
 
 // ── Nav ───────────────────────────────────────────────────────────────────────
 const NAV_ITEMS = [
-  { id: "hxy-research",   label: "用戶研究" },
-  { id: "hxy-ia",         label: "資訊架構" },
-  { id: "hxy-results",    label: "設計成效" },
+  { id: "hxy-challenges", label: "問題分析" },
+  { id: "hxy-ia",         label: "解決方案" },
+  { id: "hxy-outcomes",   label: "核心設計" },
+  { id: "hxy-results",    label: "設計驗證" },
 ];
 
 function SectionNav({ active }) {
@@ -168,11 +271,11 @@ function Hero() {
           </div>
 
           {/* 主標題 */}
-          <h1 className={styles.heroH1}>數據驅動體驗革新：台灣樸石人文協會志工媒合平台之易用性重塑</h1>
+          <h1 className={styles.heroH1}>數據驅動轉型：樸石人文志工平台的體驗重構</h1>
 
           {/* 副標題 */}
           <p className={styles.heroSubtitle}>
-            透過深度 UX 研究與流程優化，成功彌合報名、培訓與社群斷層，大幅提升任務完成率 31%，並將系統易用性 (SUS) 分數推升 26%，打造最高效的志工服務體驗。
+            透過 2 輪可用性測試與深度訪談，將報名完成率有效提升 31%
           </p>
 
           {/* Info Cards */}
@@ -202,7 +305,7 @@ function Challenges() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.challengesCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="CHALLENGES & CORE DESIGN" tc="問題挑戰和核心設計" color={ORANGE} />
+          <SectionBadge en="CHALLENGES & CORE DESIGN"  color={ORANGE} />
           <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleOrange}`}>問題挑戰和核心設計</div>
           <p className={styles.sectionCoverDesc}>找出平台核心痛點，訂定可量化的設計目標。</p>
         </div>
@@ -218,7 +321,7 @@ function Challenges() {
           <div className={styles.challengesGrid}>
             {[
               { n: "01", title: "報名流程複雜",   desc: "使用者需跨越多個頁面完成報名，步驟不直覺，導致高放棄率。" },
-              { n: "02", title: "培訓體系不透明", desc: "志工無法清楚掌握培訓進度與下一步，造成混亂與挫折感。" },
+              { n: "02", title: "被動等待報名通知", desc: "由於無法得知審核進度或培訓時程，這種資訊斷層導致使用者產生極高的不確定感" },
               { n: "03", title: "社群連結薄弱",   desc: "缺乏有效的志工間交流機制，難以建立社群認同感與長期黏著度。" },
             ].map(c => (
               <div key={c.n} className={styles.challengeCard}>
@@ -236,7 +339,7 @@ function Challenges() {
           <div className={styles.protoTabRow}>
             {[
               "原型 01 — 簡化報名流程",
-              "原型 02 — 培訓進度追蹤",
+              "原型 02 — 報名狀態追蹤",
               "原型 03 — 志工社群功能",
             ].map((label, i) => (
               <button
@@ -277,9 +380,9 @@ function UserResearch() {
       {/* Cover with big title */}
       <div className={`${styles.sectionCover} ${styles.researchCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="RESEARCH" tc="用戶研究" color={ORANGE} />
+          <SectionBadge en="RESEARCH"  color={ORANGE} />
           <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleOrange}`}>用戶研究</div>
-          <p className={styles.sectionCoverDesc}>深度訪談與可用性測試，了解志工的真實使用流程與痛點。</p>
+          <p className={styles.sectionCoverDesc}>洞察痛點：從 8 位志工的真實聲音中找尋重構契機</p>
         </div>
         <WaveBottom fill={WHITE} />
       </div>
@@ -322,26 +425,25 @@ function UserResearch() {
           <h3 className={styles.researchSectionH3}>User Journey Map</h3>
           {/* Desktop: two stacked halves; Mobile: single image — handled via CSS */}
           <div className={styles.journeyMapDesktop}>
-            <img src={imgJourneyMapTop}    alt="User Journey Map 上半部" className={styles.journeyMapTop} />
-            <img src={imgJourneyMapBottom} alt="User Journey Map 下半部" className={styles.journeyMapBottom} />
+            <img src={imgJourneyMap} alt="User Journey Map" className={styles.journeyMapImg} />
           </div>
-          <img src={imgJourneyMapMobile} alt="User Journey Map" className={styles.journeyMapMobile} />
+          <JourneyMapAccordion />
         </div>
       </div>
     </div>
   );
 }
 
-// ── INFORMATION ARCHITECTURE ──────────────────────────────────────────────────
+// ── SOLUTION ──────────────────────────────────────────────────
 function InfoArchitecture() {
   return (
     <div id="hxy-ia">
       {/* Cover with big title */}
       <div className={`${styles.sectionCover} ${styles.iaCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="INFORMATION ARCHITECTURE" tc="資訊架構" color={RED} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRed}`}>資訊架構</div>
-          <p className={styles.sectionCoverDesc}>重新整理網站結構，新增交流功能，讓志工更容易找到所需內容。</p>
+          <SectionBadge en="SOLUTION" color={RED} />
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRed}`}>解決方案</div>
+          <p className={styles.sectionCoverDesc}>資訊架構重構，消除功能擴張帶來的認知負荷</p>
         </div>
         <WaveBottom fill={WHITE} flip />
       </div>
@@ -381,8 +483,8 @@ function InfoArchitecture() {
           {/* Change highlights */}
           <h3 className={styles.iaContentH3sm}>資訊架構調整</h3>
           <ul className={styles.iaChangeList}>
-            <li className={styles.iaChangeItem}>降低認知負荷，讓使用者更快達到目標。</li>
-            <li className={styles.iaChangeItem}>補齊核心流程與導覽層級。</li>
+            <li className={styles.iaChangeItem}>集中主要功能：將原本分散的報名與培訓紀錄整合至此，降低搜尋成本。</li>
+            <li className={styles.iaChangeItem}>新增交流功能模組：強化志工之間的活動交流，也能增加平台黏著度。</li>
           </ul>
 
           {/* IA diagram — responsive via CSS */}
@@ -402,8 +504,8 @@ function DesignOutcomes() {
       desc: <>透過<strong>合併冗餘表單</strong>並導入<strong>進度分段機制</strong>，我們成功將複雜的報名流程精簡為 <strong>3 個核心步驟</strong>。這不僅降低了使用者的<strong>認知負荷</strong>，更有效消弭了填表時的<strong>心理阻礙</strong>，使<strong>報名完成率顯著提升 31%</strong>。</>,
     },
     {
-      n: "02", subtitle: "視覺化進度", title: "培訓進度條", badge: null,
-      desc: <>針對志工對<strong>培訓體系不透明</strong>的焦慮感，我們建構了<strong>視覺化學習路徑</strong>。透過<strong>即時的反饋進度條</strong>，讓志工能預期接下來的每一步任務，大幅降低了服務初期的<strong>不確定感與挫折感</strong>。</>,
+      n: "02", subtitle: "視覺化進度", title: "報名狀態追蹤", badge: "易用性分數提升",
+      desc: <>透過導入<strong style={{color:"#C7626E"}}>即時的狀態追蹤模組</strong>，讓志工隨時能掌握「審核中、已錄取、培訓中」的每個節點；將原本漫長的等待轉化為可預期的目標達成感，顯著降低受試者的挫折感。</>,
     },
     {
       n: "03", subtitle: "社群連結", title: "志工交流功能", badge: "強化長期黏著",
@@ -418,8 +520,8 @@ function DesignOutcomes() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.outcomesCover}`}>
         <div className={styles.sectionCoverInner}>
-          <SectionBadge en="DESIGN OUTCOMES" tc="設計成效與洞察" color={PRIMARY} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>設計成效與洞察</div>
+          <SectionBadge en="DESIGN OUTCOMES" color={PRIMARY} />
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>核心設計</div>
           <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
         </div>
         <WaveBottom fill={WHITE} flip />
@@ -436,46 +538,30 @@ function DesignOutcomes() {
                 Because the grid column template depends on `i` (runtime data),
                 we keep these layout values inline.
               */}
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: i % 2 === 0 ? "1fr 1.4fr" : "1.4fr 1fr",
-                gap: 48,
-                alignItems: "center",
-              }}
-              className={styles.outcomesItemGrid}
+              <div
+                className={styles.outcomesItemGrid}
+                data-odd={i % 2 !== 0}
+                style={{
+                  gridTemplateColumns: i % 2 === 0 ? "1fr 1.4fr" : "1.4fr 1fr",
+                }}
               >
-                {/* Text left (even items) */}
-                {i % 2 === 0 && (
-                  <div>
-                    <div className={styles.outcomesNumRow}>
-                      <div className={styles.outcomesNumBadge}>{item.n}</div>
-                      <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
-                      {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
-                    </div>
-                    <h3 className={styles.outcomesItemH3}>{item.title}</h3>
-                    <p className={styles.outcomesItemDesc}>{item.desc}</p>
+                {/* Text — always first in DOM → mobile: top */}
+                <div className={styles.outcomesItemText} data-odd={i % 2 !== 0}>
+                  <div className={styles.outcomesNumRow}>
+                    <div className={styles.outcomesNumBadge}>{item.n}</div>
+                    <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
+                    {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
                   </div>
-                )}
+                  <h3 className={styles.outcomesItemH3}>{item.title}</h3>
+                  <p className={styles.outcomesItemDesc}>{item.desc}</p>
+                </div>
+                {/* Video — always second in DOM → mobile: bottom */}
                 <video
                   src={[proto01, proto02, proto03][i]}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                  autoPlay loop muted playsInline
                   className={styles.outcomesVideo}
+                  data-odd={i % 2 !== 0}
                 />
-                {/* Text right (odd items) */}
-                {i % 2 !== 0 && (
-                  <div>
-                    <div className={styles.outcomesNumRow}>
-                      <div className={styles.outcomesNumBadge}>{item.n}</div>
-                      <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
-                      {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
-                    </div>
-                    <h3 className={styles.outcomesItemH3}>{item.title}</h3>
-                    <p className={styles.outcomesItemDesc}>{item.desc}</p>
-                  </div>
-                )}
               </div>
             </div>
           ))}
@@ -516,8 +602,8 @@ function Results() {
       {/* Cover */}
       <div className={`${styles.sectionCover} ${styles.resultsCover}`}>
         <div className={styles.resultsCoverInner}>
-          <SectionBadge en="DESIGN OUTCOMES" tc="設計成效" color={`${WHITE}30`} />
-          <div className={styles.resultsCoverTitle}>設計成效</div>
+          <SectionBadge en="DESIGN OUTCOMES" color={`${WHITE}30`} />
+          <div className={styles.resultsCoverTitle}>設計驗證</div>
           <p className={styles.resultsCoverSub}>易用性 &amp; SUS分析</p>
         </div>
         <WaveBottom fill={WHITE} />
@@ -607,7 +693,7 @@ function Results() {
           <table className={styles.mazeTable}>
             <thead>
               <tr className={styles.mazeTableHead}>
-                {["測試者", "人數", "錯誤點擊率", "持續時間", "完成率", "錯誤率", "綜合評分"].map(h => (
+                {["測試版本", "人數", "錯誤點擊率", "持續時間", "完成率", "錯誤率", "綜合評分"].map(h => (
                   <th key={h} className={styles.mazeTableTh}>{h}</th>
                 ))}
               </tr>

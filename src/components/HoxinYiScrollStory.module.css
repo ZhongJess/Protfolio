@@ -195,7 +195,7 @@
 
 /* ── SectionBadge ───────────────────────────────────────────────────────────── */
 .sectionBadgeWrapper {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .sectionBadge {
@@ -240,14 +240,14 @@
 
 /* ── Section cover shared ───────────────────────────────────────────────────── */
 .sectionCover {
-  padding: 64px 20px 64px;
+  padding: 88px 20px 80px;
   position: relative;
   overflow: clip;
 }
 
 @media (min-width: 768px) {
   .sectionCover {
-    padding: 96px 40px 80px;
+    padding: 120px 40px 104px;
   }
 }
 
@@ -295,12 +295,12 @@
 /* ── Section content shared ─────────────────────────────────────────────────── */
 .sectionContent {
   background: #FFFFFF;
-  padding: 56px 20px;
+  padding: 80px 20px;
 }
 
 @media (min-width: 768px) {
   .sectionContent {
-    padding: 72px 40px;
+    padding: 96px 40px;
   }
 }
 
@@ -353,7 +353,7 @@
 }
 
 .heroContent {
-  padding-top: 32px;
+  padding-top: 48px;
 }
 
 .heroTagsRow {
@@ -665,32 +665,141 @@
   display: none;
 }
 
-.journeyMapMobile {
+@media (min-width: 768px) {
+  .journeyMapDesktop {
+    display: block;
+  }
+}
+
+.journeyMapImg {
   width: 100%;
   display: block;
   border-radius: 16px;
 }
 
-@media (min-width: 768px) {
-  .journeyMapDesktop {
-    display: block;
-  }
+/* ── Journey Map Accordion (mobile only) ───────────────────────────────────── */
+.jmAccordion {
+  display: flex;
+  flex-direction: column;
+  background: #FFF9EB;
+  border-radius: 20px;
+  padding: 24px 20px;
+}
 
-  .journeyMapMobile {
+@media (min-width: 768px) {
+  .jmAccordion {
     display: none;
   }
 }
 
-.journeyMapTop {
-  width: 100%;
-  display: block;
-  border-radius: 16px 16px 0 0;
+.jmStep {
+  display: flex;
+  flex-direction: column;
 }
 
-.journeyMapBottom {
-  width: 100%;
-  display: block;
-  border-radius: 0 0 16px 16px;
+.jmStepHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.jmStepIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.8px solid #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1A1A1A;
+}
+
+.jmStepIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.jmStepTitle {
+  font-family: var(--font-tc);
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A1A;
+  flex: 1;
+}
+
+.jmStepBadges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.jmBadgeRed {
+  background: #D6001A;
+  color: #fff;
+  font-family: var(--font-tc);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 3px 10px;
+}
+
+.jmBadgeGreen {
+  background: #1B930D;
+  color: #fff;
+  font-family: var(--font-tc);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 3px 10px;
+}
+
+.jmChevron {
+  width: 18px;
+  height: 18px;
+  color: #6B6760;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.jmChevron[data-open="true"] {
+  transform: rotate(180deg);
+}
+
+.jmStepBody {
+  background: #FFEAB8;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.jmInsightRow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.jmInsightText {
+  font-family: var(--font-tc);
+  font-size: 14px;
+  color: #1A1A1A;
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 2px;
+}
+
+.jmConnector {
+  width: 1.5px;
+  height: 16px;
+  background: rgba(26,26,26,0.2);
+  margin-left: 19px;
 }
 
 /* ── InfoArchitecture ───────────────────────────────────────────────────────── */
@@ -974,6 +1083,13 @@
     display: grid !important;
     gap: 48px;
   }
+  /* Odd items: video on left → push text to right with order */
+  .outcomesItemText[data-odd="true"] {
+    order: 2;
+  }
+  .outcomesVideo[data-odd="true"] {
+    order: 1;
+  }
 }
 
 .outcomesVideo {
@@ -1246,8 +1362,8 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-tc);
-  font-size: 16px;
-  min-width: 560px;
+  font-size: 13px;
+  min-width: 640px;
 }
 
 @media (min-width: 768px) {
@@ -1261,20 +1377,33 @@
 }
 
 .mazeTableTh {
-  padding: 12px 16px;
+  padding: 10px 8px;
   text-align: center;
   font-weight: 700;
   color: #1A1A1A;
   border: 1px solid #E8E3DD;
   width: 16.66%;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .mazeTableTh {
+    padding: 12px 16px;
+  }
 }
 
 .mazeTableTd {
-  padding: 14px 16px;
+  padding: 12px 8px;
   text-align: center;
   border: 1px solid #E8E3DD;
   color: #1A1A1A;
   width: 16.66%;
+}
+
+@media (min-width: 768px) {
+  .mazeTableTd {
+    padding: 14px 16px;
+  }
 }
 
 .mazeHotCell {
