@@ -2,6 +2,13 @@
 
 .footer {
   @apply border-t border-border bg-bg px-3 md:px-12 shrink-0;
+  padding-bottom: 96px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-bottom: 0;
+  }
 }
 
 .inner {
@@ -64,9 +71,6 @@
 
 /* 手機版：column 排列，全部置中 */
 @media (max-width: 767px) {
-  .footer {
-    padding-bottom: 96px !important;
-  }
   .inner {
     display: flex;
     flex-direction: column;
