@@ -2,7 +2,7 @@
 
 /* 與 ProjectsPage 相同的頁首樣式 */
 .header {
-  @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-7 pb-4;
+  @apply max-w-[1080px] mx-auto px-3 md:px-12 pt-7 pb-4;
 }
 
 .eyebrow {
@@ -16,7 +16,7 @@
 
 /* 內容區塊 */
 .content {
-  @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-12;
+  @apply max-w-[1080px] mx-auto px-3 md:px-12 pb-12;
 }
 
 .section {
@@ -52,8 +52,7 @@
 }
 
 .firstChar {
-  @apply font-serif font-bold text-fg;
-  font-size: 1.15em;
+  @apply font-sans font-light text-fg-sub;
   margin-right: 2px;
 }
 

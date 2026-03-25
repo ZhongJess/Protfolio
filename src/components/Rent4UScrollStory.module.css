@@ -98,7 +98,7 @@
   max-width: 1080px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 12px;
 }
 
 @media (min-width: 768px) {
@@ -284,8 +284,9 @@
   font-family: var(--font-main);
 }
 
+
 .researchSubA {
-  padding: 48px 20px;
+  padding: 48px 12px;
   border-bottom: 1px solid #D5D3CF;
 }
 
@@ -410,7 +411,7 @@
 
 /* Research Sub B */
 .researchSubB {
-  padding: 48px 20px;
+  padding: 48px 12px;
   border-bottom: 1px solid #D5D3CF;
 }
 
@@ -485,7 +486,6 @@
 }
 
 .researchImgFrame {
-  height: 417px;
   border-radius: 16px;
   overflow: hidden;
   width: 100%;
@@ -494,17 +494,33 @@
 }
 
 .researchPicture {
-  position: absolute;
-  width: 110.84%;
-  height: 100%;
-  left: -5.42%;
-  top: 0;
+  display: block;
+  width: 100%;
 }
 
 .researchPicture img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .researchImgFrame {
+    height: 417px;
+  }
+  .researchPicture {
+    position: absolute;
+    width: 110.84%;
+    height: 100%;
+    left: -5.42%;
+    top: 0;
+  }
+  .researchPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .researchImgAbsolute {
@@ -757,7 +773,7 @@
 
 .logicUserFlowWrap {
   background: #FFFFFF;
-  padding: 48px 20px;
+  padding: 48px 12px;
 }
 
 @media (min-width: 768px) {
@@ -1281,7 +1297,7 @@
   flex-direction: column;
   gap: 0;
   align-items: center;
-  padding: 48px 20px;
+  padding: 48px 12px;
   min-height: auto;
 }
 
@@ -1386,7 +1402,7 @@
 
 .impactSubWrap {
   background: #FFFFFF;
-  padding: 48px 20px;
+  padding: 48px 12px;
 }
 
 @media (min-width: 768px) {
@@ -1832,7 +1848,7 @@
 
 .outroValueWrap {
   background: #EBEBEA;
-  padding: 48px 20px;
+  padding: 48px 12px;
   position: relative;
   overflow: hidden;
 }
@@ -1917,9 +1933,17 @@
 }
 
 .outroCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+  color: #003795;
+}
+.outroCardIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .outroCardTitle {
@@ -1947,7 +1971,7 @@
 }
 
 .strategyWrap {
-  padding: 48px 20px;
+  padding: 48px 12px;
 }
 
 @media (min-width: 768px) {

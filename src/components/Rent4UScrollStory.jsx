@@ -893,9 +893,30 @@ function SectionOutro() {
           <h2 className={styles.outroH2}>真實價值</h2>
           <div className={styles.outroGrid}>
             {[
-              { icon: "https://www.figma.com/api/mcp/asset/a49c8661-9a5e-4a13-a26f-6c190fb7091a", img: "/images/rent4u/value-product.jpg", title: "使用者端", desc: "減少照護者的輔具選擇焦慮" },
-              { icon: "https://www.figma.com/api/mcp/asset/e8151e66-ac37-4faf-8c96-375c284d79e4", img: "/images/rent4u/value-user.jpg",    title: "商業端",  desc: "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。" },
-              { icon: "https://www.figma.com/api/mcp/asset/50437282-d9bd-4a8a-b2d3-d3c7b6249d22", img: "/images/rent4u/value-business.png", title: "產品端",  desc: "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。" },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                  </svg>
+                ),
+                img: "/images/rent4u/value-product.jpg", title: "使用者端", desc: "減少照護者的輔具選擇焦慮",
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 8 10 11 13 9 17 13"/>
+                  </svg>
+                ),
+                img: "/images/rent4u/value-user.jpg", title: "商業端", desc: "預期提升 20% 線上租賃轉換率，並透過減少退換貨與優化流程，將庫存周轉率提高 15%。",
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                  </svg>
+                ),
+                img: "/images/rent4u/value-business.png", title: "產品端", desc: "這是一套「活的生命體」系統，未來可透過 ERP 數據回流，持續強化輔具推薦的智能程度。",
+              },
             ].map((card, i) => (
               <div key={i} className={styles.outroCard}>
                 <div className={styles.outroCardImgWrap}>
@@ -903,7 +924,7 @@ function SectionOutro() {
                 </div>
                 <div className={styles.outroCardText}>
                   <div className={styles.outroCardTitleRow}>
-                    <img src={card.icon} alt="" className={styles.outroCardIcon} />
+                    <span className={styles.outroCardIcon}>{card.icon}</span>
                     <span className={styles.outroCardTitle}>{card.title}</span>
                   </div>
                   <p className={styles.outroCardDesc}>{card.desc}</p>

@@ -79,7 +79,7 @@
   max-width: 1080px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 12px;
 }
 
 @media (min-width: 768px) {
@@ -211,7 +211,7 @@
 /* ── About Section ────────────────────────────────────────────────────────── */
 .aboutSection {
   background: #F5F4F2;
-  padding: 56px 20px;
+  padding: 56px 12px;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -348,7 +348,7 @@
 /* ── Research Section ─────────────────────────────────────────────────────── */
 .researchSection {
   background: #F5F4F2;
-  padding: 56px 20px;
+  padding: 56px 12px;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -619,7 +619,7 @@
 /* ── Design System Section ────────────────────────────────────────────────── */
 .designSection {
   background: #F5F4F2;
-  padding: 56px 20px;
+  padding: 56px 12px;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
@@ -709,7 +709,7 @@
 }
 
 .optHeader {
-  padding: 56px 20px 20px;
+  padding: 56px 12px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -761,7 +761,7 @@
 /* ── Opt Card ─────────────────────────────────────────────────────────────── */
 .optCard {
   position: relative;
-  padding: 56px 20px;
+  padding: 56px 12px;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
   overflow: hidden;
 }
@@ -964,7 +964,7 @@
 /* ── Outro Section ────────────────────────────────────────────────────────── */
 .outroSection {
   background: #111111;
-  padding: 64px 20px;
+  padding: 64px 12px;
   text-align: center;
 }
 

@@ -3,7 +3,7 @@
 .nav {
   @apply sticky top-0 left-0 right-0 z-[200] shrink-0
          flex justify-between items-center
-         px-6 md:px-12 h-[60px]
+         px-3 md:px-12 h-[60px]
          border-b border-border;
   background: #F5F4F2;
 }

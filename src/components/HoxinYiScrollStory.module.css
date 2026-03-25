@@ -190,7 +190,7 @@
   font-size: 16px;
   color: #A89A90;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 12px;
 }
 
 /* ── SectionBadge ───────────────────────────────────────────────────────────── */
@@ -240,7 +240,7 @@
 
 /* ── Section cover shared ───────────────────────────────────────────────────── */
 .sectionCover {
-  padding: 88px 20px 80px;
+  padding: 88px 12px 80px;
   position: relative;
   overflow: clip;
 }
@@ -295,7 +295,7 @@
 /* ── Section content shared ─────────────────────────────────────────────────── */
 .sectionContent {
   background: #FFFFFF;
-  padding: 80px 20px;
+  padding: 80px 12px;
 }
 
 @media (min-width: 768px) {
@@ -321,7 +321,7 @@
   max-width: 1080px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 12px;
 }
 
 @media (min-width: 768px) {
@@ -683,7 +683,7 @@
   flex-direction: column;
   background: #FFF9EB;
   border-radius: 20px;
-  padding: 24px 20px;
+  padding: 24px 12px;
 }
 
 @media (min-width: 768px) {

@@ -1,6 +1,6 @@
 @reference "../index.css";
 
-.backWrap   { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-[14px]; }
+.backWrap   { @apply max-w-[1080px] mx-auto px-3 md:px-12 pt-[14px]; }
 
 .backBtn {
   @apply font-mono text-[11px] tracking-[0.08em]
@@ -14,7 +14,7 @@
 .dotYellow { background: #FFBD2E; }
 .dotGreen  { background: #28C840; }
 
-.headerWrap { @apply max-w-[1080px] mx-auto px-6 md:px-12 pt-4; }
+.headerWrap { @apply max-w-[1080px] mx-auto px-3 md:px-12 pt-4; }
 
 .repoTitle {
   @apply font-mono font-medium text-fg tracking-[-0.01em];
@@ -33,7 +33,7 @@
 
 /* 兩欄佈局：程式碼 + 截圖 */
 .twoCols {
-  @apply max-w-[1080px] mx-auto px-6 md:px-12 pb-6
+  @apply max-w-[1080px] mx-auto px-3 md:px-12 pb-6
          grid items-start;
   grid-template-columns: 1fr;
   gap: 2px;
