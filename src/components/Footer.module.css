@@ -64,6 +64,9 @@
 
 /* 手機版：column 排列，全部置中 */
 @media (max-width: 767px) {
+  .footer {
+    padding-bottom: 80px;
+  }
   .inner {
     display: flex;
     flex-direction: column;

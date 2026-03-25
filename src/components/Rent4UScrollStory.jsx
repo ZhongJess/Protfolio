@@ -4,7 +4,7 @@
  * TopNav (sticky, 4 anchors) + SectionSummary (Hero) + content sections
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useIsDesktop } from "../hooks";
@@ -17,14 +17,6 @@ const C = {
   portalAccent: "#FF6200",// nav active state (dynamic)
 };
 
-// ── Nav Items ─────────────────────────────────────────────────────────────────
-const NAV_ITEMS = [
-  { id: "summary",  label: "需求洞察" },
-  { id: "research", label: "設計核心" },
-  { id: "logic",    label: "系統實踐" },
-  { id: "impact",   label: "價值影響" },
-];
-
 // ── Hero Info Cards ───────────────────────────────────────────────────────────
 const INFO_CARDS = [
   { label: "目標達成", value: "預計優化 70% 的輔具適配精準度" },
@@ -32,43 +24,6 @@ const INFO_CARDS = [
   { label: "團隊角色", value: "UX / UI · PM" },
   { label: "工具",     value: "Figma · Notion · Miro" },
 ];
-
-// ── Anchor Scroll ─────────────────────────────────────────────────────────────
-function scrollToSection(id) {
-  const scrollEl = document.getElementById("main-scroll");
-  const target   = document.getElementById(`r4u-${id}`);
-  if (!scrollEl || !target) return;
-  scrollEl.scrollTo({ top: target.offsetTop - 56, behavior: "smooth" });
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// TOP STICKY NAV
-// ─────────────────────────────────────────────────────────────────────────────
-function TopNav({ active }) {
-  return (
-    <nav className={styles.nav}>
-      <span className={styles.navBrand}>Rent4U</span>
-
-      {NAV_ITEMS.map(({ id, label }) => {
-        const isActive = active === id;
-        return (
-          <button
-            key={id}
-            onClick={() => scrollToSection(id)}
-            className={`${styles.navBtn} ${isActive ? styles.navBtnActive : ""}`}
-            style={{
-              border:     isActive ? `1px solid ${C.portalAccent}55` : "1px solid transparent",
-              color:      isActive ? C.portalAccent                  : undefined,
-              background: isActive ? "rgba(255,98,0,0.08)"           : undefined,
-            }}
-          >
-            {label}
-          </button>
-        );
-      })}
-    </nav>
-  );
-}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SECTION SUMMARY  ←── 完整 Hero
@@ -985,8 +940,6 @@ function SectionStrategy() {
 // ROOT
 // ─────────────────────────────────────────────────────────────────────────────
 export default function Rent4UScrollStory() {
-  const [active, setActive] = useState("summary");
-
   // Noto Sans TC
   useEffect(() => {
     const id = "noto-sans-tc";
@@ -999,38 +952,11 @@ export default function Rent4UScrollStory() {
     document.head.appendChild(link);
   }, []);
 
-  // IntersectionObserver → active nav highlight
-  useEffect(() => {
-    const scrollEl = document.getElementById("main-scroll");
-    if (!scrollEl) return;
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter(e => e.isIntersecting);
-        if (!visible.length) return;
-        const mid = scrollEl.clientHeight / 2;
-        const closest = visible.sort(
-          (a, b) =>
-            Math.abs(a.intersectionRect.top - mid) -
-            Math.abs(b.intersectionRect.top - mid)
-        )[0];
-        setActive(closest.target.id.replace("r4u-", ""));
-      },
-      { root: scrollEl, rootMargin: "-20% 0px -20% 0px", threshold: 0 }
-    );
-
-    NAV_ITEMS.forEach(({ id }) => {
-      const el = document.getElementById(`r4u-${id}`);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <>
       <div className={styles.root}>
         <SectionSummary />
-        <TopNav active={active} />
         <SectionResearch />
         <SectionLogic />
         <SectionImpact />
