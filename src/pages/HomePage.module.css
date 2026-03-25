@@ -144,10 +144,9 @@
 /* 圖片區 */
 .projectImg {
   @apply relative overflow-hidden rounded-xl;
-  aspect-ratio: 4 / 3;
 }
 .projectImg img {
-  @apply w-full h-full object-cover
+  @apply w-full block
          transition-transform duration-700;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
