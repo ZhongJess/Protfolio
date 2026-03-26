@@ -932,8 +932,9 @@
 /* Sitemap responsive */
 .iaSitemapDesktop {
   display: none;
-  width: 100%;
+  width: 60%;
   border-radius: 16px;
+  margin: 0 auto;
 }
 
 .iaSitemapMobile {
@@ -950,6 +951,62 @@
   .iaSitemapMobile {
     display: none;
   }
+}
+
+/* ── 設計演進 ────────────────────────────────────────────────────────────────── */
+.evolutionGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 24px;
+}
+
+.evolutionImgRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  background: #FEF6ED;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .evolutionImgRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.evolutionImgWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evolutionTag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.evolutionTagBefore {
+  background: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.evolutionTagAfter {
+  background: #C7626E;
+  color: #FFFFFF;
+}
+
+.evolutionImg {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
 }
 
 /* ── DesignOutcomes ─────────────────────────────────────────────────────────── */

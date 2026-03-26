@@ -170,8 +170,7 @@ function scrollToTop() {
 // ── Nav ───────────────────────────────────────────────────────────────────────
 const NAV_ITEMS = [
   { id: "hxy-challenges", label: "問題分析" },
-  { id: "hxy-ia",         label: "解決方案" },
-  { id: "hxy-outcomes",   label: "核心設計" },
+  { id: "hxy-ia",         label: "解決思路" },
   { id: "hxy-results",    label: "設計驗證" },
 ];
 
@@ -298,8 +297,25 @@ function Hero() {
 }
 
 // ── CHALLENGES & GOALS ────────────────────────────────────────────────────────
+const CORE_DESIGN_ITEMS = [
+  {
+    n: "01", subtitle: "流程優化", title: "簡化報名流程", badge: "+31% 完成率",
+    desc: <>透過<strong>合併冗餘表單</strong>並導入<strong>進度分段機制</strong>，我們成功將複雜的報名流程精簡為 <strong>3 個核心步驟</strong>。這不僅降低了使用者的<strong>認知負荷</strong>，更有效消弭了填表時的<strong>心理阻礙</strong>，使<strong>報名完成率顯著提升 31%</strong>。</>,
+    video: proto01,
+  },
+  {
+    n: "02", subtitle: "視覺化進度", title: "報名狀態追蹤", badge: "易用性分數提升",
+    desc: <>透過導入<strong style={{color:"#C7626E"}}>即時的狀態追蹤模組</strong>，讓志工隨時能掌握「審核中、已錄取、培訓中」的每個節點；將原本漫長的等待轉化為可預期的目標達成感，顯著降低受試者的挫折感。</>,
+    video: proto02,
+  },
+  {
+    n: "03", subtitle: "社群連結", title: "志工交流功能", badge: "強化長期黏著",
+    desc: <>為了解決<strong>社群連結薄弱</strong>的痛點，我們建立了<strong>「認識夥伴」社交模組</strong>。透過<strong>心得分享與私訊互動</strong>，將單次的志工任務轉化為具備<strong>歸屬感的社群體驗</strong>，從而強化志工的<strong>長期參與意願與情感黏著度</strong>。</>,
+    video: proto03,
+  },
+];
+
 function Challenges() {
-  const [activeVideo, setActiveVideo] = useState(0);
   return (
     <div id="hxy-challenges">
       {/* Cover */}
@@ -332,40 +348,34 @@ function Challenges() {
             ))}
           </div>
 
-          {/* 核心設計 — 原型影片展示 */}
+          {/* 核心設計 — 交錯排版 */}
           <h3 className={styles.challengesSectionH3}>核心設計</h3>
 
-          {/* Tab Buttons */}
-          <div className={styles.protoTabRow}>
-            {[
-              "原型 01 — 簡化報名流程",
-              "原型 02 — 報名狀態追蹤",
-              "原型 03 — 志工社群功能",
-            ].map((label, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveVideo(i)}
-                className={styles.protoTabBtn}
-                style={{
-                  background: activeVideo === i ? ORANGE : "transparent",
-                  color:      activeVideo === i ? WHITE  : ORANGE,
-                }}
-              >{label}</button>
-            ))}
-          </div>
-
-          {/* Video Display Area */}
-          <div className={styles.protoVideoWrap}>
-            <video
-              key={activeVideo}
-              src={[proto01, proto02, proto03][activeVideo]}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={styles.protoVideo}
-            />
-          </div>
+          {CORE_DESIGN_ITEMS.map((item, i) => (
+            <div key={i} style={{ marginBottom: i < CORE_DESIGN_ITEMS.length - 1 ? 72 : 0 }}>
+              <div
+                className={styles.outcomesItemGrid}
+                data-odd={i % 2 !== 0}
+                style={{ gridTemplateColumns: i % 2 === 0 ? "1fr 1.4fr" : "1.4fr 1fr" }}
+              >
+                <div className={styles.outcomesItemText} data-odd={i % 2 !== 0}>
+                  <div className={styles.outcomesNumRow}>
+                    <div className={styles.outcomesNumBadge}>{item.n}</div>
+                    <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
+                    {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
+                  </div>
+                  <h3 className={styles.outcomesItemH3}>{item.title}</h3>
+                  <p className={styles.outcomesItemDesc}>{item.desc}</p>
+                </div>
+                <video
+                  src={item.video}
+                  autoPlay loop muted playsInline
+                  className={styles.outcomesVideo}
+                  data-odd={i % 2 !== 0}
+                />
+              </div>
+            </div>
+          ))}
 
         </div>
       </div>
@@ -442,7 +452,7 @@ function InfoArchitecture() {
       <div className={`${styles.sectionCover} ${styles.iaCover}`}>
         <div className={styles.sectionCoverInner}>
           <SectionBadge en="SOLUTION" color={RED} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRed}`}>解決方案</div>
+          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRed}`}>解決思路</div>
           <p className={styles.sectionCoverDesc}>資訊架構重構，消除功能擴張帶來的認知負荷</p>
         </div>
         <WaveBottom fill={WHITE} flip />
@@ -488,8 +498,53 @@ function InfoArchitecture() {
           </ul>
 
           {/* IA diagram — responsive via CSS */}
-          <img src={imgIaSitemap}       alt="資訊架構圖" className={styles.iaSitemapDesktop} />
-          <img src={imgIaSitemapMobile} alt="資訊架構圖" className={styles.iaSitemapMobile} />
+          <div style={{ marginBottom: 72 }}>
+            <img src={imgIaSitemap}       alt="資訊架構圖" className={styles.iaSitemapDesktop} />
+            <img src={imgIaSitemapMobile} alt="資訊架構圖" className={styles.iaSitemapMobile} />
+          </div>
+
+          {/* 設計演進 */}
+          <h3 className={styles.iaContentH3}>設計演進：從資訊混亂到直覺導引</h3>
+          <div className={styles.evolutionGrid}>
+
+            {/* 演進 01 */}
+            <div className={styles.evolutionImgRow}>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagBefore}`}>Before</span>
+                <img src="/images/hoxinyi/evolution-01-before.webp" alt="設計演進 1 Before" className={styles.evolutionImg} />
+              </div>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagAfter}`}>After</span>
+                <img src="/images/hoxinyi/evolution-01-after.webp" alt="設計演進 1 After" className={styles.evolutionImg} />
+              </div>
+            </div>
+
+            {/* 演進 02 */}
+            <div className={styles.evolutionImgRow}>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagBefore}`}>Before</span>
+                <img src="/images/hoxinyi/evolution-02-before.webp" alt="設計演進 2 Before" className={styles.evolutionImg} />
+              </div>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagAfter}`}>After</span>
+                <img src="/images/hoxinyi/evolution-02-after.webp" alt="設計演進 2 After" className={styles.evolutionImg} />
+              </div>
+            </div>
+
+            {/* 演進 03 */}
+            <div className={styles.evolutionImgRow}>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagBefore}`}>Before</span>
+                <img src="/images/hoxinyi/evolution-03-before.webp" alt="設計演進 3 Before" className={styles.evolutionImg} />
+              </div>
+              <div className={styles.evolutionImgWrap}>
+                <span className={`${styles.evolutionTag} ${styles.evolutionTagAfter}`}>After</span>
+                <img src="/images/hoxinyi/evolution-03-after.webp" alt="設計演進 3 After" className={styles.evolutionImg} />
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
@@ -497,80 +552,6 @@ function InfoArchitecture() {
 }
 
 // ── DESIGN OUTCOMES ───────────────────────────────────────────────────────────
-function DesignOutcomes() {
-  const items = [
-    {
-      n: "01", subtitle: "流程優化", title: "簡化報名流程", badge: "+31% 完成率",
-      desc: <>透過<strong>合併冗餘表單</strong>並導入<strong>進度分段機制</strong>，我們成功將複雜的報名流程精簡為 <strong>3 個核心步驟</strong>。這不僅降低了使用者的<strong>認知負荷</strong>，更有效消弭了填表時的<strong>心理阻礙</strong>，使<strong>報名完成率顯著提升 31%</strong>。</>,
-    },
-    {
-      n: "02", subtitle: "視覺化進度", title: "報名狀態追蹤", badge: "易用性分數提升",
-      desc: <>透過導入<strong style={{color:"#C7626E"}}>即時的狀態追蹤模組</strong>，讓志工隨時能掌握「審核中、已錄取、培訓中」的每個節點；將原本漫長的等待轉化為可預期的目標達成感，顯著降低受試者的挫折感。</>,
-    },
-    {
-      n: "03", subtitle: "社群連結", title: "志工交流功能", badge: "強化長期黏著",
-      desc: <>為了解決<strong>社群連結薄弱</strong>的痛點，我們建立了<strong>「認識夥伴」社交模組</strong>。透過<strong>心得分享與私訊互動</strong>，將單次的志工任務轉化為具備<strong>歸屬感的社群體驗</strong>，從而強化志工的<strong>長期參與意願與情感黏著度</strong>。</>,
-    },
-  ];
-
-  // The alternating layout (text-left vs text-right on desktop) depends on
-  // the item index at runtime, so we keep it as inline gridTemplateColumns.
-  return (
-    <div id="hxy-outcomes">
-      {/* Cover */}
-      <div className={`${styles.sectionCover} ${styles.outcomesCover}`}>
-        <div className={styles.sectionCoverInner}>
-          <SectionBadge en="DESIGN OUTCOMES" color={PRIMARY} />
-          <div className={`${styles.sectionCoverTitle} ${styles.sectionCoverTitleRose}`}>核心設計</div>
-          <p className={styles.sectionCoverDesc}>三大核心流程的重新設計，以易用性為中心打造更直覺的體驗。</p>
-        </div>
-        <WaveBottom fill={WHITE} flip />
-      </div>
-
-      {/* Content */}
-      <div className={styles.sectionContent}>
-        <div className={styles.sectionContentInner}>
-          {items.map((item, i) => (
-            <div key={i} style={{ marginBottom: i < items.length - 1 ? 72 : 0 }}>
-              {/*
-                On mobile: always column (flex).
-                On desktop: grid, alternating column order per item.
-                Because the grid column template depends on `i` (runtime data),
-                we keep these layout values inline.
-              */}
-              <div
-                className={styles.outcomesItemGrid}
-                data-odd={i % 2 !== 0}
-                style={{
-                  gridTemplateColumns: i % 2 === 0 ? "1fr 1.4fr" : "1.4fr 1fr",
-                }}
-              >
-                {/* Text — always first in DOM → mobile: top */}
-                <div className={styles.outcomesItemText} data-odd={i % 2 !== 0}>
-                  <div className={styles.outcomesNumRow}>
-                    <div className={styles.outcomesNumBadge}>{item.n}</div>
-                    <span className={styles.outcomesSubtitle}>{item.subtitle}</span>
-                    {item.badge && <span className={styles.outcomesBadge}>{item.badge}</span>}
-                  </div>
-                  <h3 className={styles.outcomesItemH3}>{item.title}</h3>
-                  <p className={styles.outcomesItemDesc}>{item.desc}</p>
-                </div>
-                {/* Video — always second in DOM → mobile: bottom */}
-                <video
-                  src={[proto01, proto02, proto03][i]}
-                  autoPlay loop muted playsInline
-                  className={styles.outcomesVideo}
-                  data-odd={i % 2 !== 0}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // ── RESULTS ───────────────────────────────────────────────────────────────────
 function Results() {
   const tasks = [
@@ -808,7 +789,6 @@ export default function HoxinYiScrollStory() {
       <Challenges />
       <UserResearch />
       <InfoArchitecture />
-      <DesignOutcomes />
       <Results />
       {createPortal(
         <button onClick={scrollToTop} className={`${styles.glassBtn} ${styles.glassBtnRight}`}>
