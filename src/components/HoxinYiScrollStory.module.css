@@ -681,7 +681,7 @@
 .jmAccordion {
   display: flex;
   flex-direction: column;
-  background: #FFF9EB;
+  background: #F5F4F2;
   border-radius: 20px;
   padding: 24px 12px;
 }
@@ -737,7 +737,7 @@
 }
 
 .jmBadgeRed {
-  background: #D6001A;
+  background: #E63946;
   color: #fff;
   font-family: var(--font-tc);
   font-size: 13px;
@@ -747,7 +747,7 @@
 }
 
 .jmBadgeGreen {
-  background: #1B930D;
+  background: #27AE60;
   color: #fff;
   font-family: var(--font-tc);
   font-size: 13px;
@@ -769,7 +769,7 @@
 }
 
 .jmStepBody {
-  background: #FFEAB8;
+  background: #DDDDDD;
   border-radius: 12px;
   padding: 16px;
   display: flex;
@@ -965,7 +965,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
-  background: #FEF6ED;
+  background: rgba(225, 108, 84, 0.063);
   border-radius: 16px;
   padding: 16px;
 }
