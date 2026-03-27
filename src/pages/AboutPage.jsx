@@ -97,8 +97,8 @@ export default function AboutPage() {
             </a>{' '}
             傳個訊息給我，或是下載{' '}
             <a
-              href="/鍾思瑩UXUI designer.pdf"
-              download="鍾思瑩UXUI designer.pdf"
+              href="/鍾思瑩UXUI Resume.pdf"
+              download="鍾思瑩UXUI Resume.pdf"
               className={styles.link}
             >
               我的履歷

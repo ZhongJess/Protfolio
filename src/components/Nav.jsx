@@ -75,7 +75,7 @@ export default function Nav() {
             {label}
           </button>
         ))}
-        <a href="/鍾思瑩UXUI designer.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.ctaButton}>
+        <a href="/鍾思瑩UXUI Resume.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.ctaButton}>
           <IconDownload /> 履歷下載
         </a>
       </div>
@@ -128,7 +128,7 @@ export default function Nav() {
                 <IconCake />
               </a>
             </div>
-            <a href="/鍾思瑩UXUI designer.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.mobileResumeLink}>
+            <a href="/鍾思瑩UXUI Resume.pdf" download="鍾思瑩UXUI designer.pdf" className={styles.mobileResumeLink}>
               <IconDownload /> 履歷下載
             </a>
           </div>
