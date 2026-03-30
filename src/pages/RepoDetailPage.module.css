@@ -75,6 +75,7 @@
   @apply font-mono text-[11px] md:text-[12px] leading-[1.7]
          m-0 p-4 md:p-6 overflow-x-auto whitespace-pre;
   color: #A8C4A0;
+  scrollbar-gutter: stable;
 }
 
 .previewImg  { @apply flex-1 overflow-hidden min-h-[240px] md:min-h-[320px]; }
