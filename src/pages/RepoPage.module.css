@@ -43,24 +43,29 @@
 
 /* ── Card ────────────────────────────────────────────────────────────────────── */
 .card {
+  cursor: pointer;
+  outline: none;
+  border-radius: 14px;
+}
+
+.card:focus-visible .cardInner {
+  box-shadow: 0 0 0 3px rgba(199, 98, 110, 0.35);
+}
+
+.cardInner {
   display: flex;
   flex-direction: column;
   border: 1px solid #E5E3DF;
   border-radius: 14px;
   overflow: hidden;
   background: #FFFFFF;
-  cursor: pointer;
   transition: box-shadow 0.22s ease, transform 0.22s ease;
-  outline: none;
+  height: 100%;
 }
 
-.card:hover {
+.card:hover .cardInner {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.10);
   transform: translateY(-4px);
-}
-
-.card:focus-visible {
-  box-shadow: 0 0 0 3px rgba(199, 98, 110, 0.35);
 }
 
 /* ── Image ───────────────────────────────────────────────────────────────────── */

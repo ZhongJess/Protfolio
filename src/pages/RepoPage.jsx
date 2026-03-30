@@ -14,6 +14,7 @@ function RepoCard({ repo }) {
       tabIndex={0}
       onKeyDown={e => e.key === "Enter" && navigate(`/repo/${repo.id}`)}
     >
+      <div className={styles.cardInner}>
       {/* Preview Image */}
       <div className={styles.cardImg}>
         <img src={repo.screenshot} alt={repo.name} className={styles.img} />
@@ -45,6 +46,7 @@ function RepoCard({ repo }) {
           </div>
           <span className={styles.arrow}>→</span>
         </div>
+      </div>
       </div>
     </div>
   );
