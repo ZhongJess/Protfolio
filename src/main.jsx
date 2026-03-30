@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { inject } from '@vercel/analytics'
+import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 import Portfolio from './App.jsx'
-
-inject()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Portfolio />
+    <Analytics />
   </React.StrictMode>,
 )
