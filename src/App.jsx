@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate, useLocation } from "react-router-dom";
 import { PROJECTS, REPOS } from "./data";
+import { Analytics } from "@vercel/analytics/react";
 
 import ProgressBar from "./components/ProgressBar";
 import Nav        from "./components/Nav";
@@ -132,6 +133,7 @@ export default function Portfolio() {
   return (
     <BrowserRouter>
       <AppLayout />
+      <Analytics />
     </BrowserRouter>
   );
 }
