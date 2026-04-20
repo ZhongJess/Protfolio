@@ -15,6 +15,7 @@ import CaseStudyPage     from "./pages/CaseStudyPage";
 import Rent4UScrollStory       from "./components/Rent4UScrollStory";
 import StarbucksMOPScrollStory from "./components/StarbucksMOPScrollStory";
 import HoxinYiScrollStory     from "./components/HoxinYiScrollStory";
+import ErpCrmScrollStory      from "./components/ErpCrmScrollStory";
 import RepoPage          from "./pages/RepoPage";
 import RepoDetailPage    from "./pages/RepoDetailPage";
 import ContactPage       from "./pages/ContactPage";
@@ -28,6 +29,7 @@ function ProjectRoute() {
   if (!project) return <Navigate to="/projects" replace />;
   if (project.scrollStory === "starbucks-mop") return <StarbucksMOPScrollStory />;
   if (project.scrollStory === "hoxinyi") return <HoxinYiScrollStory />;
+  if (project.scrollStory === "erp-crm") return <ErpCrmScrollStory />;
   if (project.scrollStory) return <Rent4UScrollStory />;
   return <CaseStudyPage project={project} onBack={() => navigate("/projects")} />;
 }

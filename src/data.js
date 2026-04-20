@@ -44,6 +44,19 @@ export const PROJECTS = [
     impact: [],
     sections: [],
   },
+  {
+    id: "erp-crm",
+    num: "03",
+    title: "ERP / CRM 系統重設計",
+    tags: ["UX Research", "Information Architecture", "Role-based Dashboard", "AI-Assisted Design"],
+    tagColor: "#63b3ed",
+    desc: "為數位轉型顧問公司主導 CRM 模組設計——從 10 場跨部門訪談到可部署的 Demo，用 AI 工具加速交付同時保留關鍵的人為判斷。",
+    year: "2026",
+    img: "/images/project/erp-crm.webp",
+    scrollStory: "erp-crm",
+    impact: [],
+    sections: [],
+  },
 ];
 
 // ── GitHub Repos ───────────────────────────────────────────────────────────────
