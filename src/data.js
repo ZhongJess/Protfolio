@@ -11,7 +11,7 @@ export const PROJECTS = [
     title: "ERP / CRM 系統重設計",
     tags: ["UX Research", "Information Architecture", "Role-based Dashboard", "AI-Assisted Design"],
     tagColor: "#2563EB",
-    desc: "為數位轉型顧問公司主導 CRM 模組設計——從 10 場跨部門訪談到可部署的 Demo，用 AI 工具加速交付同時保留關鍵的人為判斷。",
+    desc: "為數位轉型顧問公司主導 CRM 模組設計——從 5 場跨部門訪談到可部署的 Demo，用 AI 工具加速交付同時保留關鍵的人為判斷。",
     year: "2026",
     img: "/images/project/erp-crm.webp",
     scrollStory: "erp-crm",

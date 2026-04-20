@@ -134,7 +134,7 @@ export default function ErpCrmScrollStory() {
             </p>
             <div className={styles.heroStats}>
               {[
-                { num: "10", sup: "+", label: "跨部門訪談" },
+                { num: "5", sup: "+", label: "跨部門訪談" },
                 { num: "3",  sup: "",  label: "角色視圖"   },
                 { num: "−40", sup: "%", label: "必填欄位縮減" },
                 { num: "0",  sup: "",  label: "寄錯信事故"  },
@@ -161,7 +161,7 @@ export default function ErpCrmScrollStory() {
             <span className={styles.sectionBadge}>01 / 問題定義</span>
             <h2 className={styles.sectionH2}>許願池困境</h2>
             <p className={styles.sectionDesc}>
-              超過 10 場跨部門訪談後，我發現這不是一個 UI 問題——
+              超過 5 場跨部門訪談後，我發現這不是一個 UI 問題——
               這是一場資訊架構的失控。每個人都把這套系統想像成自己習慣的延伸，
               而不是整個組織的工具。
             </p>
@@ -208,15 +208,15 @@ export default function ErpCrmScrollStory() {
             <div className={styles.flowWrap}>
               {[
                 ["需求訪談",       false],
-                ["AI 整理痛點",    true ],
+                ["AI 整理訪談分析",    true ],
                 ["Function Map",   false],
                 ["IA 資訊架構",    false],
                 ["Sitemap",        false],
                 ["Design System",  true ],
                 ["Wireframe",      true ],
-                ["Figma 金稿",     false],
+                ["Figma mockup",     false],
                 ["MCP 串接",       true ],
-                ["VS Code 原型",   false],
+                ["Claude code 原型",   false],
                 ["AI 測試報告",    true ],
                 ["迭代修正",       false],
               ].map(([label, isAi], i, arr) => (
