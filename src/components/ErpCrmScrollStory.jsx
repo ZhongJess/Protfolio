@@ -106,10 +106,10 @@ export default function ErpCrmScrollStory() {
             </p>
             <div className={styles.heroStats}>
               {[
-                { num: "UXUI Designer", sup: "", label: "專案角色" },
                 { num: "5",  sup: "+",  label: "跨部門訪談" },
                 { num: "−40", sup: "%", label: "必填欄位縮減" },
                 { num: "0",  sup: "",  label: "寄錯信事故"  },
+                { num: "UXUI Designer", sup: "", label: "專案角色" },
               ].map(({ num, sup, label }) => (
                 <div key={label} className={styles.statCard}>
                   <div className={styles.statNum}>{num}<span>{sup}</span></div>
