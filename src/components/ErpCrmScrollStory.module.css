@@ -196,12 +196,13 @@
 
 .statNum {
   font-family: var(--font-main);
-  font-size: 28px;
+  font-size: clamp(18px, 2vw, 28px);
   font-weight: 800;
   color: var(--c-text);
   line-height: 1;
   margin-bottom: 4px;
   letter-spacing: -0.02em;
+  word-break: break-word;
 }
 
 .statNum span { color: var(--c-accent); }
@@ -234,14 +235,12 @@
   background-size: 28px 28px;
 }
 
-.heroBannerLabel {
-  font-family: var(--font-mono);
-  font-size: 16px;
-  color: rgba(37, 99, 235, 0.5);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
+.heroBannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 .heroSpacer { height: 56px; }
@@ -302,9 +301,8 @@
 /* ── Insight box ─────────────────────────────────────────────────────────── */
 .insight {
   background: rgba(37, 99, 235, 0.04);
-  border: 1px solid rgba(37, 99, 235, 0.18);
-  border-left: 3px solid var(--c-accent);
-  border-radius: 0 8px 8px 0;
+  border: 1px solid var(--c-accent);
+  border-radius: 8px;
   padding: 28px 32px;
   margin-bottom: 48px;
 }
@@ -383,6 +381,58 @@
   font-family: var(--font-mono);
   font-size: 16px;
   color: var(--c-red);
+  margin: 0;
+}
+
+/* ── Persona zig-zag ─────────────────────────────────────────────────────── */
+.personaZigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 48px;
+  padding: 0 40px;
+}
+
+@media (max-width: 767px) { .personaZigzag { padding: 0; } }
+
+.personaRow {
+  display: flex;
+  width: 100%;
+}
+
+.personaLeft  { justify-content: flex-start; }
+.personaRight { justify-content: flex-end; }
+
+.personaContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 526px;
+  width: 100%;
+}
+
+.personaImg {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.personaImgFlip {
+  transform: scaleX(-1);
+}
+
+.personaDesc {
+  font-size: 16px;
+  color: var(--c-sub);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.personaConclusion {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-text);
   margin: 0;
 }
 
@@ -467,6 +517,57 @@
   margin-bottom: 0;
 }
 
+/* Dashboard side-by-side container */
+.dbContainer {
+  background: var(--c-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 52px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) { .dbContainer { padding: 52px 80px; } }
+
+.dbRow {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dbTextBlock {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) { .dbTextBlock { width: 420px; } }
+
+.dbPreview {
+  flex: 1;
+  min-width: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #f0fdf4 100%);
+  aspect-ratio: 1000 / 428;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dbPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
 .dbCard {
   background: var(--c-white);
   border: 1px solid var(--c-border);
@@ -539,20 +640,13 @@
   border-color: rgba(146, 64, 14, 0.2) !important;
 }
 
-.screenshot {
-  margin-top: 16px;
-  background: var(--c-card);
-  border: 1px dashed var(--c-border);
-  border-radius: 8px;
-  padding: 20px;
-  font-family: var(--font-mono);
-  font-size: 16px;
-  color: var(--c-muted);
-  text-align: center;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.fullImg {
+  margin-top: 24px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Before / After ──────────────────────────────────────────────────────── */
@@ -1047,7 +1141,7 @@
   margin: 0;
 }
 
-/* ── Glass portal buttons (scroll-to-top) ────────────────────────────────── */
+/* ── Glass portal buttons ────────────────────────────────────────────────── */
 .glassBtn {
   display: inline-flex;
   align-items: center;
@@ -1059,7 +1153,7 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-main);
   font-weight: 500;
   color: var(--c-text);
@@ -1069,13 +1163,46 @@
   transition: background 0.2s, box-shadow 0.2s;
   position: fixed;
   bottom: 32px;
-  right: 16px;
   z-index: 9999;
 }
 
 .glassBtn:hover {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glassBtnLeft  { left: 16px; }
+.glassBtnRight { right: 16px; }
+
+/* ── Matrix image ────────────────────────────────────────────────────────── */
+.matrixImg {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+  .matrixImg {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ── Prototype image grid ────────────────────────────────────────────────── */
+.protoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.protoImg {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Reveal animation ────────────────────────────────────────────────────── */
