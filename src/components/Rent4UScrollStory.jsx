@@ -89,7 +89,7 @@ function SectionSummary() {
           </div>
 
           {/* 主標題 */}
-          <h1 className={styles.heroH1}>重塑輔具租賃：以GMFCS實現精準適配</h1>
+          <h1 className={styles.heroH1}>重塑輔具租賃：以 E11 實現精準適配</h1>
 
           {/* 副標題 */}
           <p className={styles.heroSubtitle}>
@@ -173,7 +173,7 @@ function SectionResearch() {
             </h2>
             <p className={styles.researchBodyText}>
               在照護情境中，家屬往往處於極度焦慮且需要情境不對稱的狀態。
-              很多家屬租了病床卻忘了洗澡椅。我們發現 70% 的家庭在租借輔具時，
+              很多家屬租了病床卻忘了洗澡椅。受訪店家指出，約 70% 的家屬在租借輔具時，
               因為<strong className={styles.researchBodyStrong}>缺乏情境聯想而產生照顧斷層</strong>。
             </p>
           </div>
@@ -200,12 +200,12 @@ function SectionResearch() {
           <h2 className={styles.researchInsightH2}>研究與洞察</h2>
 
           <p className={styles.researchInsightSubtitle}>
-            我們與兩位利害關係人線上訪談、研究三種競品分析。核心發現：
+            我們與兩位利害關係人線上訪談、研究兩種競品分析。核心發現：
           </p>
 
           <div className={styles.researchBullets}>
             <p className={styles.researchBullet}>
-              • 數據警示：目前輔具市場面臨 80% 的用戶流失率，主因是
+              • 數據警示：受訪店家反映，約 80% 的線上詢問最終未成交，主因是
               <strong className={styles.researchBodyStrong}>線上評估與實體需求之間存在巨大的「資訊斷層」</strong>。
             </p>
             <p className={styles.researchBullet}>
@@ -497,7 +497,7 @@ const FEATURE_ROWS = [
     side:    "right",
     label:   "Feature 01",
     title:   "詢問單功能設計",
-    body:    "詢問單設計基於粗大動作評估系統的分級標準，涵蓋五種失能級別，確保使用者能夠按照自身的失能狀態進行輔具諮詢。此機制有助於店家更準確地理解使用者需求，避免資訊不對稱或無法確定使用者目前的失能級別，進而提供最合適的輔具建議。",
+    body:    "詢問單直接引用台灣官方長照評估量表的 E11 題項行動能力分級，將五個等級轉化為使用者可自行填答的日常語言選項。店家無需面對面評估，即可透過使用者的自填資訊遠端掌握其行動能力，避免資訊不對稱，並提供最合適的輔具建議。",
     checks:  null,
     MockupComponent: PhoneInquiry,
     bg:      "#FAFAFA",
@@ -588,7 +588,7 @@ function SectionLogic() {
                 </div>
                 <div className={styles.journeyPillsDesktop}>
                   {[
-                    { label: "自評行為能力 GMFCS",                          dark: true  },
+                    { label: "自評行為能力 E11",                             dark: true  },
                     { label: "店家後台收到詢問單，給予客製化輔具建議",      dark: false },
                     { label: "用戶 LINE 收到通知",                          dark: true  },
                   ].map((step, i) => (
@@ -608,7 +608,7 @@ function SectionLogic() {
                 </div>
                 <div className={styles.journeyPillsMobile}>
                   {[
-                    { label: "自評行為能力 GMFCS",                          dark: true  },
+                    { label: "自評行為能力 E11",                             dark: true  },
                     { label: "店家後台收到詢問單，給予客製化輔具建議",      dark: false },
                     { label: "用戶 LINE 收到通知",                          dark: true  },
                   ].map((step, i) => (
@@ -656,7 +656,7 @@ function SectionImpact() {
         <div className={styles.impactSubInner}>
           <h2 className={styles.impactH2}>設計核心</h2>
           <p className={styles.impactSubtitle}>
-            我們透過<strong className={styles.impactStrong}>數位化GMFCS行動能力分級描述</strong>，打破地理限制，讓專業店家能透過
+            我們透過<strong className={styles.impactStrong}>數位化 E11 行動能力分級描述</strong>，打破地理限制，讓專業店家能透過
             <strong className={styles.impactStrong}>「遠端諮詢建議單」</strong>精準觸達家屬，消除 80% 的轉化缺口，透明化租賃體驗。
           </p>
 
