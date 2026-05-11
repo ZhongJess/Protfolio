@@ -538,6 +538,14 @@
   flex-wrap: wrap;
 }
 
+/* mobile: text before image even when image is first in DOM */
+.dbRowReverse .dbTextBlock { order: 1; }
+.dbRowReverse .dbPreview   { order: 2; }
+@media (min-width: 768px) {
+  .dbRowReverse .dbTextBlock { order: 0; }
+  .dbRowReverse .dbPreview   { order: 0; }
+}
+
 .dbTextBlock {
   flex-shrink: 0;
   width: 100%;

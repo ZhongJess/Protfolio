@@ -270,8 +270,8 @@ export default function ErpCrmScrollStory() {
                 <img src={imgDashboard} alt="總經理儀表板" className={styles.dbPreviewImg} />
               </div>
             </div>
-            {/* AM/PM — preview left, text right */}
-            <div className={styles.dbRow}>
+            {/* AM/PM — preview left, text right (mobile: text first) */}
+            <div className={`${styles.dbRow} ${styles.dbRowReverse}`}>
               <div className={styles.dbPreview}>
                 <img src={imgDashboardAm} alt="AM/PM 儀表板" className={styles.dbPreviewImg} />
               </div>
