@@ -532,6 +532,16 @@
   top: 0;
 }
 
+@media (max-width: 767px) {
+  .researchImgAbsolute {
+    position: static;
+    width: 100%;
+    height: auto;
+    left: auto;
+    top: auto;
+  }
+}
+
 .researchImgCaption {
   display: flex;
   flex-direction: column;
