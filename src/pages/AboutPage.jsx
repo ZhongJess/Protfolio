@@ -17,10 +17,10 @@ export default function AboutPage() {
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>嗨，我是 Jess</h2>
           <div className={styles.acrosticIntro}>
-            <p><span className={styles.firstChar}>造</span>就好產品不靠空談，我更怕設計稿到了工程師手上走樣。</p>
-            <p><span className={styles.firstChar}>橋</span>接代碼與視覺，我學會手刻 Code，用開發邏輯來寫 UI。</p>
-            <p><span className={styles.firstChar}>順</span>手到像原本就在那裡，才是我心目中真正「酷」的設計。</p>
-            <p><span className={styles.firstChar}>實</span>現價值的關鍵，在於還原度與無障礙細節，而不只是美工。</p>
+            <p><strong className={styles.firstChar}>造</strong>產品不靠空談，更怕設計走樣。</p>
+            <p><strong className={styles.firstChar}>橋</strong>接代碼與視覺，用邏輯寫 UI。</p>
+            <p><strong className={styles.firstChar}>順</strong>手如原本就在，這才是酷設計。</p>
+            <p><strong className={styles.firstChar}>實</strong>現價值，在於還原度與細節。</p>
           </div>
         </section>
 

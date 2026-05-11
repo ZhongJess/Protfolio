@@ -938,6 +938,110 @@ function SectionOutro() {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION HANDOFF  (設計交付：Spec → Engineering)
+// ─────────────────────────────────────────────────────────────────────────────
+const HANDOFF_CARDS = [
+  {
+    num: "01",
+    title: "Design Tokens 一致性",
+    desc: "色彩、字級、間距、圓角、陰影 token 化命名（primary / accent / space-N / radius-md）。設計師與工程師說同一種語言，避免 hex literal 滿天飛。",
+    chips: ["Color", "Type", "Spacing", "Radius"],
+  },
+  {
+    num: "02",
+    title: "元件規格 + 互動邏輯",
+    desc: "每個關鍵元件附 Anatomy 標註圖、State 對照、互動觸發表、API 對應欄位、無障礙（A11y）需求。工程不再回頭問「這個 hover 怎麼做」。",
+    chips: ["E11 選項按鈕", "建議單卡片", "States × 3", "ARIA"],
+  },
+  {
+    num: "03",
+    title: "Handoff Checklist",
+    desc: "設計端 / 工程端 / QA / PM 四象限交付檢查清單；任一項未達標即不交付。同步 Notion 專案時程，狀態變更可追蹤。",
+    chips: ["Design", "Engineering", "QA", "PM"],
+  },
+];
+
+const HANDOFF_PREVIEWS = [
+  { src: "/images/rent4u/spec/p01.png", cap: "Cover · v1.0" },
+  { src: "/images/rent4u/spec/p03.png", cap: "Color Tokens" },
+  { src: "/images/rent4u/spec/p06.png", cap: "Component · E11" },
+  { src: "/images/rent4u/spec/p10.png", cap: "Handoff Checklist" },
+];
+
+function SectionHandoff() {
+  return (
+    <section id="r4u-handoff" className={styles.handoffSection}>
+      <div className={styles.handoffInner}>
+
+        <div className={styles.handoffEyebrow}>DESIGN SPEC &nbsp;·&nbsp; HANDOFF</div>
+        <h2 className={styles.handoffH2}>
+          設計交付：從規格到工程的<br />單一真實來源
+        </h2>
+        <p className={styles.handoffSubtitle}>
+          Rent4U 為 4 人團隊（1 設計、2 前端、1 後端）。為了避免設計凍結後反覆來回確認，我建立了完整的
+          <strong> Design Spec & Handoff 文件</strong>——把 token、元件規格、互動邏輯、無障礙需求、跨部門檢查清單收斂成一份 PDF，作為設計與工程之間的單一真實來源。
+        </p>
+
+        {/* 3-column highlight cards */}
+        <div className={styles.handoffCards}>
+          {HANDOFF_CARDS.map((c) => (
+            <article key={c.num} className={styles.handoffCard}>
+              <div className={styles.handoffCardNum}>{c.num}</div>
+              <h3 className={styles.handoffCardTitle}>{c.title}</h3>
+              <p className={styles.handoffCardDesc}>{c.desc}</p>
+              <div className={styles.handoffCardChips}>
+                {c.chips.map((chip) => (
+                  <span key={chip} className={styles.handoffCardChip}>{chip}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* PDF preview strip */}
+        <div className={styles.handoffPreviewBlock}>
+          <div className={styles.handoffPreviewLabel}>SAMPLE PAGES</div>
+          <h3 className={styles.handoffPreviewTitle}>Rent4U Design Spec & Handoff · v1.0</h3>
+
+          <div className={styles.handoffPreviewGrid}>
+            {HANDOFF_PREVIEWS.map((p) => (
+              <div key={p.src} className={styles.handoffPreviewItem}>
+                <div className={styles.handoffPreviewImgWrap}>
+                  <img src={p.src} alt={p.cap} className={styles.handoffPreviewImg} loading="lazy" />
+                </div>
+                <span className={styles.handoffPreviewCap}>{p.cap}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA row */}
+        <div className={styles.handoffCtaRow}>
+          <a
+            href="/docs/rent4u-design-spec.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.handoffCtaPrimary}
+          >
+            下載完整規格書 PDF <span aria-hidden>↓</span>
+          </a>
+          <a
+            href="/docs/rent4u-design-spec.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.handoffCtaSecondary}
+          >
+            線上預覽 ↗
+          </a>
+          <span className={styles.handoffCtaMeta}>11 頁 · A4 · ~200 KB</span>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 // ── SectionStrategy ───────────────────────────────────────────────────────────
 function SectionStrategy() {
   const isDesktop = useIsDesktop();
@@ -981,6 +1085,7 @@ export default function Rent4UScrollStory() {
         <SectionResearch />
         <SectionLogic />
         <SectionImpact />
+        <SectionHandoff />
         <SectionStrategy />
         <SectionOutro />
       </div>
